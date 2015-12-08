@@ -27,8 +27,8 @@ The Red Dots app lets users find liquor stores nearby, pre-order and pay for alc
 
 * User Login
 * User Profile (editable)
-* List of Stores and locations
-* List of Stores’ items
+* List of Stores and locations (or map)
+* Store View (list of products)
 * Shopping Cart
 
 ### For Stores
@@ -36,18 +36,18 @@ The Red Dots app lets users find liquor stores nearby, pre-order and pay for alc
 * Store Login
 * Store Profile (editable)
 * Inventory CRUD
+* Store View
 
 ### For App Admins
 
 * List of Stores
 * List of Users
-* CRUD for Stores and Users
+* Admin CRUD for Stores and Users (support)
 
 ## Wishlist / “Low Priority”
 
 ### For Users
-* Map of stores around you
-* View of store if delivery is available
+* Map of stores around you (location permission and/or zip entry)
 * Current orders, past orders
 * Support chat
 
@@ -55,7 +55,7 @@ The Red Dots app lets users find liquor stores nearby, pre-order and pay for alc
 
 * Current orders
 * Total Sales for the week, month, and year
-* Blog by stores
+* Blog for stores
 * Support chat
 
 ### For Admins
@@ -66,22 +66,22 @@ The Red Dots app lets users find liquor stores nearby, pre-order and pay for alc
 
 ### Users can create a New User account via email and password
 
-* Value Statement: By making it simple and easy for users to sign-up for the service, users will have a good user experience by making it easy for them to see what the app has to offer while their interest is fresh.
+* Value Statement: By making it simple and easy for users to sign-up for the service, users will have a good user experience-- they can easily see what the app has to offer while their interest is fresh.
 
-* Acceptance Criteria:  A working sign-up form that saves new users to the database which includes a profile picture.
+* Acceptance Criteria:  A working sign-up form that saves new users to the database which includes a profile picture (which users can upload later on editing their Profile).
 
 
-### Store Owners can create a New Store account via email, password, store name, store address, store phone number
+### Store Owners can create a New Store account via email, password, store name, store address
 
 * Value Statement: By allowing stores to setup a vendor account, they become part of the network of stores that make their business available to users.
 
-* Acceptance Criteria:  A working sign-up form that saves new stores to the database which includes a store image.
+* Acceptance Criteria:  A working sign-up form that saves new stores to the database (can include a store image to be uploaded later on editing Store Profile).
 
 
 
 ### Store Owners should be able to input and edit categorized inventory and pricing
 
-* Value Statement: Store owners can monitor, and update their inventory that shows on the app.
+* Value Statement: Store owners can monitor, and update their inventory shown on the app.
 
 * Acceptance Criteria:  Stores can add inventory and upload images.
 
@@ -89,7 +89,7 @@ The Red Dots app lets users find liquor stores nearby, pre-order and pay for alc
 
 ### Admins can CRUD both users and stores
 
-* Value Statement: Admins can provide a consistent user experience for both sides.
+* Value Statement: Admins can provide a consistent user experience and support for both sides.
 
 * Acceptance Criteria:  A working app.
 
