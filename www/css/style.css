@@ -1,1 +1,9 @@
-/* Empty. Add your own CSS if you like */
+.title img {
+  width: 25%;
+  margin-top: 10px;
+}
+
+.button.button-positive {
+  width: 75%;
+  margin: auto;
+}
