@@ -3,14 +3,17 @@ angular.module('starter.controllers', [])
 .controller('AppCtrl', function($scope) {
 })
 
-.controller('LoginCtrl', function($scope) {
-  $scope.login = [
-    { title: 'Name', id: 1 },
-    { title: 'Email', id: 2 },
-    { title: 'Password', id: 3 },
-    { title: 'Confirm', id: 4 },
+
+.controller('PlaylistsCtrl', function($scope) {
+  $scope.playlists = [
+    { title: 'Reggae', id: 1 },
+    { title: 'Chill', id: 2 },
+    { title: 'Dubstep', id: 3 },
+    { title: 'Indie', id: 4 },
+    { title: 'Rap', id: 5 },
+    { title: 'Cowbell', id: 6 }
   ];
 })
 
-.controller('LoginCtrl', function($scope, $stateParams) {
+.controller('PlaylistCtrl', function($scope, $stateParams) {
 })
