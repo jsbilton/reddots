@@ -24,11 +24,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       controller: 'AppCtrl'
     })
 
+    .state('app.header', {
+      url: "/header",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/header.html",
+          controller: "HeaderCtrl"
+        }
+      }
+    })
+    
     .state('app.browse', {
       url: "/browse",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/browse.html",
+          controller: "BrowseCtrl"
         }
       }
     })
@@ -44,20 +55,20 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 
     .state('app.create-customer', {
-      url: "/login/:create-customer",
+      url: "/createcustomer",
       views: {
         'menuContent' :{
-          templateUrl: "templates/create-customer.html",
+          templateUrl: "templates/createcustomer.html",
           controller: 'CustomerCtrl'
         }
       }
     })
 
     .state('app.create-owner', {
-      url: "/login/:create-owner",
+      url: "/createowner",
       views: {
         'menuContent' :{
-          templateUrl: "templates/create-owner.html",
+          templateUrl: "templates/createowner.html",
           controller: 'OwnerCtrl'
         }
       }
