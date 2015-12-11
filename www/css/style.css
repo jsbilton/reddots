@@ -1,9 +1,9 @@
-.scroll-content {
-    background: url('img/getty_rm_photo_of_friends_drinking_wine_at_dinner.jpg');
+.background {
+    background: url('../img/ladies_partytime.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
-    margin: auto;
+    margin: 0 auto;
     z-index: 2;
 }
 
