@@ -1,16 +1,20 @@
-.scroll-content {
-    background: url('img/getty_rm_photo_of_friends_drinking_wine_at_dinner.jpg');
+.background {
+    background: url('../img/getty_rm_photo_of_friends_drinking_wine_at_dinner.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
-    margin: auto;
+    margin: 0 auto;
     z-index: 2;
 }
 
+.button-clear {
+  position: fixed;
+}
+
 .title img {
-  width: 28%;
+  width: 90%;
   margin: auto;
-  /*margin-top: 7px;*/
+  margin-top: 8px;
 }
 
 .item.item-input {
