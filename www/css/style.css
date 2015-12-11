@@ -1,14 +1,16 @@
-.background.scroll-content {
-    background-image: url('img/getty_rm_photo_of_friends_drinking_wine_at_dinner.jpg') no-repeat;
-    background-size: cover;
+.scroll-content {
+    background: url('img/getty_rm_photo_of_friends_drinking_wine_at_dinner.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
     background-position: center;
     margin: auto;
     z-index: 2;
 }
 
 .title img {
-  width: 35%;
-  margin-top: 10px;
+  width: 28%;
+  margin: auto;
+  /*margin-top: 7px;*/
 }
 
 .item.item-input {
@@ -20,6 +22,6 @@
   margin: 20px auto;
 }
 
-.list {
+.login-form {
   margin-top: 200px;
 }
