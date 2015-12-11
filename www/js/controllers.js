@@ -3,16 +3,38 @@ angular.module('starter.controllers', [])
 .controller('AppCtrl', function($scope) {
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('HeaderCtrl', function($scope) {
+  $scope.header = header;
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('LoginCtrl', function($scope) {
+  $scope.login = login;
+})
+
+.controller('LoginCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('BrowseCtrl', function($scope) {
+  $scope.browse = browse;
+})
+
+.controller('BrowseCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('CustomerCtrl', function($scope) {
+  $scope.createcustomer = create-customer;
+})
+
+.controller('CustomerCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('OwnerCtrl', function($scope) {
+  $scope.createowner = owner;
+})
+
+.controller('OwnerCtrl', function($scope, $stateParams) {
+
 })
