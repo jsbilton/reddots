@@ -1,14 +1,36 @@
-<ion-view title="Browse">
-	<ion-content class='ownerDetails'>
-    <h1>Create Owner Account</h1>
-    <h2>{{email}}</h2>
-    <h2>{{password}}</h2>
-    <h2>{{password-confirm}}</h2>
-    <h2>{{address}}</h2>
-    <h2>{{store-name}}</h2>
-    <h2>{{phone}}</h2>
-    <button class="button button-block button-outline button-light customer-signup-button">
-      Setup Your Store
-    </button>
+
+<ion-view title="">
+  <ion-content class="has-header" scroll="false">
+        <div class="list createowner-form">
+          <label class="item item-input">
+            <input type="text" placeholder="Store Name">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Street Address">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="City">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="State">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Zip">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Email">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Confirm Password">
+          </label>
+        </div>
+        <div class="buttons-set">
+          <button class="button button-block button-positive login-button">
+            Login
+          </button>
+        </div>
   </ion-content>
 </ion-view>

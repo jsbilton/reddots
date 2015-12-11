@@ -5,7 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular
+.module('starter', [
+  'ionic',
+  'starter.controllers'
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -33,7 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    
+
     .state('app.browse', {
       url: "/browse",
       views: {
@@ -63,6 +67,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
+    // .state('app.login', {
+    //   url: "/login",
+    //   views: {
+    //     'menuContent' :{
+    //       templateUrl: "templates/createcustomer.html",
+    //       controller: 'AppCtrl'
+    //     }
+    //   }
+    // })
 
     .state('app.create-owner', {
       url: "/createowner",

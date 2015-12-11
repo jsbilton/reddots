@@ -2,18 +2,14 @@
 
 (function() {
   'use strict';
-  
+
   angular
   .module('starter')
   .factory('ReddotService', function ($http) { //Google API
     var urlOpts = {
-        baseUrl: "http://tiny-tiny.herokuapp.com/collections/reddots";
-        apiKey: "",
+        apiKey: "AIzaSyDhRWpt5iVgJj2MXR2YPJnZNKzXbhEaGZk",
         method: "",
         format: "json",
-        buildUrl: function () {
-          // body...
-        }
 
       }
   } )

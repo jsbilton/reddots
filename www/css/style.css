@@ -7,10 +7,14 @@
     z-index: 2;
 }
 
+.button-clear {
+  position: fixed;
+}
+
 .title img {
-  width: 28%;
+  width: 90%;
   margin: auto;
-  /*margin-top: 7px;*/
+  margin-top: 8px;
 }
 
 .item.item-input {
