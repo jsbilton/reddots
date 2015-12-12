@@ -1,10 +1,8 @@
-angular.module('starter', ['ionic', 'ngMap']);
-
-app.controller('BrowseCtrl', function($scope, $ionicLoading) {
+app.controller('MarkerRemoveCtrl', function($scope, $ionicLoading) {
 
   $scope.positions = [{
-    lat: 43.07493,
-    lng: -89.381388
+    lat: 32.7794,
+    lng: -79.9341
   }];
 
   $scope.$on('mapInitialized', function(event, map) {
