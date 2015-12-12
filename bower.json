@@ -1,7 +1,35 @@
 {
-  "name": "HelloIonic",
-  "private": "true",
+  "name": "Red Dots",
+  "private": true,
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.2.0"
-  }
+  },
+  "dependencies": {
+    "angular-animate": "1.4.3",
+    "angular-ui-router": "0.2.13",
+    "angular-sanitize": "1.4.3"
+  },
+  "homepage": "https://github.com/jetbalagtas/reddots",
+  "authors": [
+    "Jet Balagtas <jetbalagtas@gmail.com>"
+  ],
+  "description": "red dots app in ionic",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "iconic",
+    "angular",
+    "google",
+    "maps",
+    "api"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ]
 }
