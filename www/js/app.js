@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular
 
-  .module('starter', ['ionic',
+  .module('reddots', ['ionic',
     'starter.controllers',
     'ngMap'
   ])

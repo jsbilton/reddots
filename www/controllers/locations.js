@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'ngMap'])
+angular.module('reddots', ['ionic', 'ngMap'])
 
 .controller('LocationsCtrl', function($scope, $ionicLoading) {
 

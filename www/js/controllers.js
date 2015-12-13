@@ -1,4 +1,5 @@
-angular.module('starter.controllers', ['ngMap'])
+angular.module('starter.controllers', [
+  'ngMap'])
 
 .controller('AppCtrl', function($scope) {
 })
