@@ -8,7 +8,7 @@
 angular
 
   .module('reddots', ['ionic',
-    'starter.controllers',
+    'reddots.controllers',
     'ngMap'
   ])
 .run(function($ionicPlatform) {
