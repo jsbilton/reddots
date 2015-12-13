@@ -6,11 +6,11 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular
-.module('starter', [
-  'ionic',
-  'starter.controllers'
-])
 
+  .module('starter', ['ionic',
+    'starter.controllers',
+    'ngMap'
+  ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.StatusBar) {

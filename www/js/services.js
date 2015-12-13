@@ -11,8 +11,8 @@
         method: "",
         format: "json",
 
-      }
-  } )
+      };
+  });
 
 
 

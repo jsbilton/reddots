@@ -37,4 +37,4 @@ angular.module('starter.controllers', [])
 
 .controller('OwnerCtrl', function($scope, $stateParams) {
 
-})
+});
