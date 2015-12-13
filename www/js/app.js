@@ -24,21 +24,12 @@ angular
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
-    .state('app.header', {
-      url: "/header",
+    .state('app.locations', {
+      url: "/locations",
       views: {
         'menuContent' :{
-          templateUrl: "templates/header.html",
-          controller: "HeaderCtrl"
-        }
-      }
-    })
-    .state('app.browse', {
-      url: "/browse",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/browse.html",
-          controller: "BrowseCtrl"
+          templateUrl: "templates/locations.html",
+          controller: "LocationsCtrl"
         }
       }
     })
@@ -51,7 +42,7 @@ angular
         }
       }
     })
-    .state('app.create-customer', {
+    .state('app.createcustomer', {
       url: "/createcustomer",
       views: {
         'menuContent' :{
@@ -60,7 +51,7 @@ angular
         }
       }
     })
-    .state('app.create-owner', {
+    .state('app.createowner', {
       url: "/createowner",
       views: {
         'menuContent' :{

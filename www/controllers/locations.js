@@ -1,4 +1,6 @@
-app.controller('MarkerRemoveCtrl', function($scope, $ionicLoading) {
+angular.module('starter', ['ionic', 'ngMap'])
+
+.controller('LocationsCtrl', function($scope, $ionicLoading) {
 
   $scope.positions = [{
     lat: 32.7794,
