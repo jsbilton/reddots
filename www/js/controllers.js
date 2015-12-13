@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngMap'])
 
 .controller('AppCtrl', function($scope) {
 })
@@ -15,11 +15,11 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('BrowseCtrl', function($scope) {
-  $scope.browse = browse;
+.controller('LocationsCtrl', function($scope) {
+  $scope.locations = locations;
 })
 
-.controller('BrowseCtrl', function($scope, $stateParams) {
+.controller('LocationsCtrl', function($scope, $stateParams) {
 
 })
 

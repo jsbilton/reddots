@@ -39,7 +39,9 @@ h3 {
 }
 
 .login-form {
-  margin-top: 200px;
+  width: 75%;
+  margin: auto;
+  margin-top: 150px;
 }
 
 body {
