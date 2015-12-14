@@ -1,5 +1,5 @@
 .background {
-    background: url('../img/getty_rm_photo_of_friends_drinking_wine_at_dinner.jpg');
+    background: url('../img/party-ladies.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -11,10 +11,10 @@
   position: fixed;
 }
 
-.title img {
-  width: 90%;
+h1.title img {
+  width: 30%;
   margin: auto;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .login-form .item.item-input {
@@ -55,4 +55,17 @@ map {
 
 .scroll, .mapWrap {
   height: 100%;
+}
+
+.button.button-light.button-outline {
+  background-color: maroon;
+}
+
+.button.button-stable.button-outline {
+  background-color: darkgrey;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
 }
