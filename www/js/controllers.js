@@ -41,21 +41,36 @@ angular.module('reddots.controllers', [
 
 .controller('OwnerCtrl', function($scope, $stateParams) {
 
-})
-
-.controller('OwnerCtrl', function($scope, $cordovaBarcodeScanner) {
-
-    $scope.scanBarcode = function() {
-        $cordovaBarcodeScanner.scan().then(function(imageData) {
-            alert(imageData.text);
-            console.log("Barcode Format -> " + imageData.format);
-            console.log("Cancelled -> " + imageData.cancelled);
-        }, function(error) {
-            console.log("An error happened -> " + error);
-        });
-    };
-
 });
+
+
+// .controller('StoreviewCtrl', function($scope, $cordovaBarcodeScanner) {
+//
+//     $scope.scanBarcode = function() {
+//         $cordovaBarcodeScanner.scan().then(function(imageData) {
+//             alert(imageData.text);
+//             console.log("Barcode Format -> " + imageData.format);
+//             console.log("Cancelled -> " + imageData.cancelled);
+//         }, function(error) {
+//             console.log("An error happened -> " + error);
+//         });
+//     };
+
+// .controller('StoreviewCtrl', function($scope) {
+//     $scope.storeview = storeview;
+//
+// })
+//
+// .controller('StoreviewCtrl', function($scope, $stateParams) {
+//
+// });
+
+
+
+
+
+
+
 // .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 //
 // // Triggered on a button click, or some other target
