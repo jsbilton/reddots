@@ -69,6 +69,15 @@ angular
           controller: 'StoreviewCtrl'
         }
       }
+    })
+    .state('app.neworders', {
+      url: "/neworders",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/neworders.html",
+          controller: 'NewordersCtrl'
+        }
+      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');
