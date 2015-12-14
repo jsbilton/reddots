@@ -37,4 +37,13 @@ angular.module('reddots.controllers', ['ngMap'])
 
 .controller('OwnerCtrl', function($scope, $stateParams) {
 
+})
+
+.controller('StoreviewCtrl', function($scope) {
+    $scope.storeveiw = storeview;
+
+})
+
+.controller('StoreviewCtrl', function($scope, $stateParams) {
+
 });
