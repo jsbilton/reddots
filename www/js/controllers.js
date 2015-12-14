@@ -15,33 +15,21 @@ angular.module('reddots.controllers', [
   $scope.login = login;
 })
 
-.controller('LoginCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('LocationsCtrl', function($scope) {
+.controller('LocationsCtrl', function($scope, $stateParams) {
   $scope.locations = locations;
 })
 
-.controller('LocationsCtrl', function($scope, $stateParams) {
 
-})
-
-.controller('CustomerCtrl', function($scope) {
+.controller('CustomerCtrl', function($scope, $stateParams) {
   $scope.createcustomer = create-customer;
 })
 
-.controller('CustomerCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('OwnerCtrl', function($scope) {
-  $scope.createowner = owner;
-})
 
 .controller('OwnerCtrl', function($scope, $stateParams) {
-
+  $scope.createowner = owner;
 });
+
+
 
 
 // .controller('StoreviewCtrl', function($scope, $cordovaBarcodeScanner) {
