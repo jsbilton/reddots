@@ -40,10 +40,21 @@ angular.module('reddots.controllers', ['ngMap'])
 })
 
 .controller('StoreviewCtrl', function($scope) {
-    $scope.storeveiw = storeview;
+    $scope.storeview = storeview;
 
 })
 
 .controller('StoreviewCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('NewordersCtrl', function($scope) {
+    $scope.neworders = neworders;
+    $scope.shouldShowDelete = false;
+    $scope.shouldShowReorder = false;
+    $scope.listCanSwipe = true;
+})
+
+.controller('NewordersCtrl', function($scope, $stateParams) {
 
 });
