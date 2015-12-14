@@ -28,7 +28,7 @@ angular
       url: "/locations",
       templateUrl: "templates/locations.html",
       views: {
-        'menuContent' :{
+        'menuContent': {
           templateUrl: "templates/locations.html",
           controller: "LocationsCtrl"
         }
@@ -37,7 +37,7 @@ angular
     .state('app.login', {
       url: "/login",
       views: {
-        'menuContent' :{
+        'menuContent': {
           templateUrl: "templates/login.html",
           controller: 'LoginCtrl'
         }
@@ -46,7 +46,7 @@ angular
     .state('app.createcustomer', {
       url: "/createcustomer",
       views: {
-        'menuContent' :{
+        'menuContent': {
           templateUrl: "templates/createcustomer.html",
           controller: 'CustomerCtrl'
         }
@@ -55,9 +55,18 @@ angular
     .state('app.createowner', {
       url: "/createowner",
       views: {
-        'menuContent' :{
+        'menuContent': {
           templateUrl: "templates/createowner.html",
           controller: 'OwnerCtrl'
+        }
+      }
+    })
+    .state('app.storeview', {
+      url: "/storeview",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/storeview.html",
+          controller: 'StoreviewCtrl'
         }
       }
     });
