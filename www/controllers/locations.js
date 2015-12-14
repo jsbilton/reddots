@@ -1,6 +1,6 @@
 angular.module('reddots', ['ionic', 'ngMap'])
 
-.controller('LocationsCtrl', function($scope, $ionicLoading) {
+.controller('LocationsCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading) {
 
   $scope.positions = [{
     lat: 32.7794,
@@ -31,3 +31,4 @@ angular.module('reddots', ['ionic', 'ngMap'])
   };
 
 });
+// Example taken from ng-maps c/o Mike Harrington @ http://codepen.io/mhartington/pen/bwdoA

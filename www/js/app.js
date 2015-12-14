@@ -6,7 +6,6 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular
-
   .module('reddots', ['ionic',
     'reddots.controllers',
     'ngMap'
@@ -30,6 +29,7 @@ angular
 
     .state('app.locations', {
       url: "/locations",
+      templateUrl: "templates/locations.html",
       views: {
         'menuContent' :{
           templateUrl: "templates/locations.html",

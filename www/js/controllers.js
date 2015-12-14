@@ -1,5 +1,5 @@
-angular.module('reddots.controllers', [
-  'ngMap'])
+
+angular.module('reddots.controllers', ['ngMap'])
 
 .controller('AppCtrl', function($scope) {
 })
@@ -40,7 +40,7 @@ angular.module('reddots.controllers', [
 
 });
 
-//POPUP confirm 
+//POPUP confirm
 // angular.module('mySuperApp', ['ionic'])
 // .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 //
