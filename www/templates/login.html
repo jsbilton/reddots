@@ -11,20 +11,38 @@
           <input type="password" placeholder="Password">
         </label>
       </div>
+
       <div class="buttons-set">
-        <button class="button button-block button-positive login-button">
+
+        <button class="button button-block button-calm button-positive">
           Login
         </button>
-        <button class="button button-block button-outline button-light customer-signup-button">
-          <a href="#/app/createcustomer">
-          No account? Signup now!
-          </a>
-        </button>
-        <button class="button button-block button-outline button-stable customer-signup-button">
-          <a href="#/app/createowner">
-          Store owner? Create account!
-        </a>
-        </button>
+
+            <button href="#/app/createcustomer" class="button button-block button-assertive  customer-signup-button">
+
+              <ion-list>
+
+                <ion-item href="#/app/createcustomer">
+                    No account? Signup now!
+                </ion-item>
+
+              </ion-list>
+
+            </button>
+
+
+            <button href="#/app/createowner" class="button button-block button-royal owner-signup-button">
+
+              <ion-list>
+
+                <ion-item href="#/app/createowner" class="button customer-signup-button">
+                    Store Owner? Sign up!
+                </ion-item>
+              </ion-list>
+
+            </button>
+
+
       </div>
   </ion-content>
 </ion-pane>
