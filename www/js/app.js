@@ -8,7 +8,8 @@
 angular
   .module('reddots', ['ionic',
     'reddots.controllers',
-    'ngMap'
+    'ngMap',
+    'ngCordova'
   ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

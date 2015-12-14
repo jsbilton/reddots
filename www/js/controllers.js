@@ -1,5 +1,8 @@
 
-angular.module('reddots.controllers', ['ngMap'])
+angular.module('reddots.controllers', [
+  'ngMap',
+  'ngCordova'
+])
 
 .controller('AppCtrl', function($scope) {
 })
@@ -38,10 +41,21 @@ angular.module('reddots.controllers', ['ngMap'])
 
 .controller('OwnerCtrl', function($scope, $stateParams) {
 
-});
+})
 
-//POPUP confirm
-// angular.module('mySuperApp', ['ionic'])
+.controller('OwnerCtrl', function($scope, $cordovaBarcodeScanner) {
+
+    $scope.scanBarcode = function() {
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            alert(imageData.text);
+            console.log("Barcode Format -> " + imageData.format);
+            console.log("Cancelled -> " + imageData.cancelled);
+        }, function(error) {
+            console.log("An error happened -> " + error);
+        });
+    };
+
+});
 // .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 //
 // // Triggered on a button click, or some other target
@@ -50,8 +64,8 @@ angular.module('reddots.controllers', ['ngMap'])
 //
 //   // An elaborate, custom popup
 //   var myPopup = $ionicPopup.show({
-//     template: '<input type="password" ng-model="data.wifi">',
-//     title: 'Enter Wi-Fi Password',
+//     template: '',
+//     title: 'Confirm Account ',
 //     subTitle: 'Please use normal things',
 //     scope: $scope,
 //     buttons: [
@@ -80,8 +94,8 @@ angular.module('reddots.controllers', ['ngMap'])
 //  // A confirm dialog
 //  $scope.showConfirm = function() {
 //    var confirmPopup = $ionicPopup.confirm({
-//      title: 'Consume Ice Cream',
-//      template: 'Are you sure you want to eat this ice cream?'
+//      title: 'Confirm Account',
+//      template: 'Are you sure you want to confirm account?'
 //    });
 //    confirmPopup.then(function(res) {
 //      if(res) {
