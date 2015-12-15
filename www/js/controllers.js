@@ -3,58 +3,29 @@ angular.module('reddots.controllers', ['ngMap'])
 .controller('AppCtrl', function($scope) {
 })
 
-.controller('HeaderCtrl', function($scope) {
-  $scope.header = header;
-})
-
-.controller('LoginCtrl', function($scope) {
-  $scope.login = login;
-})
-
 .controller('LoginCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('LocationsCtrl', function($scope) {
-  $scope.locations = locations;
+  // $scope.login = login
 })
 
 .controller('LocationsCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('CustomerCtrl', function($scope) {
-  $scope.createcustomer = create-customer;
+  // $scope.locations = locations;
 })
 
 .controller('CustomerCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('OwnerCtrl', function($scope) {
-  $scope.createowner = owner;
+  // $scope.createcustomer = create-customer;
 })
 
 .controller('OwnerCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('StoreviewCtrl', function($scope) {
-    $scope.storeview = storeview;
-
+  // $scope.createowner = owner;
 })
 
 .controller('StoreviewCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('NewordersCtrl', function($scope) {
-    $scope.neworders = neworders;
-    $scope.shouldShowDelete = false;
-    $scope.shouldShowReorder = false;
-    $scope.listCanSwipe = true;
+    // $scope.storeview = storeview;
 })
 
 .controller('NewordersCtrl', function($scope, $stateParams) {
-
+    // $scope.neworders = neworders;
+    $scope.shouldShowDelete = false;
+    $scope.shouldShowReorder = false;
+    $scope.listCanSwipe = true;
 });
