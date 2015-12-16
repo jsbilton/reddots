@@ -22,6 +22,10 @@ mongoose.connection.on('error', function() {
 
 app.use(express.static(__dirname + "/www"));
 
+///////////////////////////////////////
+// CREATE CUSTOMER ACCOUNT ON SIGNUP
+///////////////////////////////////////
+
 app.post('/createcustomer', function(req,res,next) {
   console.log("Request From Client", req.body);
   var customer = new Customer(req.body);
@@ -35,7 +39,11 @@ app.post('/createcustomer', function(req,res,next) {
   });
 });
 
-app.get('/locations', function(req,res) {
+/////////////////////////////////////////////////////////////////////////////////////
+// SHOW CUSTOMER THE MAP **ON SIGNUP OR LOGIN **IDEALLY WITH NEARBY STORE LOCATIONS
+/////////////////////////////////////////////////////////////////////////////////////
+
+app.get('/storelocations', function(req,res) {
   var locations = Locations.find({},function(err,data) {
     if(err) {
       console.log(err);
@@ -46,18 +54,27 @@ app.get('/locations', function(req,res) {
   });
 });
 
+//////////////////////////////////////////
+// CREATE STORE OWNER ACCOUNT ON SIGNUP
+//////////////////////////////////////////
+
 app.post('/createowner', function(req,res,next) {
   console.log("Request From Client",req.body);
-  var owner = new Owner(req.body);
+  var store = new Store(req.body);
 
-  owner.save(function(err,data) {
+  store.save(function(err,data) {
     if (err) {
       console.log(err);
       next(err);
     }
-    res.send(owner);
+    res.send(store);
   });
 });
+
+////////////////////////////////////////////////////////////////////////
+// ON SIGNUP OR LOGIN, SHOW STORE OWNER THE STOREVIEW WITH EDITABLE
+// INVENTORY LIST, SAME VIEW FOR LOGGED IN CUSTOMERS BUT NOT EDITABLE.
+////////////////////////////////////////////////////////////////////////
 
 app.get('/storeview', function(req,res) {
   var storeview = Storeview.find({},function(err,data) {
@@ -66,6 +83,24 @@ app.get('/storeview', function(req,res) {
       next(err);
     }
 
+    res.send(data);
+  });
+});
+
+///////////////////////////////////////////////////////////////////
+// SHOW EDITABLE INDIVIDUAL PRODUCT PAGE TO LOGGED IN STORE OWNER.
+// SHOW NON EDITABLE INDIVIDUAL PRODUCT PAGE TO LOGGED IN CUSTOMER.
+///////////////////////////////////////////////////////////////////
+
+app.get('/storeview/:productname', function(req,res) {
+  var storeview = Storeview.find({author: req.params.productname}, function(err,data) {
+    if(err) next(err);
+
+    if(data === null) {
+      console.log('Could not find a product of that name');
+    }
+    console.log(req.body);
+    console.log("FOUND PRODUCTS" + req.params.productname + data);
     res.send(data);
   });
 });

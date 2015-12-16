@@ -1,10 +1,14 @@
+// app.storelocations.js controls the same view for all users whether they are authenticated or not.
+// it displays the map, and ideally, locations of nearby stores based on data from the database.
+// geolocation needs to work. this goes hand-in-hand with store location data populating the map.
+
 angular.module('reddots', ['ionic', 'ngMap'])
 
-.controller('LocationsCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading) {
+.controller('StorelocationsCtrl', function($scope, $state, $cordovaGeolocation, $ionicLoading) {
 
   $scope.positions = [{
-    lat: 32.7794,
-    lng: -79.9341
+    lat: 43.07493,
+    lng: -89.381388
   }];
 
   $scope.$on('mapInitialized', function(event, map) {

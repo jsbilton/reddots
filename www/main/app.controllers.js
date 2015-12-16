@@ -7,16 +7,16 @@ angular.module('reddots.controllers', ['ngMap'])
   // $scope.login = login
 })
 
-.controller('LocationsCtrl', function($scope, $stateParams) {
+.controller('CustomerCtrl', function($scope, $stateParams) {
+  // $scope.createcustomer = createcustomer;
+})
+
+.controller('StorelocationsCtrl', function($scope, $stateParams) {
   // $scope.locations = locations;
 })
 
-.controller('CustomerCtrl', function($scope, $stateParams) {
-  // $scope.createcustomer = create-customer;
-})
-
-.controller('OwnerCtrl', function($scope, $stateParams) {
-  // $scope.createowner = owner;
+.controller('StoreCtrl', function($scope, $stateParams) {
+  // $scope.createstore = store;
 })
 
 .controller('StoreviewCtrl', function($scope, $stateParams) {

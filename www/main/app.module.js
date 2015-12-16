@@ -1,12 +1,7 @@
-// Ionic Starter App, v0.9.20
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
 angular
   .module('reddots', ['ionic',
     'reddots.controllers',
+    'reddots.services',
     'ngMap'
   ])
 .run(function($ionicPlatform) {
@@ -21,16 +16,16 @@ angular
     .state('app', {
       url: "/app",
       abstract: true,
-      templateUrl: "templates/menu.html",
+      templateUrl: "main/views/menu.html",
       controller: 'AppCtrl'
     })
-    .state('app.locations', {
-      url: "/locations",
-      templateUrl: "templates/locations.html",
+    .state('app.storelocations', {
+      url: "/storelocations",
+      templateUrl: "main/views/storelocations.html",
       views: {
         'menuContent': {
-          templateUrl: "templates/locations.html",
-          controller: "LocationsCtrl"
+          templateUrl: "main/views/storelocations.html",
+          controller: "StorelocationsCtrl"
         }
       }
     })
@@ -38,7 +33,7 @@ angular
       url: "/login",
       views: {
         'menuContent': {
-          templateUrl: "templates/login.html",
+          templateUrl: "main/views/login.html",
           controller: 'LoginCtrl'
         }
       }
@@ -47,17 +42,17 @@ angular
       url: "/createcustomer",
       views: {
         'menuContent': {
-          templateUrl: "templates/createcustomer.html",
+          templateUrl: "customers/views/createcustomer.html",
           controller: 'CustomerCtrl'
         }
       }
     })
-    .state('app.createowner', {
-      url: "/createowner",
+    .state('app.createstore', {
+      url: "/createstore",
       views: {
         'menuContent': {
-          templateUrl: "templates/createowner.html",
-          controller: 'OwnerCtrl'
+          templateUrl: "stores/views/createstore.html",
+          controller: 'StoreCtrl'
         }
       }
     })
@@ -65,7 +60,7 @@ angular
       url: "/storeview",
       views: {
         'menuContent': {
-          templateUrl: "templates/storeview.html",
+          templateUrl: "main/views/storeview.html",
           controller: 'StoreviewCtrl'
         }
       }
@@ -74,7 +69,7 @@ angular
       url: "/neworders",
       views: {
         'menuContent': {
-          templateUrl: "templates/neworders.html",
+          templateUrl: "stores/views/neworders.html",
           controller: 'NewordersCtrl'
         }
       }
