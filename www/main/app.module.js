@@ -1,9 +1,11 @@
+
 angular
   .module('reddots', ['ionic',
     'reddots.controllers',
     'reddots.services',
     'ngMap'
   ])
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.StatusBar) {
@@ -11,6 +13,7 @@ angular
     }
   });
 })
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('app', {
@@ -19,6 +22,7 @@ angular
       templateUrl: "main/views/menu.html",
       controller: 'AppCtrl'
     })
+
     .state('app.storelocations', {
       url: "/storelocations",
       templateUrl: "main/views/storelocations.html",
@@ -29,6 +33,7 @@ angular
         }
       }
     })
+
     .state('app.login', {
       url: "/login",
       views: {
@@ -38,6 +43,7 @@ angular
         }
       }
     })
+
     .state('app.createcustomer', {
       url: "/createcustomer",
       views: {
@@ -47,6 +53,7 @@ angular
         }
       }
     })
+
     .state('app.createstore', {
       url: "/createstore",
       views: {
@@ -56,6 +63,7 @@ angular
         }
       }
     })
+
     .state('app.storeview', {
       url: "/storeview",
       views: {
@@ -65,6 +73,13 @@ angular
         }
       }
     })
+
+     .state('login', {
+       url: '/login',
+       templateUrl: 'templates/login.html',
+       controller: 'LoginCtrl'
+     })
+
     .state('app.neworders', {
       url: "/neworders",
       views: {
@@ -74,6 +89,7 @@ angular
         }
       }
     });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');
 });
