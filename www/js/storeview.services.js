@@ -1,11 +1,9 @@
-// services for adding an item and getting an item
-
 (function() {
   'use strict';
 
   angular
-  .module('reddots.services')
-  .factory('ReddotService', function ($http) {
+  .module('reddots.storeview.services')
+  .factory('StoreviewService', function ($http) {
 
       var addItem = function(newItem){
         $http.post(url, newItem).then(function(res) {

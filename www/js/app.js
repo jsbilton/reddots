@@ -2,9 +2,9 @@
 angular
   .module('reddots', ['ionic',
     'reddots.controllers',
-    'ngMap',
-    'ngCordova'
+    'ngMap'
   ])
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.StatusBar) {
@@ -62,12 +62,29 @@ angular
         }
       }
     })
+
     .state('app.storeview', {
       url: "/storeview",
       views: {
         'menuContent': {
           templateUrl: "templates/storeview.html",
           controller: 'StoreviewCtrl'
+        }
+      }
+    })
+
+     .state('login', {
+       url: '/login',
+       templateUrl: 'templates/login.html',
+       controller: 'LoginCtrl'
+     })
+
+    .state('app.neworders', {
+      url: "/neworders",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/neworders.html",
+          controller: 'NewordersCtrl'
         }
       }
     });

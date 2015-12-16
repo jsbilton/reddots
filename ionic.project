@@ -1,4 +1,12 @@
 {
   "name": "reddots",
-  "app_id": "b2044cad"
+  "app_id": "b2044cad",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
