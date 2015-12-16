@@ -8,7 +8,8 @@
     "angular-animate": "1.4.3",
     "angular-ui-router": "0.2.13",
     "angular-sanitize": "1.4.3",
-    "ngCordova": "~0.1.23-alpha"
+    "ngCordova": "~0.1.23-alpha",
+    "satellizer": "~0.13.1"
   },
   "homepage": "https://github.com/jetbalagtas/reddots",
   "authors": [
