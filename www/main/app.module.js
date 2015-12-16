@@ -21,10 +21,10 @@ angular
     })
     .state('app.storelocations', {
       url: "/storelocations",
-      templateUrl: "main/views/storelocations.html",
+      templateUrl: "stores/views/storelocations.html",
       views: {
         'menuContent': {
-          templateUrl: "main/views/storelocations.html",
+          templateUrl: "stores/views/storelocations.html",
           controller: "StorelocationsCtrl"
         }
       }
@@ -60,7 +60,7 @@ angular
       url: "/storeview",
       views: {
         'menuContent': {
-          templateUrl: "main/views/storeview.html",
+          templateUrl: "stores/views/storeview.html",
           controller: 'StoreviewCtrl'
         }
       }

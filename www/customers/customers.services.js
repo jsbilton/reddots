@@ -2,7 +2,8 @@ angular
     .module('reddots.services', [])
     .factory('CustomerService', function ($http) {
       var url = '/createcustomer';
-      function getStorelocations() {
+
+      function createCustomer() {
         return $http.get('/storelocations');
       }
 
