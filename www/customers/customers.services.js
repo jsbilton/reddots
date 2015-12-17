@@ -15,9 +15,22 @@ angular
         return $http.get('/store/' + name);
       }
 
+      var addItem = function(newItem){
+        $http.post(url, newItem).then(function(res) {
+          console.log(res);
+        });
+      };
+
+      var getItems = function () {
+        return $http.get(url);
+      };
+
       return {
         sendStorelocations: sendStorelocations,
         getStorelocations: getStorelocations,
-        getStore: getStore
+        getStore: getStore,
+        addItem: addItem,
+        getItems: getItems
       };
+
     });

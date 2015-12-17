@@ -10,6 +10,10 @@
     <link href="css/ionic.app.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
+    <!-- <script src="lib/ionic/js/angular/angular.js"></script> -->
+    <!-- <script src="lib/ionic/js/angular/angular-sanitize.js"></script> -->
+    <!-- <script src="/lib/ionic/js/angular-ui/angular-ui-router.js"></script> -->
+
     <!-- <script src="lib/ionic/js/ionic.bundle.js"></script> -->
     <script data-require="ionic@1.0.0-beta6" data-semver="1.0.0-beta6" src="http://code.ionicframework.com/1.0.0-beta.6/js/ionic.bundle.js"></script>
     <!-- <script data-require="ionic@1.0.0-beta.1" data-semver="1.0.0-beta.1" src="http://code.ionicframework.com/1.0.0-beta.1/js/ionic.bundle.js"></script> -->
@@ -21,12 +25,20 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- app's js -->
+
+    <!-- customers js files -->
     <script src="customers/customers.controller.js"></script>
     <script src="customers/customers.services.js"></script>
-    <script src="stores/stores.neworders.js"></script>
-    <script src="stores/stores.storelocations.js"></script>
-    <script src="stores/stores.storeview.js"></script>
+
+    <!-- stores js files -->
+    <script src="stores/storelocations.controllers.js"></script>
+    <script src="stores/storelocations.module.js"></script>
+    <script src="stores/neworders.module.js"></script>
+    <script src="stores/neworders.controllers.js"></script>
+    <script src="stores/neworders.services.js"></script>
+    <script src="stores/storeview.controller.js"></script>
+
+    <!-- main js files -->
     <script src="main/app.controllers.js"></script>
     <script src="main/app.module.js"></script>
   </head>
