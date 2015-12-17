@@ -9,23 +9,19 @@ angular.module('reddots.controllers', [
   // $scope.login = login
 })
 
-.controller('CustomerCtrl', function($scope, $stateParams) {
+.controller('CustomerSignupCtrl', function($scope, $stateParams) {
   // $scope.createcustomer = createcustomer;
 })
 
-// .controller('StorelocationsCtrl', function($scope, $stateParams) {
-//   // $scope.locations = locations;
-// })
-
-.controller('StoreCtrl', function($scope, $stateParams) {
+.controller('StoreSignupCtrl', function($scope, $stateParams) {
   // $scope.createstore = store;
 })
 
-.controller('StoreviewCtrl', function($scope, $stateParams) {
+.controller('StoreViewCtrl', function($scope, $stateParams) {
     // $scope.storeview = storeview;
 })
 
-.controller('NewordersCtrl', function($scope, $stateParams) {
+.controller('NewOrdersCtrl', function($scope, $stateParams) {
     // $scope.neworders = neworders;
     $scope.shouldShowDelete = false;
     $scope.shouldShowReorder = false;

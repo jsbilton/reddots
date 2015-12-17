@@ -1,6 +1,6 @@
 angular
-    .module('reddots.controllers')
-    .controller('CustomerCtrl', function ($scope, $stateParams, CustomerService) {
+    .module('customersignup', [])
+    .controller('CustomerSignupCtrl', function ($scope, $stateParams, CustomerService) {
 
       CustomerService.getStorelocations().success(function(data) {
         console.log(data);

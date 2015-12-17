@@ -1,6 +1,6 @@
 angular
-    .module('reddots.services')
-    .factory('NewordersCtrl', function ($http) {
+    .module('neworders')
+    .factory('NewOrdersServices', function ($http) {
       var url = '/neworders';
       function getStorelocations() {
         return $http.get('/storelocations');

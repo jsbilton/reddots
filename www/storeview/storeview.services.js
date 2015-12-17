@@ -4,7 +4,7 @@
 
   angular
   .module('storeview')
-  .factory('StoreviewService', function ($http) {
+  .factory('StoreViewService', function ($http) {
 
       var addItem = function(newItem){
         $http.post(url, newItem).then(function(res) {

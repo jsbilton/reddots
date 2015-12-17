@@ -1,6 +1,6 @@
-angular.module('reddots.controllers')
+angular.module('neworders')
 
-.controller('NewordersCtrl', function($scope) {
+.controller('NewOrdersCtrl', function($scope) {
 
   $scope.data = {
     showDelete: false

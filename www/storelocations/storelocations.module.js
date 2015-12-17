@@ -6,11 +6,11 @@ angular
 
   .state('app.storelocations', {
     url: "/storelocations",
-    templateUrl: "stores/views/storelocations.html",
+    templateUrl: "storelocations/views/storelocations.html",
     views: {
       'menuContent': {
-        templateUrl: "stores/views/storelocations.html",
-        controller: "StorelocationsCtrl"
+        templateUrl: "storelocations/views/storelocations.html",
+        controller: "StoreLocationsCtrl"
       }
     }
   });

@@ -1,7 +1,7 @@
 angular
-    .module('reddots.services', [])
+    .module('customersignup', [])
     .factory('CustomerService', function ($http) {
-      var url = '/createcustomer';
+      var url = '/signup';
 
       function createCustomer() {
         return $http.get('/storelocations');
