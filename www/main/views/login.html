@@ -1,31 +1,73 @@
-
 <ion-view title="">
-  <div class="login">
-  <ion-pane>
   <ion-content class="background" scroll="true">
-      <div class="list login-form">
+    <div class="panel-body login-form">
+      <form method="post" ng-submit="login()" name="loginForm">
         <label class="item item-input">
-          <input type="text" placeholder="Email">
+          <div class="form-group has-feedback">
+            <input class="form-control input-lg" type="text" name="email" ng-model="email" placeholder="Email" required autofocus>
+            <span class="ion-at form-control-feedback"></span>
+          </div>
         </label>
+
         <label class="item item-input">
-          <input type="password" placeholder="Password">
+          <div class="form-group has-feedback">
+            <input class="form-control input-lg" type="password" name="password" ng-model="password" placeholder="Password" required>
+            <span class="ion-key form-control-feedback"></span>
+          </div>
         </label>
-      </div>
 
-      <div class="buttons-set">
+        <button type="submit" ng-disabled="loginForm.$invalid" class="button button-block button-positive login-button">Log in</button>
 
-        <button class="button button-block button-positive login-button">
-          Login
-        </button>
-        <a href="#app/createcustomer"><button class="button button-block button-outline button-light customer-signup-button">
-          No account? Signup now!
+        <br/>
+
+        <p class="text-center">
+          <a href="#">Forgot your password?</a>
+        </p>
+
+        <a href="/#/app/createcustomer"><button class="button button-block button-outline button-light customer-signup-button">
+          No account? Sign up!
         </button></a>
-        <a href="#/app/createstore"><button class="button button-block button-outline button-stable customer-signup-button">
+
+        <a href="/#/app/createstore"><button class="button button-block button-outline button-stable customer-signup-button">
           Store owner? Create account!
         </button></a>
-      </div>
-  </ion-content>
-</ion-pane>
 
-</div>
+        <!-- <div class="signup-or-separator">
+          <h6 class="text">or</h6>
+          <hr>
+        </div> -->
+      </form>
+
+      <!-- <button class="btn btn-block btn-google-plus" ng-click="authenticate('google')">
+        <span class="ion-social-googleplus"></span>Sign in with Google
+      </button>
+      <button class="btn btn-block btn-github" ng-click="authenticate('github')">
+        <i class="ion-social-github"></i> Sign in with GitHub
+      </button> -->
+
+    </div>
+  </ion-content>
 </ion-view>
+
+<!-- Ionic Form -->
+<!-- <div class="list login-form">
+  <label class="item item-input">
+    <input type="text" placeholder="Email">
+  </label>
+  <label class="item item-input">
+    <input type="password" placeholder="Password">
+  </label>
+</div>
+
+<div class="buttons-set">
+
+  <button class="button button-block button-positive login-button">
+    Login
+  </button>
+  <a href="/#/app/createcustomer"><button class="button button-block button-outline button-light customer-signup-button">
+    No account? Signup now!
+  </button></a>
+  <a href="/#/app/createstore"><button class="button button-block button-outline button-stable customer-signup-button">
+    Store owner? Create account!
+  </button></a>
+</div> -->

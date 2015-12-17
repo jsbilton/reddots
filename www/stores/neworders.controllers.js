@@ -1,4 +1,4 @@
-angular.module('reddots.controllers', ['ionic'])
+angular.module('reddots.controllers')
 
 .controller('NewordersCtrl', function($scope) {
 

@@ -1,4 +1,6 @@
-angular.module('reddots.controllers', ['ngMap'])
+angular.module('reddots.controllers', [
+  'ngMap'
+])
 
 .controller('AppCtrl', function($scope) {
 })
@@ -11,9 +13,9 @@ angular.module('reddots.controllers', ['ngMap'])
   // $scope.createcustomer = createcustomer;
 })
 
-.controller('StorelocationsCtrl', function($scope, $stateParams) {
-  // $scope.locations = locations;
-})
+// .controller('StorelocationsCtrl', function($scope, $stateParams) {
+//   // $scope.locations = locations;
+// })
 
 .controller('StoreCtrl', function($scope, $stateParams) {
   // $scope.createstore = store;

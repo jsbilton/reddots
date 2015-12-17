@@ -9759,14 +9759,14 @@ h1.title img {
 h3 {
   text-align: center; }
 
-.button.button-block {
-  width: 75%;
+.button .button-block {
+  width: 100%;
   margin: 20px auto; }
 
 .login-form {
-  width: 75%;
+  width: 85%;
   margin: auto;
-  margin-top: 150px; }
+  margin-top: 100px; }
 
 body {
   cursor: url("http://ionicframework.com/img/finger.png"), auto; }
