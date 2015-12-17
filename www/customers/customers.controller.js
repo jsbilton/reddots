@@ -1,5 +1,5 @@
 angular
-    .module('reddots.controllers', ['ngMap'])
+    .module('reddots.controllers')
     .controller('CustomerCtrl', function ($scope, $stateParams, CustomerService) {
 
       CustomerService.getStorelocations().success(function(data) {

@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-  .module('reddots.storeview.services')
+  .module('storeview')
   .factory('StoreviewService', function ($http) {
 
       var addItem = function(newItem){

@@ -1,7 +1,10 @@
 angular
-  .module('reddots', ['ionic',
+  .module('reddots', [
+    'ionic',
     'reddots.controllers',
     'reddots.services',
+    'storelocations',
+    'storeview',
     'ngMap',
     'ui.router',
     'ngSanitize'
@@ -24,16 +27,16 @@ angular
       controller: 'AppCtrl'
     })
 
-    .state('app.storelocations', {
-      url: "/storelocations",
-      templateUrl: "stores/views/storelocations.html",
-      views: {
-        'menuContent': {
-          templateUrl: "stores/views/storelocations.html",
-          controller: "StorelocationsCtrl"
-        }
-      }
-    })
+    // .state('app.storelocations', {
+    //   url: "/storelocations",
+    //   templateUrl: "stores/views/storelocations.html",
+    //   views: {
+    //     'menuContent': {
+    //       templateUrl: "stores/views/storelocations.html",
+    //       controller: "StorelocationsCtrl"
+    //     }
+    //   }
+    // })
 
     .state('app.login', {
       url: "/login",

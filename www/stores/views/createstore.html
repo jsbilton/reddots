@@ -1,37 +1,101 @@
 <ion-view title="">
-
   <ion-content class="has-header" scroll="true">
-    <div class="list createstore-form">
-      <h3>Store Information</h3>
-      <label class="item item-input">
-        <input type="text" placeholder="Store Name" ng-model="store.name">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Street Address" ng-model="store.streetaddress">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="City" ng-model="store.city">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="State" ng-model="store.state">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Zip" ng-model="store.zip">
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Email" ng-model="store.email">
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Password" ng-model="store.password">
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Confirm Password" ng-model="store.confirmpswd">
-      </label>
-    </div>
-    <div class="buttons-set">
-      <button class="button button-block button-positive createowner-button" type="submit" name="Submit" ng-click="submitNewStore(store)">
-        Create Store Now!
-      </button>
-    </div>
+    <div class="panel-body">
+        <h3 class="text-center">Store Information</h3>
+        <form method="post" ng-submit="signup()" name="signupForm">
+          <label class="item item-input">
+            <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+              <input class="form-control input-lg" type="text" name="displayName" ng-model="displayName" placeholder="Store Name" required autofocus>
+              <span class="ion-person form-control-feedback"></span>
+              <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty" ng-messages="signupForm.displayName.$error">
+                <div ng-message="required">Please enter your store's name.</div>
+              </div>
+            </div>
+          </label>
+
+          <label class="item item-input">
+            <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+              <input class="form-control input-lg" type="text" name="storeAddress" ng-model="storeAddress" placeholder="Street Address, City, State, Zip" required autofocus>
+              <span class="ion-person form-control-feedback"></span>
+              <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty" ng-messages="signupForm.displayName.$error">
+                <div ng-message="required">Please enter your store's complete address.</div>
+              </div>
+            </div>
+          </label>
+
+          <label class="item item-input">
+            <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+              <input class="form-control input-lg" type="email" id="email" name="email" ng-model="email" placeholder="Email" required
+              ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/">
+              <span class="ion-at form-control-feedback"></span>
+              <div class="help-block text-danger" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
+                <div ng-message="required">Your email address is required.</div>
+                <div ng-message="pattern">Your email address is invalid.</div>
+              </div>
+            </div>
+          </label>
+
+          <label class="item item-input">
+            <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
+              <input password-strength class="form-control input-lg" type="password" name="password" ng-model="password" placeholder="Password" required>
+              <span class="ion-key form-control-feedback"></span>
+              <div class="help-block text-danger" ng-if="signupForm.password.$dirty" ng-messages="signupForm.password.$error">
+                <div ng-message="required">Password is required.</div>
+              </div>
+            </div>
+          </label>
+
+          <label class="item item-input">
+            <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
+              <input password-match="password" class="form-control input-lg" type="password" name="confirmPassword" ng-model="confirmPassword" placeholder="Confirm Password">
+              <span class="ion-key form-control-feedback"></span>
+              <div class="help-block text-danger" ng-if="signupForm.confirmPassword.$dirty" ng-messages="signupForm.confirmPassword.$error">
+                <div ng-message="compareTo">Password must match.</div>
+              </div>
+            </div>
+          </label>
+
+          <p class="text-center text-muted"><small>By clicking on Sign up, you agree to <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></small></p>
+
+          <button type="submit" ng-disabled="signupForm.$invalid" class="button button-block button-positive">Sign up</button>
+          <br/>
+
+          <p class="text-center text-muted">Already have an account? <a href="/#/app/login">Log in now</a></p>
+        </form>
+      </div>
   </ion-content>
 </ion-view>
+
+<!-- Ionic Form -->
+<!-- <div class="list createstore-form">
+  <h3>Store Information</h3>
+  <label class="item item-input">
+    <input type="text" placeholder="Store Name" ng-model="store.name">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Street Address" ng-model="store.streetaddress">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="City" ng-model="store.city">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="State" ng-model="store.state">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Zip" ng-model="store.zip">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Email" ng-model="store.email">
+  </label>
+  <label class="item item-input">
+    <input type="password" placeholder="Password" ng-model="store.password">
+  </label>
+  <label class="item item-input">
+    <input type="password" placeholder="Confirm Password" ng-model="store.confirmpswd">
+  </label>
+</div>
+<div class="buttons-set">
+  <button class="button button-block button-positive createowner-button" type="submit" name="Submit" ng-click="submitNewStore(store)">
+    Create Store Now!
+  </button>
+</div> -->

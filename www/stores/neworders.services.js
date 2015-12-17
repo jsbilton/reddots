@@ -1,5 +1,5 @@
 angular
-    .module('reddots.services', [])
+    .module('reddots.services')
     .factory('NewordersCtrl', function ($http) {
       var url = '/neworders';
       function getStorelocations() {
