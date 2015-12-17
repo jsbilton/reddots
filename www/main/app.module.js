@@ -2,9 +2,9 @@ angular
   .module('reddots', [
     'ionic',
     'reddots.controllers',
-    'reddots.services',
     'storelocations',
     'storeview',
+    'customersignup',
     'ngMap',
     'ui.router',
     'ngSanitize'
@@ -27,17 +27,6 @@ angular
       controller: 'AppCtrl'
     })
 
-    // .state('app.storelocations', {
-    //   url: "/storelocations",
-    //   templateUrl: "stores/views/storelocations.html",
-    //   views: {
-    //     'menuContent': {
-    //       templateUrl: "stores/views/storelocations.html",
-    //       controller: "StorelocationsCtrl"
-    //     }
-    //   }
-    // })
-
     .state('app.login', {
       url: "/login",
       views: {
@@ -48,22 +37,22 @@ angular
       }
     })
 
-    .state('app.createcustomer', {
-      url: "/createcustomer",
+    .state('app.customersignup', {
+      url: "/signup",
       views: {
         'menuContent': {
-          templateUrl: "customers/views/createcustomer.html",
-          controller: 'CustomerCtrl'
+          templateUrl: "customersignup/views/customersignup.html",
+          controller: 'CustomerSignupCtrl'
         }
       }
     })
 
-    .state('app.createstore', {
-      url: "/createstore",
+    .state('app.storesignup', {
+      url: "/storesignup",
       views: {
         'menuContent': {
-          templateUrl: "stores/views/createstore.html",
-          controller: 'StoreCtrl'
+          templateUrl: "storesignup/views/storesignup.html",
+          controller: 'StoreSignupCtrl'
         }
       }
     })
@@ -73,23 +62,7 @@ angular
       views: {
         'menuContent': {
           templateUrl: "stores/views/storeview.html",
-          controller: 'StoreviewCtrl'
-        }
-      }
-    })
-
-     .state('login', {
-       url: '/login',
-       templateUrl: 'templates/login.html',
-       controller: 'LoginCtrl'
-     })
-
-    .state('app.neworders', {
-      url: "/neworders",
-      views: {
-        'menuContent': {
-          templateUrl: "stores/views/neworders.html",
-          controller: 'NewordersCtrl'
+          controller: 'StoreViewCtrl'
         }
       }
     });

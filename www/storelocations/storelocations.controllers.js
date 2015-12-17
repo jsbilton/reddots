@@ -6,7 +6,7 @@ angular
 .module('storelocations')
 
 //The following is brought to you in part by Nic Raboy of Ionic for helping with Google Maps
-.controller('StorelocationsCtrl', function($scope, $ionicLoading, $window) {
+.controller('StoreLocationsCtrl', function($scope, $ionicLoading, $window) {
 
   $scope.positions = [{
     lat: 32.77943,

@@ -1,10 +1,5 @@
-(function() {
-  'use strict';
   angular
-    .module('storeview', [
-      'ionic',
-      'ngMap'
-    ])
+    .module('storeview', [])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -13,5 +8,3 @@
         }
       });
     });
-
-}());
