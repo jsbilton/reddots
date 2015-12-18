@@ -2,15 +2,15 @@ angular
     .module('customersignup')
     .controller('CustomerSignupCtrl', function($scope, $stateParams, CustomerSignupService, $window) {
 
-      CustomerSignupService.getStorelocations().success(function(data) {
+      CustomerSignupService.getStores().success(function(data) {
         console.log(data);
-        $scope.storelocations = data;
+        $scope.stores = data;
       });
 
       $scope.submitStorelocations = function(storelocations) {
-        CustomerSignupService.sendStorelocations(storelocations).success(function(data) {
+        CustomerSignupService.sendStores(stores).success(function(data) {
           console.log("SUCCEssFUL Post", data);
-          $scope.storelocations = data.storelocations;
+          $scope.stores = data.stores;
         });
       };
 

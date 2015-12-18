@@ -2,7 +2,7 @@ angular
   .module('reddots', [
     'ionic',
     'reddots.controllers',
-    'storelocations',
+    'map',
     'storeview',
     'storesignup',
     'customersignup',
