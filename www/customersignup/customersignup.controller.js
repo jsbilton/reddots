@@ -1,21 +1,21 @@
 angular
-    .module('customersignup', [])
-    .controller('CustomerSignupCtrl', function ($scope, $stateParams, CustomerService) {
+    .module('customersignup')
+    .controller('CustomerSignupCtrl', function($scope, $stateParams, CustomerSignupService, $window) {
 
-      CustomerService.getStorelocations().success(function(data) {
+      CustomerSignupService.getStorelocations().success(function(data) {
         console.log(data);
         $scope.storelocations = data;
       });
 
       $scope.submitStorelocations = function(storelocations) {
-        CustomerService.sendStorelocations(storelocations).success(function(data) {
+        CustomerSignupService.sendStorelocations(storelocations).success(function(data) {
           console.log("SUCCEssFUL Post", data);
           $scope.storelocations = data.storelocations;
         });
       };
 
       $scope.getOne = function(name) {
-        CustomerService.getStore(name).success(function(data){
+        CustomerSignupService.getStore(name).success(function(data){
           console.log(data);
         });
       };

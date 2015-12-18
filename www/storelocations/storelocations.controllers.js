@@ -1,11 +1,11 @@
 // app.storelocations.js controls the same view for all users whether they are authenticated or not.
 // it displays the map, and ideally, locations of nearby stores based on data from the database.
 // geolocation needs to work. this goes hand-in-hand with store location data populating the map.
+//The following is brought to you in part by Nic Raboy of Ionic for helping with Google Maps
 
 angular
 .module('storelocations')
 
-//The following is brought to you in part by Nic Raboy of Ionic for helping with Google Maps
 .controller('StoreLocationsCtrl', function($scope, $ionicLoading, $window) {
 
   $scope.positions = [{

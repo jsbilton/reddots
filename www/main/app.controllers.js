@@ -9,14 +9,6 @@ angular.module('reddots.controllers', [
   // $scope.login = login
 })
 
-.controller('CustomerSignupCtrl', function($scope, $stateParams) {
-  // $scope.createcustomer = createcustomer;
-})
-
-.controller('StoreSignupCtrl', function($scope, $stateParams) {
-  // $scope.createstore = store;
-})
-
 .controller('StoreViewCtrl', function($scope, $stateParams) {
     // $scope.storeview = storeview;
 })
