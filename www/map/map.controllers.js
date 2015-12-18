@@ -1,4 +1,4 @@
-// app.storelocations.js controls the same view for all users whether they are authenticated or not.
+// map.controllers.js controls the same view for all users whether they are authenticated or not.
 // it displays the map, and ideally, locations of nearby stores based on data from the database.
 // geolocation needs to work. this goes hand-in-hand with store location data populating the map.
 //The following is brought to you in part by Nic Raboy of Ionic for helping with Google Maps
@@ -9,12 +9,12 @@ angular
 .controller('MapCtrl', function($scope, $ionicLoading, $window) {
 
   $scope.positions = [{
-    lat: 32.77943,
-    lng: -79.9341
+    lat: 32.788990,
+    lng: -79.938120
   }];
 
     google.maps.event.addDomListener(window, 'load', function() {
-        var myLatlng = new google.maps.LatLng(32.7794, -79.9341);
+        var myLatlng = new google.maps.LatLng(32.788990, -79.938120);
 
         var mapOptions = {
             center: myLatlng,
