@@ -9742,10 +9742,10 @@ a.button {
 .button-clear {
   position: fixed; }
 
-h1.title img {
-  width: 30%;
+.title img {
+  width: 25%;
   margin: auto;
-  margin-top: 10px; }
+  margin-top: 21px; }
 
 .login-form .item.item-input {
   margin-bottom: 20px; }

@@ -4,15 +4,15 @@ angular
       var url = '#/app/signup';
 
       function createCustomer() {
-        return $http.get('/storelocations');
+        return $http.get('/map');
       }
 
-      function sendStorelocations(storelocations) {
-        return $http.post(url, storelocations);
+      function sendStores(stores) {
+        return $http.post(url, stores);
       }
 
-      function getStorelocations(storelocations) {
-        return $http.get(url, storelocations);
+      function getStores(stores) {
+        return $http.get(url, stores);
       }
 
       function getStore(name) {
@@ -30,8 +30,8 @@ angular
       };
 
       return {
-        sendStorelocations: sendStorelocations,
-        getStorelocations: getStorelocations,
+        sendStores: sendStores,
+        getStores: getStores,
         getStore: getStore,
         addItem: addItem,
         getItems: getItems
