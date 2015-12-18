@@ -1,7 +1,7 @@
 angular
-    .module('customersignup', [])
-    .factory('CustomerService', function ($http) {
-      var url = '/signup';
+    .module('customersignup')
+    .factory('CustomerSignupService', function ($http) {
+      var url = '#/app/signup';
 
       function createCustomer() {
         return $http.get('/storelocations');
@@ -9,6 +9,10 @@ angular
 
       function sendStorelocations(storelocations) {
         return $http.post(url, storelocations);
+      }
+
+      function getStorelocations(storelocations) {
+        return $http.get(url, storelocations);
       }
 
       function getStore(name) {
