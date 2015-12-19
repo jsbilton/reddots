@@ -8,7 +8,8 @@ angular
     'customersignup',
     'ngMap',
     'ui.router',
-    'ngSanitize'
+    'ngSanitize',
+    'satellizer'
   ])
 
   .run(function($ionicPlatform) {
@@ -50,4 +51,17 @@ angular
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/login');
-  });
+  })
+  .config(function ($authProvider) {
+    if (ionic.Platform.isIOS() || ionic.Platform.isAndroid()) {
+      $authProvider.cordova = true;
+    }
+   $authProvider.loginUrl = '/auth/login';
+   $authProvider.signupUrl = '/auth/signup';
+   
+  $authProvider.google({
+     clientId: '469379853070-g23rimletc4dddro1vcqvak3nk3gsrgm.apps.googleusercontent.com',
+     url: 'https://mean-starter.herokuapp.com/auth/google',
+     redirectUri: 'http://localhost'
+   });
+});

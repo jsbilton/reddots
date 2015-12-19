@@ -10,6 +10,8 @@ var authRoutes = require('./routes/auth');
 var profileRoutes = require('./routes/profile');
 var uploadRoutes = require('./routes/upload');
 var role = require('./routes/roles');
+var http = require('http');
+var port = process.env.PORT || 3001;
 
 mongoose.connect(config.MONGO_URI);
 mongoose.connection.on('error', function() {
@@ -130,5 +132,6 @@ app.get('/storeview/:productname', function(req,res) {
   });
 });
 
-http.listen(port);
-console.log('WE ARE RUNNING ON PORT:' + port);
+app.listen(port, function() {
+  console.log('WE ARE RUNNING ON PORT:' + port);
+});
