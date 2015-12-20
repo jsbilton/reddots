@@ -6,7 +6,7 @@
 angular
 .module('map')
 
-.controller('MapCtrl', function($scope, $ionicLoading, $window) {
+.controller('MapCtrl', function($scope, $ionicLoading, $window, NgMap) {
 
   $scope.positions = [{
     lat: 32.788990,
@@ -35,14 +35,7 @@ angular
 
         $scope.map = map;
 
-        $scope.searchbox = { template: 'searchbox.tpl.html', events: events };
 
-           var watchCallback = function (namePlace) {
-               MapService.getLocations().success(function (placeObject) {
-                 $scope.namePlace = placeObject;
-               });
-             };
-              $scope.$on("location:added", watchCallback);
     });
 });
 
