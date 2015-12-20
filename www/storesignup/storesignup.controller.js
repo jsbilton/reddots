@@ -1,40 +1,22 @@
 angular
     .module('storesignup')
-    .controller('StoreSignupCtrl', function ($scope, $stateParams, StoreSignupService, $window) {
+    .controller('StoreSignupCtrl', function ($state, $auth, $scope, $stateParams, StoreSignupService, $window) {
 
-      $scope.signup = function() {
+      $scope.signup = function(store) {
+        console.log("STORE", store);
         $auth.signup({
-          displayName: $scope.displayName,
-          email: $scope.email,
-          password: $scope.password
+          displayName: store.displayName,
+          storeAddress: store.address,
+          email: store.email,
+          password: store.password,
+          confirmPassword: store.confirmPassword
         }).catch(function(response) {
-          if (typeof response.data.message === 'object') {
-            angular.forEach(response.data.message, function(message) {
-              $alert({
-                content: message[0],
-                animation: 'fadeZoomFadeDown',
-                type: 'material',
-                duration: 3
-              });
-            });
-          } else {
-            $alert({
-              content: response.data.message,
-              animation: 'fadeZoomFadeDown',
-              type: 'material',
-              duration: 3
-            });
-          }
+          console.log("ERROR SIGNUP", response);
+          //where to go on failure
+          $state.go('app.storesignup');
         });
+        //where to go on success
+          $state.go('app.storeview');
       };
-
-      $scope.submitStore = function(store) {
-        StoreSignupService.sendStore(store).success(function(data) {
-          console.log("SUCCEssFUL Post", data);
-          $scope.storeview = data.store;
-        });
-      };
-
-
 
     });

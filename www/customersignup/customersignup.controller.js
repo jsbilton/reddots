@@ -7,31 +7,15 @@ angular
         $auth.signup({
           displayName: user.displayName,
           email: user.email,
-          password: user.password
+          password: user.password,
+          confirmPassword: user.confirmPassword
         }).catch(function(response) {
           console.log("ERROR SIGNUP", response);
           //where to go on failure
-          $state.go('app.login');
+          $state.go('app.signup');
         });
         //where to go on success
           $state.go('app.map');
       };
 
-      CustomerSignupService.getStores().success(function(data) {
-        // console.log(data);
-        $scope.stores = data;
-      });
-
-      $scope.submitStorelocations = function(storelocations) {
-        CustomerSignupService.sendStores(stores).success(function(data) {
-          console.log("SUCCEssFUL Post", data);
-          $scope.stores = data.stores;
-        });
-      };
-
-      $scope.getOne = function(name) {
-        CustomerSignupService.getStore(name).success(function(data){
-          console.log(data);
-        });
-      };
     });
