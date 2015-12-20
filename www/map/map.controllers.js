@@ -10,7 +10,7 @@ angular
 
   $scope.positions = [{
     lat: 32.788990,
-    lng: -79.938120
+    lng: -79.938120,
   }];
 
     google.maps.event.addDomListener(window, 'load', function() {
@@ -34,52 +34,57 @@ angular
         });
 
         $scope.map = map;
+
+        $scope.searchbox = { template: 'searchbox.tpl.html', events: events };
+
+           var watchCallback = function (namePlace) {
+               MapService.getLocations().success(function (placeObject) {
+                 $scope.namePlace = placeObject;
+               });
+             };
+              $scope.$on("location:added", watchCallback);
     });
-    //   var liquor = new google.maps.Marker({
-    //    position: liquor,
-    //    map: map,
-    //    title: 'ABC Store'
-    //  });
 });
 
-// var map;
-// var infowindow;
+
+// angular.module('ngMap').controller('MyCtrl', function($timeout, NgMap) {
+//    var vm = this;
 //
-// function initMap() {
-//   var theIronYard = {lat: 32.7794, lng: -79.9341};
+//    vm.stores = {
+//      foo: { position:[32.788990, -79.938120], items: [1,2,3,4]},
+//      bar:{ position:[32.792670, -79.938020], items: [5,6,7,8]}
+//    };
 //
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: theIronYard,
-//     zoom: 15
-//   });
+//    vm.initMap = function(mapId) {
+//      vm.map = NgMap.initMap(mapId);
+//      console.log('vm.map 2', vm.map);
+//    };
 //
-//   infowindow = new google.maps.InfoWindow();
-//
-//   var service = new google.maps.places.PlacesService(map);
-//   service.nearbySearch({
-//     location: theIronYard,
-//     radius: 500,
-//     types: ['store']
-//   }, callback);
+//    vm.showStore = function(evt, storeId) {
+//      vm.store = vm.stores[storeId];
+//      console.log('vm.map', vm.map);
+//      vm.map.showInfoWindow('bar', this);
+//    };
+//  });
+// $scope.addMarker = function ( coordinates ) {
+//     $scope.markers.push({
+//         latitude: parseFloat(coordinates.latitude),
+//         longitude: parseFloat(coordinates.longitude),
+//         icon: "img/marker-map.png";
+//     });
 // }
 //
-// function callback(results, status) {
-//   if (status === google.maps.places.PlacesServiceStatus.OK) {
-//     for (var i = 0; i < results.length; i++) {
-//       createMarker(results[i]);
+// $scope.addUserMarker = function ( coordinates ) {
+//     $scope.markers.push({
+//         latitude: parseFloat(coordinates.latitude),
+//         longitude: parseFloat(coordinates.longitude),
+//     });
+// }
+
+// $scope.addUserMarker(position);
+//
+// $scope.populateMarkers = function(locations) {
+//     for (var i = 0; i < locations.length; i++) {
+//         $scope.addMarker(locations[i]);
 //     }
-//   }
-// }
-//
-// function createMarker(place) {
-//   var placeLoc = place.geometry.location;
-//   var marker = new google.maps.Marker({
-//     map: map,
-//     position: place.geometry.location
-//   });
-//
-//   google.maps.event.addListener(marker, 'click', function() {
-//     infowindow.setContent(place.name);
-//     infowindow.open(map, this);
-//   });
 // }
