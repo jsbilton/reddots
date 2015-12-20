@@ -9750,6 +9750,9 @@ a.button {
 .login-form .item.item-input {
   margin-bottom: 20px; }
 
+.item-input input, .item-input textarea {
+  width: 180%; }
+
 .createstore-form {
   margin-top: 45px; }
 

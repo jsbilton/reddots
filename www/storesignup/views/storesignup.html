@@ -2,45 +2,43 @@
   <ion-content class="has-header" scroll="true">
     <div class="panel-body createstore-form">
         <h3 class="text-center">Store Information</h3>
-        <form method="post" ng-submit="signup()" name="signupForm">
           <label class="item item-input">
             <div class="form-group" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
-              <input class="form-control input-lg" type="text" name="displayName" ng-model="displayName" placeholder="Store Name" required autofocus>
+              <input class="form-control input-lg" type="text" name="displayName" ng-model="store.displayName" placeholder="Store Name" autofocus>
             </div>
           </label>
 
           <label class="item item-input">
             <div class="form-group" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
-              <input class="form-control input-lg" type="text" name="storeAddress" ng-model="storeAddress" placeholder="Street Address, City, State, Zip" required autofocus>
+              <input class="form-control input-lg" type="text" name="storeAddress" ng-model="store.address" placeholder="Street Address, City, State, Zip" required autofocus>
             </div>
           </label>
 
           <label class="item item-input">
             <div class="form-group" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
-              <input class="form-control input-lg" type="email" id="email" name="email" ng-model="email" placeholder="Email" required
+              <input class="form-control input-lg" type="email" id="email" name="email" ng-model="store.email" placeholder="Email" required
               ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/">
             </div>
           </label>
 
           <label class="item item-input">
             <div class="form-group" ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
-              <input password-strength class="form-control input-lg" type="password" name="password" ng-model="password" placeholder="Password" required>
+              <input password-strength class="form-control input-lg" type="password" name="password" ng-model="store.password" placeholder="Password" required>
             </div>
           </label>
 
           <label class="item item-input">
             <div class="form-group" ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
-              <input password-match="password" class="form-control input-lg" type="password" name="confirmPassword" ng-model="confirmPassword" placeholder="Confirm Password">
+              <input password-match="password" class="form-control input-lg" type="password" name="confirmPassword" ng-model="store.confirmPassword" placeholder="Confirm Password">
             </div>
           </label>
 
           <p class="text-center text-muted"><small>By clicking on Sign up, you agree to <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></small></p>
 
-          <button type="submit" ng-disabled="signupForm.$invalid" class="button button-block button-positive">Sign up</button>
+          <button type="submit" ng-click="signup(store)" ng-disabled="signupForm.$invalid" class="button button-block button-positive">Sign up</button>
           <br/>
 
           <p class="text-center text-muted">Already have an account? <a href="/#/app/login">Log in now</a></p>
-        </form>
       </div>
   </ion-content>
 </ion-view>
