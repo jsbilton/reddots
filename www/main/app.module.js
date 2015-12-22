@@ -6,7 +6,7 @@ angular
     'storeview',
     'storesignup',
     'customersignup',
-    'ngMap',
+    'angular-mapbox',
     'ui.router',
     'ngSanitize',
     'satellizer'
@@ -58,7 +58,7 @@ angular
     }
    $authProvider.loginUrl = '/auth/login';
    $authProvider.signupUrl = '/auth/signup';
-   
+
   $authProvider.google({
      clientId: '469379853070-g23rimletc4dddro1vcqvak3nk3gsrgm.apps.googleusercontent.com',
      url: 'https://mean-starter.herokuapp.com/auth/google',

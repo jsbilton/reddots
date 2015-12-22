@@ -1,5 +1,5 @@
 angular.module('reddots.controllers', [
-  'ngMap'
+  'angular-mapbox'
 ])
 
 .controller('AppCtrl', function($scope) {
