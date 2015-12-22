@@ -6,7 +6,7 @@
 angular
 .module('map')
 .controller('MapCtrl', function($scope, MapService, mapboxService, $ionicLoading, $window) {
-  mapboxService.init({ accessToken: 'pk.eyJ1IjoiY2Fsd2ViIiwiYSI6IkQxUTJBS2cifQ.aS0kLu4cddiieYU2XoFGvg' });
+  mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
     $scope.map = {
       center: {
         latitude: 32.788969,

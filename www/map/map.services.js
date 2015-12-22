@@ -1,7 +1,7 @@
 angular
   .module('map')
   .factory('MapService', function ($http, $rootScope) {
-    var url = 'http://tiny-tiny.herokuapp.com/collections/mySpots';
+    var url = 'http://tiny-tiny.herokuapp.com/collections/reddotsmapdata';
     var getSpots = function () {
       return $http.get(url);
     };
