@@ -69,3 +69,8 @@ map {
 a {
   text-decoration: none;
 }
+
+#mapWrap {
+    width: 500px;
+    height: 300px;
+}

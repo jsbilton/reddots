@@ -11,46 +11,71 @@
         <map center="32.788990, -79.938120" zoom="15" >
           <marker ng-repeat=" pos in positions" animation="Animation.BOUNCE" position="{{pos.lat}},{{pos.lng}}"></marker>
         </map>
-    </ion-content>
-    <ion-content>
+        <ion-list>
+          <ion-item ng-repeat="item in items">
 
+          </ion-item>
+        </ion-list>
     </ion-content>
+
   </body>
   </ion-content>
 </ion-view> -->
 
 
-<!-- Example taken from ng-maps c/o Mike Harrington @ http://codepen.io/mhartington/pen/bwdoA -->
-<ion-view title="">
- <ion-content class="has-header">
+<ion-view title="Map Overview">
+  <ion-header-bar class="bar-assertive">
+    <h1 class="title">My Stores</h1>
+  </ion-header-bar>
 
-    <body ng-controller="MapCtrl">
-
-    <h3>Closest Stores</h3>
-
-
-        <input type="text" ng-model="search"/>
+    <ion-content class="has-header" ng-init="initialize()" scroll="false">
+        <body ng-controller="MapCtrl">
 
 
-        <!-- map -->
-        <app-map style="height:525px;margin:12px;box-shadow:0 3px 25px black;"
-            center="loc" markers="stores">
-        </app-map>
+            <div id="mapWrap" data-tap-disabled="true">
 
-        <!-- current location -->
-        <div class="text-info text-right">
-            {{loc.lat | lat:0}}, {{loc.lon | lon:0}}
-        </div>
-
-        <!-- list of stores -->
-        <div class="container-fluid">
-            <div class="span3 btn"
-                ng-repeat="a in stores"
-                ng-click="gotoLocation(a.lat, a.lon)">
-                <b>{{a.code}}</b>: {{a.name}}
+              <!-- <div class="mapWrap"  data-tap-disabled="true" > -->
+                <map center="32.788990, -79.938120" zoom="15" >
+                  <!-- <marker ng-repeat=" pos in positions" animation="Animation.BOUNCE" position="{{pos.lat}},{{pos.lng}}"></marker> -->
+                </map>
+              <!-- </div> -->
             </div>
+    </ion-content>
+
+  <ion-footer-bar class="bar-stable">
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+
+  </ion-footer-bar>
+
+</ion-view>
+
+
+<!-- <ion-view title="">
+ <ion-content class="has-header"> -->
+   <!-- <body ng-app="app" ng-controller="MapCtrl">
+
+      <h3>My Store Map</h3>
+
+      <!-- map -->
+      <!-- <button class="button button-icon ion-pinpoint" ng-click="centerOnMe()"></button>
+      <app-map style="height:500px;box-shadow:0 3px 25px black;" center="loc" markers="stores"></app-map>
+      <marker ng-repeat=" pos in stores" animation="Animation.BOUNCE" position="{{pos.lat}},{{pos.lng}}"></marker> -->
+
+      <!-- <body ng-app="app" ng-controller="MapCtrl">
+
+        <h3>Google Maps</h3>
+
+
+        <button class="button button-icon ion-pinpoint" ng-click="centerOnMe()"></button>
+        <app-map style="height:400px;box-shadow:0 3px 25px black;"></app-map>
+
+
+
+        <div class="text-info text-right">
+          {{loc.lat | lat:0}}, {{loc.lon | lon:0}}
         </div>
 
+      </body>
 
-      </ion-content>
-    </ion-view> -->
+  </ion-content>
+</ion-view> -->
