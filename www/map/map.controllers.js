@@ -12,7 +12,7 @@ angular
         latitude: 32.788969,
         longitude: -79.938103
       },
-      zoom: 8
+      zoom: 4
     };
      MapService.getSpots().success(function (spots) {
        $scope.spots = spots;
