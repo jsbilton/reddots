@@ -10,7 +10,7 @@
 
           <label class="item item-input">
             <div class="form-group" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
-              <input class="form-control input-lg" type="text" name="storeAddress" ng-model="store.address" placeholder="Street Address, City, State, Zip" required autofocus>
+              <input class="form-control input-lg" type="text" name="storeAddress" ng-model="store.address" placeholder="Street Address, City, State, Zip">
             </div>
           </label>
 
@@ -29,7 +29,7 @@
 
           <label class="item item-input">
             <div class="form-group" ng-class="{ 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
-              <input password-match="password" class="form-control input-lg" type="password" name="confirmPassword" ng-model="store.confirmPassword" placeholder="Confirm Password">
+              <input password-match="password" class="form-control input-lg" type="password" name="confirmPassword" ng-model="store.confirmPassword" placeholder="Confirm Password" required>
             </div>
           </label>
 
