@@ -1,6 +1,6 @@
 angular
-  .module('map')
-  .factory('MapService', function ($http, $rootScope) {
+  .module('stores')
+  .factory('StoresService', function ($http, $rootScope) {
     var url = 'http://tiny-tiny.herokuapp.com/collections/reddotsmapdata';
     var getSpots = function () {
       return $http.get(url);
@@ -27,6 +27,24 @@ angular
     };
 
   });
+
+  // .factory('StoreViewService', function ($http) {
+  //
+  //     var addItem = function(newItem){
+  //       $http.post(url, newItem).then(function(res) {
+  //         console.log(res);
+  //       });
+  //     };
+  //
+  //     var getItems = function () {
+  //       return $http.get(url);
+  //     };
+  //
+  //     return {
+  //       addItem: addItem,
+  //       getItems: getItems
+  //     };
+  // });
 
   // angular
   //   .module('storesignup')

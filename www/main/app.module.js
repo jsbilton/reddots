@@ -2,10 +2,8 @@ angular
   .module('reddots', [
     'ionic',
     'reddots.controllers',
-    'map',
-    // 'addStore',
+    'stores',
     'storeview',
-    // 'storesignup',
     'customersignup',
     'angular-mapbox',
     'ui.router',
@@ -36,16 +34,6 @@ angular
           'menuContent': {
             templateUrl: "main/views/login.html",
             controller: 'LoginCtrl'
-          }
-        }
-      })
-
-      .state('app.storeview', {
-        url: "/storeview",
-        views: {
-          'menuContent': {
-            templateUrl: "storeview/views/storeview.html",
-            controller: 'StoreViewCtrl'
           }
         }
       });
