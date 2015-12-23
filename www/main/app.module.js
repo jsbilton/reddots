@@ -3,7 +3,6 @@ angular
     'ionic',
     'reddots.controllers',
     'stores',
-    'storeview',
     'customersignup',
     'angular-mapbox',
     'ui.router',
