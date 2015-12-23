@@ -5,7 +5,7 @@ angular
     'map',
     // 'addStore',
     'storeview',
-    'storesignup',
+    // 'storesignup',
     'customersignup',
     'angular-mapbox',
     'ui.router',
