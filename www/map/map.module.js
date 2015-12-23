@@ -13,5 +13,16 @@ angular
         controller: "MapCtrl"
       }
     }
+  })
+
+  .state('app.addStore', {
+    url: "/addStore",
+    templateUrl: "map/views/addStore.html",
+    views: {
+      'menuContent': {
+        templateUrl: "map/views/addStore.html",
+        controller: "MapCtrl"
+      }
+    }
   });
 });

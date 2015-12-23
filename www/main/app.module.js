@@ -3,6 +3,7 @@ angular
     'ionic',
     'reddots.controllers',
     'map',
+    // 'addStore',
     'storeview',
     'storesignup',
     'customersignup',

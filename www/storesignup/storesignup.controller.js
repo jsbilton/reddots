@@ -2,14 +2,14 @@ angular
     .module('storesignup')
     .controller('StoreSignupCtrl', function ($state, $auth, $scope, $stateParams, StoreSignupService, $window) {
 
-      $scope.signup = function(store) {
-        console.log("STORE", store);
+      $scope.signup = function(newSpot) {
+        console.log("STORE", newSpot);
         $auth.signup({
-          displayName: store.displayName,
-          storeAddress: store.address,
-          email: store.email,
-          password: store.password,
-          confirmPassword: store.confirmPassword
+          displayName: newSpot.name,
+          storeAddress: newSpot.address,
+          email: newSpot.email,
+          password: newSpot.password,
+          confirmPassword: newSpot.confirmPassword
         }).catch(function(response) {
           console.log("ERROR SIGNUP", response);
           //where to go on failure

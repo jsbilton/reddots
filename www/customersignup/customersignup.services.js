@@ -30,6 +30,7 @@ angular
       };
 
       return {
+        createCustomer: createCustomer,
         sendStores: sendStores,
         getStores: getStores,
         getStore: getStore,
