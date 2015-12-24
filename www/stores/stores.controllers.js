@@ -21,6 +21,10 @@ angular
        StoresService.createSpot(spot);
      };
 
+     $scope.deleteSpot = function (spot) {
+       StoresService.deleteSpot(spot);
+     };
+
      $scope.signup = function(newSpot) {
        console.log("STORE", newSpot);
        $auth.signup({
