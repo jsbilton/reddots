@@ -1,0 +1,19 @@
+<ion-view title="">
+  <ion-content class="has-header">
+    <body ng-controller="StoresCtrl">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Red Dot Stores Near You</h1>
+    </ion-header-bar>
+    <ion-content scroll="false">
+      <mapbox map-id="jetbalagtas.og7ca26a" scale-to-fit width="100%">
+        <marker ng-repeat="c in spots" lat="{{c.coords.latitude}}" lng="{{c.coords.longitude}}" size="medium" color="#f86767" icon="bar">
+         <h3>{{c.name}}</h3>
+          <p>{{c.address}}
+            </br><a href="/#/app/storeview">Visit Store</a>
+          </p>
+        </marker>
+      </mapbox>
+    </ion-content>
+  </body>
+  </ion-content>
+</ion-view>

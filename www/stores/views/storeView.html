@@ -1,0 +1,85 @@
+<!-- storeview.html is the same view for Customers, Stores, and Admin.
+DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and Admin can CRUD. -->
+<body ng-controller="StoresCtrl">
+<ion-view title="">
+  <ion-content class="has-header" scroll="true">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title"><div ng-repeat="c in spots">
+        {{c.name}}
+        </div></h1>
+    </ion-header-bar>
+    <div class="list storeview">
+      <ion-list id="AddItem">
+        <h3>Add Items</h3>
+        <form ng-submit="addItem(newItem)">
+          <label class="item item-input">
+            <input value="" type="text" placeholder="Add Item" ng-model="itemName">
+            <input value="" type="number" placeholder="$" ng-model="itemPrice">
+          </label>
+            <br />
+          <button ng-click="addItem(itemName, itemPrice)">Add to list</button>
+        </form>
+      </ion-list>
+      <ion-list id="storeItems">
+        <h4>Store Items</h4>
+        <table>
+          <tr ng-repeat="item in items" class="item-store-items">
+            <td>{{item.name}}  </td>
+            <td>${{item.price}}  </td>
+            <td>
+              <button ng-click="removeItem($index)">remove</button>
+            </td>
+          </tr>
+        </table>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>
+</body>
+
+/////////// old code /////////////
+<!-- <body ng-controller="StoresCtrl">
+<ion-view title="">
+  <ion-content class="has-header" scroll="true">
+    <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-plus-outline"
+          ng-click="data.showAdd = !data.showAdd; data.showReorder = false"></button>
+      </div>
+      <h1 class="title"><div ng-repeat="id in spots">
+        {{id.name}}
+        </div></h1>
+      <div class="buttons">
+        <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+            Reorder
+        </button>
+      </div>
+    </ion-header-bar>
+    <div class="list storeview">
+      <ion-list show-add="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items"
+                  item="item"
+                  href="#/item/{{item.id}}" class="item-remove-animate">
+          Item {{ item.id }}
+          <ion-delete-button class="ion-minus-circled"
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">
+            Share
+          </ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+    </div>
+  </ion-content>
+</ion-view>
+</body> -->

@@ -53,7 +53,7 @@ app.listen(app.get('port'), function() {
 // CREATE CUSTOMER ACCOUNT ON SIGNUP
 ///////////////////////////////////////
 
-app.post('/createcustomer', function(req,res,next) {
+app.post('/customersignup', function(req,res,next) {
   console.log("Request From Client", req.body);
   var customer = new Customer(req.body);
 
@@ -70,7 +70,7 @@ app.post('/createcustomer', function(req,res,next) {
 // SHOW CUSTOMER THE MAP **ON SIGNUP OR LOGIN **IDEALLY WITH NEARBY STORE LOCATIONS
 /////////////////////////////////////////////////////////////////////////////////////
 
-app.get('/storelocations', function(req,res) {
+app.get('/map', function(req,res) {
   var locations = Locations.find({},function(err,data) {
     if(err) {
       console.log(err);
@@ -85,7 +85,7 @@ app.get('/storelocations', function(req,res) {
 // CREATE STORE OWNER ACCOUNT ON SIGNUP
 //////////////////////////////////////////
 
-app.post('/createowner', function(req,res,next) {
+app.post('/storesignup', function(req,res,next) {
   console.log("Request From Client",req.body);
   var store = new Store(req.body);
 
