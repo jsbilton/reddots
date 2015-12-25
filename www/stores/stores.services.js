@@ -21,9 +21,26 @@ angular
       });
 
     };
+    var deleteSpot = function (removeSpot) {
+      // var geocoder = new google.maps.Geocoder();
+      // geocoder.geocode({address: removeSpot.address}, function (res) {
+      //   console.log("response from google: ", res);
+      //   removeSpot.coords = {
+      //     latitude: res[0].geometry.location.lat(),
+      //     longitude: res[0].geometry.location.lng(),
+      //   };
+        console.log(removeSpot);
+        $http.delete(url, removeSpot).success(function (res) {
+          console.log("yaay, spot deleted!");
+        });
+
+      // });
+
+    };
     return {
       getSpots: getSpots,
-      createSpot: createSpot
+      createSpot: createSpot,
+      deleteSpot: deleteSpot
     };
 
   });
