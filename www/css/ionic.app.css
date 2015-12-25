@@ -9762,6 +9762,9 @@ a.button {
 h3 {
   text-align: center; }
 
+h4 {
+  text-align: center; }
+
 .button .button-block {
   width: 100%;
   margin: 20px auto; }
@@ -9790,3 +9793,9 @@ map {
 
 a {
   text-decoration: none; }
+
+#add-item {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px; }
