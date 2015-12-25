@@ -7,9 +7,9 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
       <h1 class="title"><div ng-repeat="c in spots">
         {{c.name}}
         </div></h1>
-        <form ng-submit="deleteSpot(removeSpot)">
-          <button type="submit" ng-click="delete(removeSpot)" ng-disabled="signupForm.$invalid" class="button button-block button-assertive">Delete Store</button>
-        </form>
+        <div class="buttons" ng-submit="deleteSpot(removeSpot)">
+          <button type="submit" ng-click="delete(removeSpot)" class="button button-assertive">Delete Store</button>
+        </div>
     </ion-header-bar>
   </ion-content>
 
