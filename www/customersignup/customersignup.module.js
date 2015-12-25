@@ -1,5 +1,5 @@
 angular
-  .module('customersignup', ['map'])
+  .module('customersignup', ['stores'])
 
   .config(function($stateProvider) {
     $stateProvider
