@@ -4,7 +4,7 @@
 
 angular
 .module('stores')
-.controller('StoresCtrl', function($state, $auth, $scope, StoresService, mapboxService, $ionicLoading, $window) {
+.controller('StoresCtrl', function($state, $auth, $scope, StoresService, $stateParams, mapboxService, $ionicLoading, $window) {
   mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
     $scope.map = {
       center: {
@@ -46,6 +46,12 @@ angular
     //    $scope.item = item;
     //  });
 
+    var vm = this;
+    $scope.storeview = StoresService.getSpots();
+
+    if($stateParams.spotId) {
+      vm.spotDetail = StoresService.getSpot($stateParams.spotId);
+    }
      $scope.name="addStoreItems";
      $scope.items = [];
      $scope.addItem = function (itemName, itemPrice) {

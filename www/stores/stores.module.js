@@ -27,7 +27,7 @@ angular
   })
 
   .state('app.storeview', {
-    url: "/storeview",
+    url: "/storeview/:spotId",
     views: {
       'menuContent': {
         templateUrl: "stores/views/storeView.html",
