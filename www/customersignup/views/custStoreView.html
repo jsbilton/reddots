@@ -1,8 +1,35 @@
-<body ng-controller="StoresCtrl">
-<ion-view title="Customer Store View">
+<!-- View for customers to shop the stores and (add to their cart) -->
+
+<body ng-controller="CustomerSignupCtrl">
+<ion-view title="">
 	<ion-content class="has-header" scroll="true">
     <ion-header-bar class="bar-positive">
 
     </ion-header-bar>
   </ion-content>
 </ion-view>
+
+		<ion-content class="storeItems">
+				<div id="cust-add-item">
+					<h4>Add Items</h4>
+
+							<br/>
+						<button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-calm addItem-btn">Add to list</button>
+				</div>
+
+				<ion-list id="customer-items">
+					<h4>Customer Items</h4>
+					<ion-item ng-repeat="item in items"
+										item="item"
+										class="item-remove-animate">
+						<ion-option-button class="button-calm" ng-click="edit(item)">
+							Edit
+						</ion-option-button>
+						<ion-option-button type="submit" ng-click="removeItem($index)" class="button-assertive">
+							Delete
+						</ion-option-button>
+					</ion-item>
+				</ion-list>
+		</ion-content>
+</ion-view>
+</body>
