@@ -1,37 +1,37 @@
 angular
   .module('stores')
   .factory('StoresService', function ($http, $rootScope) {
-    var url = 'http://tiny-tiny.herokuapp.com/collections/reddots';
-    var getSpots = function () {
+    var url = '';
+    var getStores = function () {
       return $http.get(url);
     };
-    var createSpot = function (newSpot) {
+    var createStore = function (newStore) {
       var geocoder = new google.maps.Geocoder();
-      geocoder.geocode({address: newSpot.address}, function (res) {
+      geocoder.geocode({address: newStore.address}, function (res) {
         console.log("response from google: ", res);
-        newSpot.coords = {
+        newStore.coords = {
           latitude: res[0].geometry.location.lat(),
           longitude: res[0].geometry.location.lng(),
         };
-        console.log(newSpot);
-        $http.post(url, newSpot).success(function (res) {
-          console.log("yaay, spot created!");
+        console.log(newStore);
+        $http.post(url, newStore).success(function (res) {
+          console.log("yaay, store created!");
         });
 
       });
 
     };
-    var deleteSpot = function (removeSpot) {
+    var deleteStore = function (removeStore) {
       // var geocoder = new google.maps.Geocoder();
-      // geocoder.geocode({address: removeSpot.address}, function (res) {
+      // geocoder.geocode({address: removeStore.address}, function (res) {
       //   console.log("response from google: ", res);
-      //   removeSpot.coords = {
+      //   removeStore.coords = {
       //     latitude: res[0].geometry.location.lat(),
       //     longitude: res[0].geometry.location.lng(),
       //   };
-        console.log(removeSpot);
-        $http.delete(url, removeSpot).success(function (res) {
-          console.log("yaay, spot deleted!");
+        console.log(removeStore);
+        $http.delete(url, removeStore).success(function (res) {
+          console.log("yaay, store deleted!");
         });
 
       // });
@@ -57,9 +57,9 @@ angular
 
 
     return {
-      getSpots: getSpots,
-      createSpot: createSpot,
-      deleteSpot: deleteSpot,
+      getStores: getStores,
+      createStore: createStore,
+      deleteStore: deleteStore,
       addItem: addItem,
       // getItems: getItems
     };

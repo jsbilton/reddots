@@ -13,26 +13,26 @@ angular
       },
       zoom: 8
     };
-     StoresService.getSpots().success(function (spots) {
-       $scope.spots = spots;
+     StoresService.getStores().success(function (stores) {
+       $scope.stores = stores;
      });
 
-     $scope.addSpot = function (spot) {
-       StoresService.createSpot(spot);
+     $scope.addStore = function (store) {
+       StoresService.createStore(store);
      };
 
-     $scope.deleteSpot = function (spot) {
-       $scope.spots.splice(index, 1);
+     $scope.deleteStore = function (store) {
+       $scope.stores.splice(index, 1);
      };
 
-     $scope.signup = function(newSpot) {
-       console.log("STORE", newSpot);
+     $scope.signup = function(newStore) {
+       console.log("STORE", newStore);
        $auth.signup({
-         displayName: newSpot.name,
-         storeAddress: newSpot.address,
-         email: newSpot.email,
-         password: newSpot.password,
-         confirmPassword: newSpot.confirmPassword
+         displayName: newStore.name,
+         storeAddress: newStore.address,
+         email: newStore.email,
+         password: newStore.password,
+         confirmPassword: newStore.confirmPassword
        }).catch(function(response) {
          console.log("ERROR SIGNUP", response);
          //where to go on failure
@@ -47,10 +47,10 @@ angular
     //  });
 
     var vm = this;
-    $scope.storeview = StoresService.getSpots();
+    $scope.storeview = StoresService.getStores();
 
-    if($stateParams.spotId) {
-      vm.spotDetail = StoresService.getSpot($stateParams.spotId);
+    if($stateParams.storeId) {
+      vm.storeDetail = StoresService.getStore($stateParams.storeId);
     }
      $scope.name="addStoreItems";
      $scope.items = [];
