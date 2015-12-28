@@ -1,7 +1,7 @@
 angular
   .module('stores')
   .factory('StoresService', function ($http, $rootScope) {
-    var url = 'http://tiny-tiny.herokuapp.com/collections/reddots';
+    var url = 'http://red-dots.herokuapp.com/collections/stores';
     var getStores = function () {
       return $http.get(url);
     };

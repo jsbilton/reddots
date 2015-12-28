@@ -36,6 +36,7 @@
     "ios"
   ],
   "scripts": {
+    "postinstall": "./node_modules/.bin/bower install",
     "start": "node server.js"
   },
   "main": "server.js",
