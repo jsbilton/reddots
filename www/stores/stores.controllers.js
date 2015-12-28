@@ -22,7 +22,7 @@ angular
      };
 
      $scope.deleteSpot = function (spot) {
-       StoresService.deleteSpot(spot);
+       $scope.spots.splice(index, 1);
      };
 
      $scope.signup = function(newSpot) {
@@ -42,7 +42,11 @@ angular
          $state.go('app.storeview');
      };
 
-     $scope.name="asd";
+    //  StoresService.addItem().success(function (item) {
+    //    $scope.item = item;
+    //  });
+
+     $scope.name="addStoreItems";
      $scope.items = [];
      $scope.addItem = function (itemName, itemPrice) {
       $scope.items.push({
