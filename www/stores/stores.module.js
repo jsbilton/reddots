@@ -26,7 +26,7 @@ angular
     }
   })
 
-  .state('app.storeview', {
+  .state('app.storeview/:storeId', {
     url: "/storeview/:storeId",
     views: {
       'menuContent': {

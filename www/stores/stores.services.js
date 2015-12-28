@@ -1,7 +1,7 @@
 angular
   .module('stores')
   .factory('StoresService', function ($http, $rootScope) {
-    var url = 'http://red-dots.herokuapp.com/collections/stores';
+    var url = 'http://tiny-tiny.herokuapp.com/collections/reddot-stores';
     var getStores = function () {
       return $http.get(url);
     };
@@ -21,6 +21,11 @@ angular
       });
 
     };
+
+    var getStore = function (store) {
+      store = store._id;
+    };
+
     var deleteStore = function (removeStore) {
       // var geocoder = new google.maps.Geocoder();
       // geocoder.geocode({address: removeStore.address}, function (res) {
@@ -58,6 +63,7 @@ angular
 
     return {
       getStores: getStores,
+      getStore: getStore,
       createStore: createStore,
       deleteStore: deleteStore,
       addItem: addItem,
