@@ -103,7 +103,7 @@ app.post('/storesignup', function(req,res,next) {
 // INVENTORY LIST, SAME VIEW FOR LOGGED IN CUSTOMERS BUT NOT EDITABLE.
 ////////////////////////////////////////////////////////////////////////
 
-app.get('/storeview', function(req,res) {
+app.get('/storeview/:storeId', function(req,res) {
   var storeview = Storeview.find({},function(err,data) {
     if(err) {
       console.log(err);

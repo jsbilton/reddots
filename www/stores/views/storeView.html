@@ -4,8 +4,9 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
 <ion-view title="">
   <ion-content class="has-header" scroll="true">
     <ion-header-bar class="bar-positive">
-      <h1 class="title"><div ng-repeat="c in stores" class="store" data-id="{{store.id}}">
+      <h1 class="title"><div ng-repeat="c in stores" class="store" data-id="{{c.id}}">
       <!-- <h1 class="title"><div class="store" data-id="{{store.id}}"> -->
+        <!-- {{c.id}} -->
         {{c.name}}
         </div></h1>
         <!-- <div class="buttons" ng-submit="deleteStore(removeStore)">

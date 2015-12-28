@@ -39,7 +39,8 @@ angular
          $state.go('app.storesignup');
        });
        //where to go on success
-         $state.go('app.storeview/ + store._id');
+        var id = store._id;
+         $state.go('app.storeview', {storedId: id});
      };
 
     //  StoresService.addItem().success(function (item) {

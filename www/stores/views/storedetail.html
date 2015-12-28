@@ -1,0 +1,6 @@
+<marker ng-repeat="c in stores" href="#/app/stores/{{c.id}}" class="store" data.id="{{store._id}}" lat="{{c.coords.latitude}}" lng="{{c.coords.longitude}}" size="medium" color="#f86767" icon="bar">
+ <h3>{{c.name}}</h3>
+  <p>{{c.address}}
+  </br><a href="/#/app/storeview">Visit Store</a>
+  </p>
+</marker>
