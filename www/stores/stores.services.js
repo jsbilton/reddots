@@ -1,7 +1,7 @@
 angular
   .module('stores')
   .factory('StoresService', function ($http, $rootScope) {
-    var url = 'http://tiny-tiny.herokuapp.com/collections/reddotsmapdata';
+    var url = 'http://tiny-tiny.herokuapp.com/collections/reddots';
     var getSpots = function () {
       return $http.get(url);
     };
@@ -37,10 +37,31 @@ angular
       // });
 
     };
+
+    var addItem = function (newItem) {
+      var item = new addItem();
+      item.description({itemName: newItem.name, itemPrice: newItem.price}, function (res) {
+        console.log("response from heroku: ", res);
+        // newItem.description = {
+        //   latitude: res[0].geometry.location.lat(),
+        //   longitude: res[0].geometry.location.lng(),
+        // };
+        console.log(newItem);
+        $http.post(url, newItem).success(function (res) {
+          console.log("NEW ITEM created!");
+        });
+
+      });
+
+    };
+
+
     return {
       getSpots: getSpots,
       createSpot: createSpot,
-      deleteSpot: deleteSpot
+      deleteSpot: deleteSpot,
+      addItem: addItem,
+      // getItems: getItems
     };
 
   });
