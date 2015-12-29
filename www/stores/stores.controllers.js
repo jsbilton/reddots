@@ -19,7 +19,7 @@ angular
 
      $scope.goToStoreView = function(store) {
        var id = store._id;
-       $state.go('^.storeview', {storeId: id});
+       $state.go('app.storeview', {storeId: id});
      };
 
      $scope.addStore = function (store) {
