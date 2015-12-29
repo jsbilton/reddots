@@ -1,0 +1,36 @@
+
+<body ng-controller="CartController">
+    <ion-view title="">
+      <ion-content class="has-header" scroll="true">
+        <h3>My Cart</h3>
+        <section ng-repeat="item in Cart">
+          <article class="item">
+            <h4>{{item.name}}</h4>
+            <h5>{{item.price | currency}}</h5>
+            <button type="button" class="removeFromCart(item)" ng-click="removeFromCart(item)">Remove from Cart</button>
+          </article>
+        </section>
+      </ion-content>
+    </ion-view>
+</body>
+
+
+
+<!-- <ion-list ng-controller="CartController"
+    show-delete="shouldShowDelete"
+    can-swipe="listCanSwipe">
+  <ion-item ng-repeat="item in items"
+      class="item-thumbnail-left">
+    <h3>{{item.title}}</h3>
+
+    <ion-option-button class="button-info"
+                       ng-click="edit(item)">
+      Edit
+    </ion-option-button>
+    <ion-delete-button class="ion-minus-circled"
+                       ng-click="items.splice($index, 1)">
+      Delete
+    </ion-delete-button>
+
+  </ion-item>
+</ion-list> -->

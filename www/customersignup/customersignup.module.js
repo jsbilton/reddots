@@ -15,11 +15,11 @@ angular
     }
   })
 //added this to route to customer store VIEW
-  .state('app.custStoreView', {
-    url: "/custStoreView/:custId",
+  .state('app.custHome', {
+    url: "/custHome/:custId",
     views: {
       'menuContent': {
-        templateUrl: "customersignup/views/custStoreView.html",
+        templateUrl: "customersignup/views/custHome.html",
         controller: 'CustomerSignupCtrl'
       }
     }

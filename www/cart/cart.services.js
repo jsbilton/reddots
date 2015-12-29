@@ -1,16 +1,34 @@
 angular
 
 .module('cart')
-.factory('CartService', function ($http, $rootscope) {
-  // body...
+  .factory('CartService', function($http, $rootscope) {
+        var url = 'https://tiny-tiny.herokuapp.com/collections/reddot';
 
+        var getCartItems = function() {
+          return $http.get(url);
+        };
 
-  return {
-    cart: getCart,
-    addToCart: addToCart,
-    clearCart: clearCart,
-    getCart: getCart,
-  }
+        var newCartItem = function(item) {
+          return $http.post(url, item);
+        };
+
+        var selectItemID = function(item) {
+          return item._id;
+        };
+
+        var deleteCartItem = function(item) {
+          var id = selectItemID(item);
+          var url = 'https://tiny-tiny.herokuapp.com/collections/reddot/' + id;
+          return $http.delete(url, item);
+        };
+
+        return {
+          getCartItems: getCartItems,
+          selectItemID: selectItemID,
+          deleteCartItem: deleteCartItem,
+          newCartItem: newCartItem
+        };
+
 
 
 });

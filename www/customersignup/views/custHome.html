@@ -1,0 +1,81 @@
+<!-- View for customers to shop the stores and (add to their cart) -->
+
+<body ng-controller="CustomerSignupCtrl">
+	<ion-view title="">
+	  <ion-content class="has-header" scroll="true">
+	    <ion-header-bar class="bar-positive">
+
+			</ion-header-bar>
+		</ion-content>
+
+			<h3>{{My Nearby Store}}</h3>
+			<!-- <br/> -->
+
+			<section ng-repeat="item in Items">
+			  <article class="item">
+			    <h4>{{item.name}}</h4>
+			    <h5>{{item.price | currency}}</h5>
+					<button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-balanced addItem-btn">Add to My Cart</button>
+			  </article>
+			</section>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <body ng-controller="CustomerSignupCtrl">
+	<ion-view title="">
+	  <ion-content class="has-header" scroll="true">
+	    <ion-header-bar class="bar-positive">
+	      <h1 class="title">
+					<div ng-repeat="c in spots">{{c.name}}</div>
+				</h1>
+	        </div>
+	    </ion-header-bar>
+	  </ion-content>
+
+	  <ion-content class="list-current-store">
+	      <div id="add-item">
+	        <h4>{{storeName}}</h4> <!-- want the names of the stores at top-->
+
+	      <!-- </div>
+
+	      <ion-list id="store-items">
+	        <ion-item ng-repeat="item in items"
+	                  item="item"
+	                  class="item-remove-animate">
+	          <ion-option-button type="submit" ng-click="removeItem($index)" class="button-assertive">
+	            Delete
+	          </ion-option-button>
+	        </ion-item>
+					<button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-balanced addItem-btn">Add to My Cart</button>
+	      </ion-list>
+	  </ion-content>
+
+	</ion-view>
+</body> -->
+
+
+
+<!-- <ion-list>
+
+	<ion-checkbox ng-model="filter.blue">Tito's Vodka</ion-checkbox>
+	<ion-checkbox ng-model="filter.yellow">Captain Morgan's Spiced Rum</ion-checkbox>
+	<ion-checkbox ng-model="filter.pink">Jack Daniels Whiskey</ion-checkbox>
+
+</ion-list> -->
+
+	<!-- <button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-balanced addItem-btn">Add to My Cart</button> -->

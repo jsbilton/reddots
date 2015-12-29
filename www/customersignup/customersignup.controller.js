@@ -20,7 +20,7 @@ angular
 
 // need to control the customer store view and be able to add/remove/edit for the cart
       var vm = this;
-      $scope.custStoreView = CustomerSignupService.getItems();
+      $scope.custHome = CustomerSignupService.getItems();
 
       if($stateParams.custId) {
         vm.storeDetail = CustomerSignupService.getItems($stateParams.custId);

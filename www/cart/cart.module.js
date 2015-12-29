@@ -9,7 +9,7 @@ angular
           views: {
           'menuContent': {
           templateUrl: 'cart/views/cart.html',
-          controller: 'CartController as cartCtrl'
+          controller: 'CartController'
             }
           },
           onEnter: function ($state, $auth) {
