@@ -17,6 +17,11 @@ angular
        $scope.stores = stores;
      });
 
+     $scope.goToStoreView = function(store) {
+       var id = store._id;
+       $state.go('app.storeview', {storeId: id});
+     };
+
      $scope.addStore = function (store) {
        StoresService.createStore(store);
      };
@@ -39,7 +44,8 @@ angular
          $state.go('app.storesignup');
        });
        //where to go on success
-         $state.go('app.storeview');
+        var id = store._id;
+         $state.go('app.storeview', {storedId: id});
      };
 
     //  StoresService.addItem().success(function (item) {
@@ -47,7 +53,9 @@ angular
     //  });
 
     var vm = this;
-    $scope.storeview = StoresService.getStores();
+    //$scope.storeview = StoresService.getStores();
+
+
 
     if($stateParams.storeId) {
       vm.storeDetail = StoresService.getStore($stateParams.storeId);
@@ -69,6 +77,14 @@ angular
 
     $scope.edit = function(item) {
       alert('Edit Item: ' + item.id);
+    };
+
+    $scope.getOneStore = function() {
+      var id = $stateParams.storeId;
+      StoresService.getStore(id).then(function(data) {
+         console.log(data);
+         $scope.items = data;
+       });
     };
 
 });

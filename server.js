@@ -36,17 +36,12 @@ if (app.get('env') === 'production') {
     protocol === 'https' ? next() : res.redirect('https://' + req.hostname + req.url);
   });
 }
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, 'www/')));
 
 // Routes
 app.use('/auth', authRoutes);
 app.use('/api', profileRoutes);
 app.use('/api/uploads', uploadRoutes);
-
-
-app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
-});
 
 
 ///////////////////////////////////////
@@ -103,7 +98,7 @@ app.post('/storesignup', function(req,res,next) {
 // INVENTORY LIST, SAME VIEW FOR LOGGED IN CUSTOMERS BUT NOT EDITABLE.
 ////////////////////////////////////////////////////////////////////////
 
-app.get('/storeview', function(req,res) {
+app.get('/storeview/:storeId', function(req,res) {
   var storeview = Storeview.find({},function(err,data) {
     if(err) {
       console.log(err);
