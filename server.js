@@ -36,7 +36,7 @@ if (app.get('env') === 'production') {
     protocol === 'https' ? next() : res.redirect('https://' + req.hostname + req.url);
   });
 }
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, 'www/')));
 
 // Routes
 app.use('/auth', authRoutes);
