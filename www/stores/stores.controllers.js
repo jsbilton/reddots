@@ -83,7 +83,7 @@ angular
       var id = $stateParams.storeId;
       StoresService.getStore(id).then(function(data) {
          console.log(data);
-         $scope.items = data;
+         $scope.stores = data;
        });
     };
 
