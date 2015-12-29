@@ -5,8 +5,8 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
   <ion-content class="has-header" scroll="true">
 
     <ion-header-bar class="bar-positive" ng-init="getOneStore()">
-      <h1 class="title"><div ng-repeat="c in stores" class="store" data-id="{{c.id}}">
-        {{c.name}}
+      <h1 class="title"><div ng-repeat="store in stores" class="store" data-id="{{c.id}}">
+        {{store.name}}
         </div></h1>
     </ion-header-bar>
   </ion-content>
@@ -28,7 +28,7 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
                   item="item"
                   class="item-remove-animate">
           <div class="row">
-            <div class="col col-75">{{ item.itemName }}</div>
+            <div class="col col-75">{{ item.name }}</div>
             <div class="col"> ${{ item.price }}</div>
           </div>
           <ion-option-button class="button-calm" ng-click="edit(item)">

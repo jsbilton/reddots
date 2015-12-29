@@ -23,7 +23,6 @@ angular
     };
 
     var getStore = function(id) {
-      console.log(url + "/" + id);
       return $http.get(url + "/" + id);
     };
 
