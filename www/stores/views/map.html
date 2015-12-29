@@ -6,12 +6,7 @@
     </ion-header-bar>
     <ion-content scroll="false">
       <mapbox map-id="jetbalagtas.og7ca26a" scale-to-fit width="100%">
-        <marker ng-repeat="c in stores" class="store" data.id="{{store.id}}" lat="{{c.coords.latitude}}" lng="{{c.coords.longitude}}" size="medium" color="#f86767" icon="bar">
-         <h3>{{c.name}}</h3>
-          <p>{{c.address}}
-          </br><a href="/#/app/storeview/{{store.id}}">Visit Store</a>
-          </p>
-        </marker>
+        <store-detail></store-detail>
       </mapbox>
     </ion-content>
   </body>
