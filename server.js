@@ -44,11 +44,6 @@ app.use('/api', profileRoutes);
 app.use('/api/uploads', uploadRoutes);
 
 
-app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
-});
-
-
 ///////////////////////////////////////
 // CREATE CUSTOMER ACCOUNT ON SIGNUP
 ///////////////////////////////////////
