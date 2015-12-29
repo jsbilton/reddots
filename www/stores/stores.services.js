@@ -22,8 +22,9 @@ angular
 
     };
 
-    var getStore = function (store) {
-      store = store._id;
+    var getStore = function(id) {
+      console.log(url + "/" + id);
+      return $http.get(url + "/" + id);
     };
 
     var deleteStore = function (removeStore) {

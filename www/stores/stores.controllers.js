@@ -81,14 +81,10 @@ angular
 
     $scope.getOneStore = function() {
       var id = $stateParams.storeId;
-      StoresService.getStores().success(function (stores) {
-        for (var i in stores) {
-          if (stores[i]._id === id) {
-            $scope.OneStore = stores[i];
-          }
-        }
-        console.log(stores[i]);
-      });
+      StoresService.getStore(id).then(function(data) {
+         console.log(data);
+         $scope.items = data;
+       });
     };
 
 });
