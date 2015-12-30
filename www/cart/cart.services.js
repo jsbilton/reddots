@@ -4,32 +4,41 @@ angular
   .factory('CartService', function($http) {
         var url = 'https://tiny-tiny.herokuapp.com/collections/reddot';
 
+//Get Cart Items
         var getCartItems = function() {
           return $http.get(url);
         };
 
-        var newCartItem = function(item) {
-          return $http.post(url, item);
+//Add Item to Cart
+        var addToCart = function(item){
+          $http.post(url, item).success(function(response){
+          });
         };
 
-        var selectItemID = function(item) {
+//Remove Item from Cart
+        var getID = function(item){
+          console.log(item._id);
           return item._id;
         };
-
-        var deleteCartItem = function(item) {
-          var id = selectItemID(item);
-          var url = 'https://tiny-tiny.herokuapp.com/collections/reddot/' + id;
-          return $http.delete(url, item);
+        var removeFromCart = function(item){
+          var id = getID(item);
+          $http.delete(url + "/" + id);
+        };
+        
+//View Single Item
+        var getSingleItem = function(item){
+          url = 'http://tiny-tiny.herokuapp.com/collections/reddot';
+          var id = getID(item);
+          var dog = $http.get(url + "/"+ _id);
+          console.log(dog);
         };
 
-        return {
-          getCartItems: getCartItems,
-          selectItemID: selectItemID,
-          deleteCartItem: deleteCartItem,
-          newCartItem: newCartItem
-
-        };
-
+return {
+        getCartItems : getCartItems,
+        addToCart : addToCart,
+        removeFromCart : removeFromCart,
+        getSingleItem : getSingleItem
+      };
 
 
 });

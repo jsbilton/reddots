@@ -10,9 +10,51 @@
             <button type="button" class="removeFromCart(item)" ng-click="removeFromCart(item)">Remove from Cart</button>
           </article>
         </section>
+        <button class="button button-small button-balanced addProduct-btn" ng-click="addItem(item)">Add Me</button>
+        <!-- <div id="add-item">
+          <h4>Add Products</h4>
+            <label class="item item-input" ng-submit="addProduct(newProduct)">
+              <input value="" type="text" placeholder="Add product" ng-model="productName">
+            </label>
+              <br />
+            <button type="submit" ng-click="addProduct(productName, productPrice)" class="button button-block button-calm addProduct-btn">Add to store</button>
+        </div> -->
       </ion-content>
     </ion-view>
 </body>
+
+<!-- <body ng-controller="CartController">
+  <ion-view title="">
+    <ion-content class="has-header" scroll="true">
+
+        <table class="table">
+            <tr>
+
+                <th>Description</th>
+                <th>Qty</th>
+                <th>Cost</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="item in invoice.items">
+                <td><input type="text" ng-model="item.description"class="input-small"></td>
+                <td><input type="number" ng-model="item.qty" ng-required class="input-mini"></td>
+                <td><input type="number" ng-model="item.cost" ng-required class="input-mini"></td>
+                <td>{{item.qty * item.cost | currency}}</td>
+                <td>
+                    [<a href ng-click="removeItem($index)">X</a>]
+                </td>
+            </tr>
+            <tr>
+                <td><a href ng-click="addItem()" class="btn btn-small">add item</a></td>
+                <td></td>
+                <td>Total:</td>
+                <td>{{total() | currency}}</td>
+            </tr>
+        </table>
+    </ion-content>
+  </ion-view>
+</body> -->
 
 
 <!-- <ion-view ng-controller="CartController" view-title="{{myTitleLogo}}" class="header-attribs">
@@ -25,25 +67,4 @@
     </ion-content>
     <ion-cart-footer path='checkoutPath'></ion-cart-footer>
 </ion-view>
-</body> -->
-
-
-
-<!-- <ion-list ng-controller="CartController"
-    show-delete="shouldShowDelete"
-    can-swipe="listCanSwipe">
-  <ion-item ng-repeat="item in items"
-      class="item-thumbnail-left">
-    <h3>{{item.title}}</h3>
-
-    <ion-option-button class="button-info"
-                       ng-click="edit(item)">
-      Edit
-    </ion-option-button>
-    <ion-delete-button class="ion-minus-circled"
-                       ng-click="items.splice($index, 1)">
-      Delete
-    </ion-delete-button>
-
-  </ion-item>
-</ion-list> -->
+</body> --
