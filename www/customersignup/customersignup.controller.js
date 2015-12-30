@@ -44,4 +44,13 @@ angular
         alert('Edit Item: ' + item.id);
       };
 
+//need to store to be able to shop from
+      $scope.getOneStore = function() {
+        var id = $stateParams.storeId;
+        StoresService.getStore(id).then(function(data) {
+           console.log(data);
+           $scope.stores = data;
+         });
+      };
+
     });

@@ -1,38 +1,61 @@
 <!-- View for customers to shop the stores and (add to their cart) -->
 
 <body ng-controller="CustomerSignupCtrl">
+
 	<ion-view title="">
 	  <ion-content class="has-header" scroll="true">
-	    <ion-header-bar class="bar-positive">
-
+			<ion-header-bar class="bar-calm">
+	      <h1 class="title"><div ng-repeat="item in Items" class="item" data-id="{{c.id}}">
+	        {{item.name}}
+	        </div></h1>
 			</ion-header-bar>
+			<ion-header-bar align-title="center" class="bar-positive">
+				<div>
+					<button class="button button-clear ion-ios-cart-outline" ng-click="goToCart()"></button>
+				</div>
+			  <h1 class="title">My Store</h1> <!-- will have to change from h1 -->
+			</ion-header-bar>
+
 		</ion-content>
-
-			<h3>{{My Nearby Store}}</h3>
-			<!-- <br/> -->
-
-			<section ng-repeat="item in Items">
-			  <article class="item">
-			    <h4>{{item.name}}</h4>
-			    <h5>{{item.price | currency}}</h5>
-					<button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-balanced addItem-btn">Add to My Cart</button>
-			  </article>
-			</section>
-
+	</ion-view>
 </body>
 
+<!-- <div class="addItemtoCart">
+	<button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-balanced addItem-btn">Add to My Cart</button>
+</div> -->
+
+
+
+<!-- This is a button along with a cart icon
+<div class="cart-btn">
+	<button class="button button-clear ion-ios-cart-outline addItem-btn"> My Cart</button>
+</div> -->
+
+	<!-- <ion-content>
+		<div class="addItemtoCart">
+			<button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-balanced addItem-btn">Add to My Cart</button>
+		</div>
+	</ion-content> -->
 
 
 
 
+<!-- <h3>{{My Nearby Store}}</h3>
+<div ng-repeat="item in Items">
+	<article class="item">
+		<h4>{{item.name}}</h4>
+		<h5>{{item.price | currency}}</h5>
+		<button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-balanced addItem-btn">Add to My Cart</button>
+
+	</article> -->
 
 
+	<!-- <button type="submit" ng-click="addItem(itemName, itemPrice)" class="button button-block button-balanced addItem-btn">Add to My Cart</button> -->
 
-
-
-
-
-
+	<!-- <div ng-repeat="item in Items">
+		<article class="item">
+			<h4>{{item.name}}</h4>
+			<h5>{{item.price | currency}}</h5> -->
 
 
 

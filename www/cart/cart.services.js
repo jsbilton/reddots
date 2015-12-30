@@ -1,7 +1,7 @@
 angular
 
 .module('cart')
-  .factory('CartService', function($http, $rootscope) {
+  .factory('CartService', function($http) {
         var url = 'https://tiny-tiny.herokuapp.com/collections/reddot';
 
         var getCartItems = function() {
@@ -27,6 +27,7 @@ angular
           selectItemID: selectItemID,
           deleteCartItem: deleteCartItem,
           newCartItem: newCartItem
+
         };
 
 

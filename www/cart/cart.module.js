@@ -1,10 +1,8 @@
 angular
-  .module('cart', [
-    'ui.router'
-  ])
+  .module('cart', ['stores'])
   .config(function ($stateProvider) {
       $stateProvider
-        .state('cart', {
+        .state('app.cart', {
           url: '/cart',
           views: {
           'menuContent': {
@@ -12,8 +10,8 @@ angular
           controller: 'CartController'
             }
           },
-          onEnter: function ($state, $auth) {
-            if(!$auth.isAuthenticated()) $state.go('login');
-          }
+          // onEnter: function ($state, $auth) {
+          //   if(!$auth.isAuthenticated()) $state.go('login');
+          // }
       });
     });
