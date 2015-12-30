@@ -13,7 +13,7 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
   <ion-content class="list storeview">
       <div id="add-item">
         <h4>Add Products</h4>
-          <label class="item item-input" ng-submit="addProduct(newProduct)">
+          <label class="item item-input" ng-submit="addProduct(products)">
             <input value="" type="text" placeholder="Add product" ng-model="productName">
             <input value="" type="number" placeholder="$" ng-model="productPrice">
           </label>
@@ -25,8 +25,8 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
         <h4>Products</h4>
         <ion-item ng-repeat="product in products" item="item" class="item-remove-animate">
           <div class="row">
-            <div class="col col-75">{{ product.productName }}</div>
-            <div class="col"> ${{ product.productPrice }}</div>
+            <div class="col col-75">{{ productName }}</div>
+            <div class="col"> ${{ productPrice }}</div>
           </div>
           <ion-option-button class="button-calm" ng-click="edit(product)">
             Edit

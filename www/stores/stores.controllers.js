@@ -48,9 +48,14 @@ angular
          $state.go('app.storeview', {storedId: id});
      };
 
-    //  StoresService.addProduct().success(function (item) {
-    //    $scope.item = item;
+    //  StoresService.addProduct().success(function (product) {
+    //    $scope.product = product;
     //  });
+
+    // $scope.addProduct = function (product) {
+    //   StoresService.addProduct(product);
+    //   console.log(product);
+    // };
 
     var vm = this;
     if($stateParams.storeId) {

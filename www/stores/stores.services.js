@@ -33,20 +33,37 @@ angular
       });
     };
 
-    var addProduct = function (newProduct) {
-      var product = new Product(data.products);
-      product.details({productName: newProduct.name, productPrice: newProduct.price}, function (res) {
-        console.log("response from db: ", res);
-        newProduct.products = {
-          productName: name[0],
-          productPrice: price[0]
-        };
-        console.log(newProduct);
-        products[productName] = productPrice;
-        $http.post(url, newProduct).success(function (res) {
-          console.log("NEW PRODUCT ADDED!");
-        });
+    // var addProduct = function (newProduct) {
+    //   var product = new Product(data.products);
+    //   product.details({productName: newProduct.name, productPrice: newProduct.price}, function (res) {
+    //     console.log("response from db: ", res);
+    //     newProduct.products = {
+    //       productName: name[0],
+    //       productPrice: price[0]
+    //     };
+    //     console.log(newProduct);
+    //     products[productName] = productPrice;
+    //     $http.post(url, newProduct).success(function (res) {
+    //       console.log("NEW PRODUCT ADDED!");
+    //     });
+    //   });
+    // };
+
+    // Jsonstuff.map(function(el) {
+    //  var newObj = el
+    //  newObj.newProperty = newAttribute // as many times as you want
+    // Return newObj
+    // })
+
+    var addProduct = function () {
+      var data = [];
+      data.map(function(el) {
+        var products = el;
+        products.productName = productName;
+        products.productPrice = productPrice;
+        console.log(products);
       });
+      return data;
     };
 
     var getProducts = function(id, products) {
