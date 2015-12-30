@@ -1,5 +1,8 @@
 angular
   .module('stores')
+  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
+  localStorageServiceProvider.setPrefix('ls');
+}])
   .factory('StoresService', function ($http, $rootScope) {
     var url = 'http://tiny-tiny.herokuapp.com/collections/reddot-stores';
 
@@ -61,9 +64,11 @@ angular
         var products = el;
         products.productName = productName;
         products.productPrice = productPrice;
-        console.log(products);
       });
-      return data;
+        $http.post(url, products).then(function (res) {
+          console.log("NEW PRODUCT ADDED!");
+      });
+      return products;
     };
 
     var getProducts = function(id, products) {
