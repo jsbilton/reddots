@@ -52,12 +52,6 @@ angular
     //   });
     // };
 
-    // Jsonstuff.map(function(el) {
-    //  var newObj = el
-    //  newObj.newProperty = newAttribute // as many times as you want
-    // Return newObj
-    // })
-
     var addProduct = function () {
       var data = [];
       data.map(function(el) {
