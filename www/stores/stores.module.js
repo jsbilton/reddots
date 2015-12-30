@@ -1,5 +1,5 @@
 angular
-  .module('stores', [])
+  .module('stores', ['LocalStorageModule'])
 
   .config(function($stateProvider) {
     $stateProvider
