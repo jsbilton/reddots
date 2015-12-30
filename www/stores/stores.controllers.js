@@ -48,31 +48,27 @@ angular
          $state.go('app.storeview', {storedId: id});
      };
 
-    //  StoresService.addItem().success(function (item) {
+    //  StoresService.addProduct().success(function (item) {
     //    $scope.item = item;
     //  });
 
     var vm = this;
-    //$scope.storeview = StoresService.getStores();
-
-
-
     if($stateParams.storeId) {
       vm.storeDetail = StoresService.getStore($stateParams.storeId);
     }
-     $scope.name="addStoreItems";
-     $scope.items = [];
-     $scope.addItem = function (itemName, itemPrice) {
-      $scope.items.push({
-        name: itemName,
-        price: itemPrice
+     $scope.name="addProducts";
+     $scope.products = [];
+     $scope.addProduct = function (productName, productPrice) {
+      $scope.products.push({
+        productName: productName,
+        productPrice: productPrice
       });
-      $scope.itemName = "";
-      $scope.itemPrice = "";
+      $scope.productName = "";
+      $scope.productPrice = "";
     };
 
-    $scope.removeItem = function (index) {
-      $scope.items.splice(index, 1);
+    $scope.removeProduct = function (index) {
+      $scope.products.splice(index, 1);
     };
 
     $scope.edit = function(item) {
