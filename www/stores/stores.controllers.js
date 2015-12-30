@@ -4,7 +4,7 @@
 
 angular
 .module('stores')
-.controller('StoresCtrl', function($state, $auth, $scope, StoresService, $stateParams, mapboxService, $ionicLoading, $window) {
+.controller('StoresCtrl', function($state, $auth, $scope, StoresService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window) {
   mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
     $scope.map = {
       center: {
@@ -48,16 +48,27 @@ angular
          $state.go('app.storeview', {storedId: id});
      };
 
-    //  StoresService.addProduct().success(function (item) {
-    //    $scope.item = item;
+    //  StoresService.addProduct().success(function (product) {
+    //    $scope.product = product;
     //  });
+
+    // $scope.addProduct = function (product) {
+    //   StoresService.addProduct(product);
+    //   console.log(product);
+    // };
 
     var vm = this;
     if($stateParams.storeId) {
       vm.storeDetail = StoresService.getStore($stateParams.storeId);
     }
      $scope.name="addProducts";
-     $scope.products = [];
+     var productsInStore = localStorageService.get('products');
+
+      $scope.products = productsInStore || [];
+
+      $scope.$watch('products', function () {
+        localStorageService.set('products', $scope.products);
+      }, true);
      $scope.addProduct = function (productName, productPrice) {
       $scope.products.push({
         productName: productName,
