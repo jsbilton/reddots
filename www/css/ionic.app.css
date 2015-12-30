@@ -9763,7 +9763,8 @@ h3 {
   text-align: center; }
 
 h4 {
-  text-align: center; }
+  text-align: center;
+  color: grey; }
 
 .button .button-block {
   width: 100%;
