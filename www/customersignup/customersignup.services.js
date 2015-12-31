@@ -1,9 +1,12 @@
 angular
     .module('customersignup')
-    .factory('CustomerSignupService', function ($http) {
-      var url = '#/app/signup';
+    .factory('CustomerSignupService', function ($http, $rootScope) {
+      var url = 'http://tiny-tiny.herokuapp.com/collections/reddot-customers';
 
       function createCustomer() {
+      $http.post(url, newCustomer).then(function (res) {
+        console.log("yaay, customer added!");
+      });
         return $http.get('/map');
       }
 
