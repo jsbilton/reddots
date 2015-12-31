@@ -52,7 +52,7 @@ angular
     //   });
     // };
 
-    var addProduct = function () {
+    var addProduct = function (newProduct) {
       var data = [];
       data.map(function(el) {
         var products = el;

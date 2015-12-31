@@ -59,7 +59,7 @@ angular
 
     var vm = this;
     if($stateParams.storeId) {
-      vm.storeDetail = StoresService.getStore($stateParams.storeId);
+      vm.storeMarker = StoresService.getStore($stateParams.storeId);
     }
      $scope.name="addProducts";
      var productsInStore = localStorageService.get('products');

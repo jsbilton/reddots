@@ -13,12 +13,12 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
   <div class="list storeview-body">
       <div id="add-item">
         <h4>Add Products</h4>
-          <label class="item item-input" ng-submit="addProduct(data)">
+          <label class="item item-input" ng-submit="clearInput()">
             <input value="" type="text" placeholder="Add product" ng-model="productName">
             <input value="" type="number" placeholder="$" ng-model="productPrice">
           </label>
             <br />
-          <button type="submit" ng-click="addProduct(productName, productPrice)" class="button button-block button-calm addProduct-btn">Add to store</button>
+          <button type="submit" ng-submit="addProduct(newProduct)" ng-click="addProduct(productName, productPrice)" class="button button-block button-calm addProduct-btn">Add to store</button>
       </div>
       <div ng-repeat="store in stores" class="store store-address" data-id="{{c.id}}">{{store.address}}</div>
       <ion-list id="store-items">

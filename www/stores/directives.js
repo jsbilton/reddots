@@ -2,10 +2,10 @@
   'use strict';
 
   angular.module ('stores')
-    .directive('storeDetail', function() {
+    .directive('storeMarker', function() {
       return {
         restrict: 'E',
-        templateUrl: 'stores/views/storeDetail.html',
+        templateUrl: 'stores/views/storeMarker.html',
         controller: function($scope, StoresService) {
 
         }
