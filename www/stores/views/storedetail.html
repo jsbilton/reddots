@@ -1,7 +1,8 @@
 <marker ng-repeat="c in stores"class="store" data.id="{{store._id}}" lat="{{c.coords.latitude}}" lng="{{c.coords.longitude}}" size="medium" color="#f86767" icon="bar">
  <h3>{{c.name}}</h3>
   <p>{{c.address}}
-  </br><a href="" ng-click="goToStoreView(c)">Visit Store</a>
-  <!-- <button type="button" ng-click="goToStoreView(c)" name="button">store view</button> -->
+    <br>
+  <!-- </br><a href="" ng-click="goToStoreView(c)">Visit Store</a> -->
+  <button class="button button-small button-balanced" type="button" ng-click="goToStoreView(c)" name="button">Visit Store</button>
   </p>
 </marker>

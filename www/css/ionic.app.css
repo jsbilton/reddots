@@ -9807,7 +9807,4 @@ a {
 
 .storeview-head {
   width: 100%;
-  position: fixed; }
-
-.storeview-body {
-  position: relative; }
+  position: absolute; }
