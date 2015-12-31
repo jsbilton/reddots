@@ -18,7 +18,7 @@
     </header>
     <ion-content class="has-header">
 
-      <ion-list class="main-menu">
+      <ion-list class="main-menu" ng-hide="">
 
         <ion-item nav-clear menu-close href="#/app/map">
           Locations Near You
@@ -31,6 +31,32 @@
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/login">
           Login
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+
+  </ion-side-menu>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">Options</h1>
+    </header>
+    <ion-content class="has-header">
+
+      <ion-list class="main-menu">
+
+        <ion-item nav-clear menu-close href="#/app/map">
+          Other Locations
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/cart">
+          My Cart
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/custHome/:custId">
+          My Current Store
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/login">
+          Logout
         </ion-item>
 
       </ion-list>
