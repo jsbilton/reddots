@@ -34,5 +34,15 @@ angular
         controller: 'StoresCtrl'
       }
     }
+  })
+
+  .state('app.orderview', {
+    url: "/orderview/:storeId",
+    views: {
+      'menuContent': {
+        templateUrl: "stores/views/orderView.html",
+        controller: 'StoresCtrl'
+      }
+    }
   });
 });

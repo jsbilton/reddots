@@ -1,70 +1,31 @@
 
-<body ng-controller="CartController">
-    <ion-view title="">
-      <ion-content class="has-header" scroll="true">
-        <h3>My Cart</h3>
-        <section ng-repeat="item in Cart">
-          <article class="item">
-            <h4>{{item.name}}</h4>
-            <h5>{{item.price | currency}}</h5>
-            <button type="button" class="removeFromCart(item)" ng-click="removeFromCart(item)">Remove from Cart</button>
-          </article>
-        </section>
-        <button class="button button-small button-balanced addProduct-btn" ng-click="addItem(item)">Add Me</button>
-        <!-- <div id="add-item">
-          <h4>Add Products</h4>
-            <label class="item item-input" ng-submit="addProduct(newProduct)">
-              <input value="" type="text" placeholder="Add product" ng-model="productName">
-            </label>
-              <br />
-            <button type="submit" ng-click="addProduct(productName, productPrice)" class="button button-block button-calm addProduct-btn">Add to store</button>
-        </div> -->
-      </ion-content>
-    </ion-view>
-</body>
-
-<!-- <body ng-controller="CartController">
-  <ion-view title="">
-    <ion-content class="has-header" scroll="true">
-
-        <table class="table">
-            <tr>
-
-                <th>Description</th>
-                <th>Qty</th>
-                <th>Cost</th>
-                <th>Total</th>
-                <th></th>
-            </tr>
-            <tr ng-repeat="item in invoice.items">
-                <td><input type="text" ng-model="item.description"class="input-small"></td>
-                <td><input type="number" ng-model="item.qty" ng-required class="input-mini"></td>
-                <td><input type="number" ng-model="item.cost" ng-required class="input-mini"></td>
-                <td>{{item.qty * item.cost | currency}}</td>
-                <td>
-                    [<a href ng-click="removeItem($index)">X</a>]
-                </td>
-            </tr>
-            <tr>
-                <td><a href ng-click="addItem()" class="btn btn-small">add item</a></td>
-                <td></td>
-                <td>Total:</td>
-                <td>{{total() | currency}}</td>
-            </tr>
-        </table>
-    </ion-content>
-  </ion-view>
-</body> -->
-
-
-<!-- <ion-view ng-controller="CartController" view-title="{{myTitleLogo}}" class="header-attribs">
-    <ion-header-bar class="bar-dark">
-        <button class='button icon ion-arrow-left-a' ng-click='goToGallery()'></button>
-        <h1 class="title">Ionic Shopping Cart</h1>
-    </ion-header-bar>
-    <ion-content>
-        <ion-cart products='cartProducts'></ion-cart>
-    </ion-content>
-    <ion-cart-footer path='checkoutPath'></ion-cart-footer>
+<ion-view view-title="{{::cart.messages.title}}">
+  <ion-content>
+    <h4 class="cart empty" ng-show="cart.products.length === 0">{{::cart.messages.empty_cart}}</h4>
+    <ion-list>
+      <ion-item class="item item-avatar item-remove-animate item-icon-left" ng-repeat="product in cart.products | orderBy: 'cart_product_id' track by product.cart_product_id" type="item-text-wrap">
+        <img ng-src="{{product.image}}">
+        <span class="cart-item-text">{{product.name}}</span>
+        <span class="item-note">{{product.price | currency }}</span>
+        <ion-option-button class="button-assertive" ng-click="cart.remove(product)">
+          {{::cart.messages.remove_from_cart}}
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar ng-hide="cart.products.length === 0" align-title="center" class="bar-dark total">
+    <div class="row">
+      <div class="col">
+        <h4 class="total">{{::cart.messages.total}}</h4>
+      </div>
+      <div class="col">
+        <h4 class="total number">{{cart.total | currency}}</h4>
+      </div>
+      <div class="col">
+        <div class="buttons" ng-click="doSomething()">
+          <button class="buttons-stable button checkout">{{::cart.messages.checkout}}</button>
+        </div>
+      </div>
+    </div>
+  </ion-footer-bar>
 </ion-view>
-</body> --
