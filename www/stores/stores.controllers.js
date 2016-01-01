@@ -22,6 +22,11 @@ angular
        $state.go('app.storeview', {storeId: id});
      };
 
+     $scope.goToOrderView = function(store) {
+       var id = store._id;
+       $state.go('app.orderview', {storeId: id});
+     };
+
      $scope.addStore = function (store) {
        StoresService.createStore(store);
      };
