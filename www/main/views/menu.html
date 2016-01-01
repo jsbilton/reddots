@@ -38,7 +38,15 @@
 
   </ion-side-menu>
 
-  <ion-side-menu side="left">
+
+  <ion-header-bar class="bar-stable">
+    <h1 ng-if="!isLogin" class="title">Login plz</h1>
+    <h1 ng-if="isLogin"  class="title">U are Login</h1>
+  </ion-header-bar>
+
+<!-- <ion-tab title="..." icon="..." ui-sref="..." class="class1 class2 {{myFunctionName()}}"> -->
+
+  <!-- <ion-side-menu side="left">
     <header class="bar bar-header bar-stable">
       <h1 class="title">Options</h1>
     </header>
@@ -62,6 +70,6 @@
       </ion-list>
     </ion-content>
 
-  </ion-side-menu>
+  </ion-side-menu> -->
 
 </ion-side-menus>

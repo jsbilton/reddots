@@ -3,6 +3,8 @@ angular.module('reddots.controllers', [
 ])
 
 .controller('AppCtrl', function($scope) {
+// $http.get('http')
+
 })
 
 .controller('LoginCtrl', function($scope, $stateParams) {

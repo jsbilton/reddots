@@ -32,14 +32,10 @@ angular
 //Post and add item to cart
           $scope.addItem = function(item){
             CartService.addToCart(item);
-            items.data.push({
-            title: item.title
-
-          });
-
+            // items.data.push({
+            // title: item.title
 
           };
 
 
-
-});
+        });
