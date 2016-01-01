@@ -22,6 +22,11 @@ angular
        $state.go('app.storeview', {storeId: id});
      };
 
+     $scope.goToOrderView = function(store) {
+       var id = store._id;
+       $state.go('app.orderview', {storeId: id});
+     };
+
      $scope.addStore = function (store) {
        StoresService.createStore(store);
      };
@@ -59,7 +64,7 @@ angular
 
     var vm = this;
     if($stateParams.storeId) {
-      vm.storeDetail = StoresService.getStore($stateParams.storeId);
+      vm.storeMarker = StoresService.getStore($stateParams.storeId);
     }
      $scope.name="addProducts";
      var productsInStore = localStorageService.get('products');
