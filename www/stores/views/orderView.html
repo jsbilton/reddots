@@ -17,7 +17,7 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
       <div id="add-item"></div>
       <div ng-repeat="store in stores" class="store store-address" data-id="{{c.id}}">{{store.address}}</div>
       <ion-list id="store-items">
-        <h4>Products</h4>
+        <h4>Product Selection</h4>
           <ion-checkbox ng-model="filter.blue" ng-repeat="product in products">
           <div class="row">
               <div class="col col-75">{{ product.productName }}</div>
