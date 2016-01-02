@@ -14,14 +14,14 @@ angular
       var geocoder = new google.maps.Geocoder();
       geocoder.geocode({address: newStore.address}, function (res) {
         console.log("response from google: ", res);
-        // newStore.coords = {
-        //   latitude: res[0].geometry.location.lat(),
-        //   longitude: res[0].geometry.location.lng(),
-        // };
-        // console.log(newStore);
-        // $http.post(url, newStore).success(function (res) {
-        //   console.log("yaay, store created!");
-        // });
+        newStore.coords = {
+          latitude: res[0].geometry.location.lat(),
+          longitude: res[0].geometry.location.lng(),
+        };
+        console.log(newStore);
+        $http.post(url, newStore).success(function (res) {
+          console.log("yaay, store created!");
+        });
       });
     };
 

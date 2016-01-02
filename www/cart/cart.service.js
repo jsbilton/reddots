@@ -17,10 +17,14 @@ angular
     var addToCart = function(id) {
       return $http.get(url + "/" + id);
     };
-
+//added this for the customer button to direct to checkout view  
+    var custCheckOut = function(id, products) {
+      return $http.get(url + "/" + id);
+    };
     return {
       getProducts: getProducts,
       getCartProducts: getCartProducts,
-      addToCart: addToCart
+      addToCart: addToCart,
+      custCheckOut: custCheckOut
     };
   });

@@ -28,6 +28,16 @@ angular
           //   if(!$auth.isAuthenticated()) $state.go('app.login');
           // }
 
+        })
+//added this for the customer button to direct to checkout view
+        .state('app.checkout', {
+          url: '/checkout/:custId',
+          views: {
+            'menuContent': {
+              templateUrl: 'cart/views/checkout.html',
+              controller: 'CartCtrl'
+            }
+          }
         });
 
     });

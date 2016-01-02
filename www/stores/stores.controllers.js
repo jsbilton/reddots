@@ -14,7 +14,7 @@ angular
       },
       zoom: 8
     };
-    
+
      StoresService.getStores().success(function (stores) {
        $scope.stores = stores;
      });
