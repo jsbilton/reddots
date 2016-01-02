@@ -5,7 +5,7 @@
 angular
 .module('stores')
 .controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window) {
-  
+
   mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
     $scope.map = {
       center: {
@@ -14,6 +14,7 @@ angular
       },
       zoom: 8
     };
+    
      StoresService.getStores().success(function (stores) {
        $scope.stores = stores;
      });
