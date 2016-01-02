@@ -1,6 +1,6 @@
 angular
   .module('cart')
-  .controller('CartCtrl', function ($scope, CartService, $stateParams, localStorageService) {
+  .controller('CartCtrl', function ($scope, CartService, StoresService, $stateParams, localStorageService) {
     var vm = this;
     if($stateParams.cartProductId) {
       vm.cart = CartService.getProduct($stateParams.cartProductId);
@@ -22,13 +22,21 @@ angular
     //   $scope.productPrice = "";
     // };
 
-    $scope.addToCart = function () {
+    // $scope.addToCart = function () {
+    //   var id = $stateParams.storeId;
+    //   CartService.getStore(id).then(function(data) {
+    //     console.log(data);
+    //     $scope.cart = data;
+    //     $state.go('app.cart', {storeId: id});
+    //   });
+    // };
+
+    $scope.getOneStore = function() {
       var id = $stateParams.storeId;
-      StoresService.getStore(id).then(function(data) {
-        console.log(data);
-        $scope.cart = data;
-        $state.go('app.cart', {storeId: id});
-      });
+      CartService.getStore(id).success(function(data) {
+         console.log(data);
+         $scope.stores = data;
+       });
     };
 
 //added this for the customer button to direct to checkout view

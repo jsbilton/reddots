@@ -29,6 +29,11 @@ angular
        $state.go('app.orderview', {storeId: id});
      };
 
+     $scope.goToCart = function () {
+       var id = $stateParams.storeId;
+       $state.go('app.cart', {storeId: id});
+     };
+
      $scope.addStore = function (store) {
        StoresService.createStore(store);
      };
@@ -74,13 +79,6 @@ angular
       });
       $scope.productName = "";
       $scope.productPrice = "";
-    };
-
-    $scope.addToCart = function () {
-      var id = $stateParams.storeId;
-
-        $state.go('app.cart', {storeId: id});
-
     };
 
     $scope.removeProduct = function (index) {
