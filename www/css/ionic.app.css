@@ -9810,3 +9810,7 @@ a {
 
 .ion-ios-cart-outline {
   width: 60px; }
+
+.checkout-btn {
+  width: 40%;
+  float: right; }

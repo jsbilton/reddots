@@ -19,7 +19,7 @@
   </ion-content>
 </ion-view> -->
 
-<body>
+<body ng-controller="StoresCtrl">
 <ion-view title="">
   <ion-content class="has-header" scroll="false" ng-controller="StoresCtrl">
     <div class="storeview-head">
@@ -30,20 +30,24 @@
       </ion-header-bar>
     </div>
   </ion-content>
-  <ion-content class="cart" ng-controller="CartCtrl">
-  <div class="list storeview-body">
+  <ion-content ng-controller="StoresCtrl">
+  <div class="list storeview-body" ng-init="getOneStore()">
       <div id="add-item"></div>
       <div ng-repeat="store in stores" class="store store-address" data-id="{{c.id}}">{{store.address}}</div>
       <ion-list id="store-items">
-          <h4>Cart</h4>
-          <ion-checkbox ng-model="filter.blue" ng-repeat="product in products">
+        <h4>Your Shopping Cart</h4>
+        <ion-checkbox ng-model="filter.blue" ng-repeat="product in products" ng-click="removeProduct($index)">
           <div class="row">
-              <div class="col col-75">{{ product.productName }}</div>
-              <div class="col">{{ product.productPrice | currency }}</div>
+            <div class="col col-75">{{ product.productName }}</div>
+            <div class="col">{{ product.productPrice | currency }}</div>
           </div>
         </ion-checkbox>
+        <div class="row">
+          <div class="col col-75"><h4>Total</h4></div>
+          <div class="col">{{ product.productPrice | currency }}</div>
+        </div>
       </ion-list>
-      <div class="row responsive-sm">
+      <div class="row responsive-sm checkout-btn">
         <button class="button button-medium button-energized">Checkout</button>
       </div>
     </div>
