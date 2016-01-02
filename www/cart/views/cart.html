@@ -1,5 +1,59 @@
 
-<ion-view view-title="{{::cart.messages.title}}">
+<!-- <ion-view view-title="Cart">
+  <ion-nav-buttons side="right" ng-controller="CartCtrl">
+      <button class="button button-light" on-tap="logout()">
+        Logout
+      </button>
+    </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-thumbnail-left item-icon-right" ng-repeat="pic in favPics" type="item-text-wrap" href="#/tab/favs/{{$index}}">
+        <img ng-src="{{pic.image}}">
+        <h2>{{pic.title}}</h2>
+        <p>{{pic.dt}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view> -->
+
+<body>
+<ion-view title="">
+  <ion-content class="has-header" scroll="false" ng-controller="StoresCtrl">
+    <div class="storeview-head">
+      <ion-header-bar class="bar-positive" ng-init="getOneStore()">
+        <h1 class="title"><div ng-repeat="store in stores" class="store" data-id="{{c.id}}">
+          {{store.name}}
+          </div></h1>
+      </ion-header-bar>
+    </div>
+  </ion-content>
+  <ion-content class="cart" ng-controller="CartCtrl">
+  <div class="list storeview-body">
+      <div id="add-item"></div>
+      <div ng-repeat="store in stores" class="store store-address" data-id="{{c.id}}">{{store.address}}</div>
+      <ion-list id="store-items">
+          <h4>Cart</h4>
+          <ion-checkbox ng-model="filter.blue" ng-repeat="product in products">
+          <div class="row">
+              <div class="col col-75">{{ product.productName }}</div>
+              <div class="col">{{ product.productPrice | currency }}</div>
+          </div>
+        </ion-checkbox>
+      </ion-list>
+      <div class="row responsive-sm">
+        <button class="button button-medium button-energized">Checkout</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+</body>
+
+
+<!-- <ion-view view-title="{{::cart.messages.title}}">
   <ion-content>
     <h4 class="cart empty" ng-show="cart.products.length === 0">{{::cart.messages.empty_cart}}</h4>
     <ion-list>
@@ -28,4 +82,4 @@
       </div>
     </div>
   </ion-footer-bar>
-</ion-view>
+</ion-view> -->

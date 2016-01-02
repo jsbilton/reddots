@@ -1,41 +1,78 @@
 angular
   .module('cart')
-  .controller('CartController', function ($scope, CartService, $stateParams) {
+  .controller('CartCtrl', function ($scope, CartService, $stateParams, localStorageService) {
     var vm = this;
-    $scope.cart = CartService.getCartItems();
-
-    if($stateParams.favId) {
-      vm.cartDetail = CartService.getCart($stateParams.cartId);
-
+    if($stateParams.cartProductId) {
+      vm.cart = CartService.getProduct($stateParams.cartProductId);
     }
-// //Gets all store data
-//      $scope.fromStore = function(liquor){
-//          CartService.getItems(liquor).then(function(items){
-//          $scope.items = items;
-//          $location.path("/store");
-//        });
-//      };
-//      CartService.getItems('liquor').then(function(items){
-//      $scope.items = items;
-//     });
+     $scope.name="addToCart";
+     var productsInCart = localStorageService.get('products');
 
-//Get Cart Data
-          CartService.getCartItems().success(function(cartItems){
-            $scope.cartItems = cartItems;
-          });
+      $scope.products = productsInCart || [];
 
-//Remove Item from Cart
-          $scope.removeFromCart = function(item){
-           CartService.removeFromCart(item);
-         };
+      $scope.$watch('products', function () {
+        localStorageService.set('products', $scope.products);
+      }, true);
+    //  $scope.addProduct = function (productName, productPrice) {
+    //   $scope.products.push({
+    //     productName: productName,
+    //     productPrice: productPrice
+    //   });
+    //   $scope.productName = "";
+    //   $scope.productPrice = "";
+    // };
 
-//Post and add item to cart
-          $scope.addItem = function(item){
-            CartService.addToCart(item);
-            // items.data.push({
-            // title: item.title
-
-          };
+    $scope.addToCart = function () {
+      var id = $stateParams.storeId;
+      StoresService.getStore(id).then(function(data) {
+        console.log(data);
+        $scope.cart = data;
+        $state.go('app.cart', {storeId: id});
+      });
+    };
 
 
-        });
+
+
+  });
+
+
+  //   .controller('CartController', function ($scope, CartService, $stateParams) {
+  //     var vm = this;
+  //     $scope.cart = CartService.getCartItems();
+  //
+  //     if($stateParams.favId) {
+  //       vm.cartDetail = CartService.getCart($stateParams.cartId);
+  //
+  //     }
+  // // //Gets all store data
+  // //      $scope.fromStore = function(liquor){
+  // //          CartService.getItems(liquor).then(function(items){
+  // //          $scope.items = items;
+  // //          $location.path("/store");
+  // //        });
+  // //      };
+  // //      CartService.getItems('liquor').then(function(items){
+  // //      $scope.items = items;
+  // //     });
+  //
+  // //Get Cart Data
+  //           CartService.getCartItems().success(function(cartItems){
+  //             $scope.cartItems = cartItems;
+  //           });
+  //
+  // //Remove Item from Cart
+  //           $scope.removeFromCart = function(item){
+  //            CartService.removeFromCart(item);
+  //          };
+  //
+  // //Post and add item to cart
+  //           $scope.addItem = function(item){
+  //             CartService.addToCart(item);
+  //             // items.data.push({
+  //             // title: item.title
+  //
+  //           };
+  //
+  //
+  //         });

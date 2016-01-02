@@ -4,6 +4,7 @@ angular
     'reddots.controllers',
     'stores',
     'customersignup',
+    'cart',
     'angular-mapbox',
     'ui.router',
     'ngSanitize',

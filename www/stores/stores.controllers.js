@@ -4,7 +4,8 @@
 
 angular
 .module('stores')
-.controller('StoresCtrl', function($state, $auth, $scope, StoresService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window) {
+.controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window) {
+  
   mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
     $scope.map = {
       center: {
@@ -53,15 +54,6 @@ angular
          $state.go('app.storeview', {storedId: id});
      };
 
-    //  StoresService.addProduct().success(function (product) {
-    //    $scope.product = product;
-    //  });
-
-    // $scope.addProduct = function (product) {
-    //   StoresService.addProduct(product);
-    //   console.log(product);
-    // };
-
     var vm = this;
     if($stateParams.storeId) {
       vm.storeMarker = StoresService.getStore($stateParams.storeId);
@@ -81,6 +73,13 @@ angular
       });
       $scope.productName = "";
       $scope.productPrice = "";
+    };
+
+    $scope.addToCart = function () {
+      var id = $stateParams.storeId;
+
+        $state.go('app.cart', {storeId: id});
+
     };
 
     $scope.removeProduct = function (index) {
