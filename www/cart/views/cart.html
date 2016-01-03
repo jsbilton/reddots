@@ -30,11 +30,13 @@
         </ion-item>
         <div class="row">
           <div class="col col-75"><h4>Total</h4></div>
-          <div class="col">{{ product.productPrice | currency }}</div>
+          <ion-item>
+          <div class="col total-price" ng-init="getTotalPrice()">{{ totalPriceValue | currency }}</div>
+        </ion-item>
         </div>
       </ion-list>
       <div class="row responsive-sm checkout-btn">
-        <button class="button button-medium button-energized">Checkout</button>
+        <ion-button class="button button-medium button-energized">Checkout</ion-button>
       </div>
     </div>
   </ion-content>
