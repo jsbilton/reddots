@@ -1,0 +1,82 @@
+<!-- Sample Code -->
+<body ng-controller="StoresCtrl">
+<ion-view title="">
+  <ion-content class="has-header" scroll="false" ng-controller="StoresCtrl">
+    <div class="storeview-head">
+      <ion-header-bar class="bar-positive" ng-init="getOneStore()">
+        <h1 class="title"><div ng-repeat="store in stores" class="store" data-id="{{c.id}}">
+          {{store.name}}
+          </div></h1>
+      </ion-header-bar>
+    </div>
+    <!-- <div class="row responsive-sm checkout-btn">
+      <button class="button button-medium button-energized" ng-click="goCheckOut()">Place Order</button>
+    </div> -->
+  </ion-content>
+<!--
+  <button class="button button-small button-assertive" ng-click="addItem()">
+    <a href ng-click="addItem()" class="btn btn-small">add item</a>
+  </button> -->
+
+  <ion-content>
+    <!-- <ion-header-bar class="has-header"> -->
+    <h4>Checkout</h4>
+
+      <ion-list id="cart-items" ng-repeat="product in products">
+        <ion-item  item="item" class="item-remove-animate">
+
+          <div class="row">
+            <div class="col">asdafsd{{ product.productName }}</div>
+            <div class="col">{{ product.productQty }}</div>
+            <div class="col">{{ product.productPrice | currency }}</div>
+            <div class="col">{{ product.productTotal | currency }}</div>
+          </div>
+        </ion-item>
+      </ion-list>
+      <div class="row responsive-sm checkout-btn">
+        <button class="button button-medium button-energized" ng-click="goCheckOut()">Place Order</button>
+      </div>
+    <!-- </ion-header-bar> -->
+  </ion-content>
+</ion-view>
+</body>
+
+
+
+
+   <!-- <table class="table">
+        <tr>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Cost</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="product in invoice.products">
+
+          <input type="text" ng-model="product.description"class="input-small">
+
+          <input type="number" ng-model="product.qty" ng-required class="input-mini">
+
+          <input type="number" ng-model="product.cost" ng-required class="input-mini">
+
+          {{product.qty * product.cost | currency}}
+
+
+                [<a href ng-click="removeItem($index)">X</a>]
+
+        </tr>
+        <tr>
+        <button class="button button-small button-assertive" ng-click="addItem()">
+          <a href ng-click="addItem()" class="btn btn-small">add item</a>
+        </button>
+          <a href ng-click="addItem()" class="btn btn-small">add item</a>
+            <td></td>
+            <td>Total:</td>
+            <td>{{total() | currency}}</td>
+        </tr>
+    </table> -->
+
+
+
+<!-- Use this icon instead of Add Item ion-plus-circled -->

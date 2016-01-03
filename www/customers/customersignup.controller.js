@@ -2,13 +2,13 @@ angular
     .module('customersignup')
     .controller('CustomerSignupCtrl', function($state, $auth, $scope, $stateParams, CustomerSignupService, $window) {
 
-      $scope.signup = function(newCustomer) {
-        console.log("USER", newCustomer);
+      $scope.signup = function(user) {
+        console.log("USER", user);
         $auth.signup({
-          displayName: newCustomer.displayName,
-          email: newCustomer.email,
-          password: newCustomer.password,
-          confirmPassword: newCustomer.confirmPassword
+          displayName: user.displayName,
+          email: user.email,
+          password: user.password,
+          confirmPassword: user.confirmPassword
         }).catch(function(response) {
           console.log("ERROR SIGNUP", response);
           //where to go on failure
@@ -17,7 +17,5 @@ angular
         //where to go on success
           $state.go('app.map');
       };
-
-
 
     });

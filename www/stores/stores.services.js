@@ -35,7 +35,6 @@ angular
         console.log("yaay, store deleted!");
       });
     };
-
     var addProduct = function (newProduct) {
       var data = [];
       data.map(function(el) {
