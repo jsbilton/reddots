@@ -19,7 +19,7 @@ angular
         })
 //added this for the customer button to direct to checkout view
         .state('app.checkout', {
-          url: '/checkout/:storeId',
+          url: '/cart/:storeId/checkout',
           views: {
             'menuContent': {
               templateUrl: 'cart/views/checkout.html',

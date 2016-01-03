@@ -10,14 +10,13 @@ angular
       return $http.get(url);
     };
 
-    var getProducts = function(id, products) {
-      return $http.get(url + "/" + id + products);
+    var getProducts = function(id) {
+      return $http.get(url + "/" + id);
     };
 
     var addToCart = function(id) {
       return $http.get(url + "/" + id);
     };
-
 
     var getOneStore = function(id) {
       return $http.get(url + "/" + id);

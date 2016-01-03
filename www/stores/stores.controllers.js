@@ -97,4 +97,19 @@ angular
        });
     };
 
+//attempting to generate the price totals on the cart page
+
+  //   $scope.getTotalPrice = function () {
+  //   var i = 0,
+  //   totalPrice = 0; //this is reading out to the total
+  //
+  //   for (i; i < $scope.products.length; i = i + 1) {
+  //     if ($scope.products[i].price) {
+  //       totalPrice = totalPrice + $scope.products[i].price;
+  //       console.log('what is total price', totalPrice);
+  //     }
+  //   }
+  //   return totalPrice;
+  // };
+
 });
