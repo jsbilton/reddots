@@ -1,32 +1,32 @@
 <!-- Sample Code -->
+<body ng-controller="CartCtrl">
 
-<ion-side-menus>
-  <ion-side-menu-content>
-    <!-- SIDE MENU CONTENT HEADER -->
-    <ion-header-bar class="bar-dark">
-      <button class="button icon ion-arrow-left-a" ng-click='back()'></button>
-        <h1 class="title">Checkout</h1>
-      <button class='button icon ion-bag' ng-click='toggleRightSideMenu()'></button>
-    </ion-header-bar>
-    <!-- SIDE MENU CONTENT -->
-    <ion-content>
-      <ion-checkout></ion-checkout>
-    </ion-content>
-    <!-- SIDE MENU CONTENT FOOTER -->
-    <ion-checkout-footer></ion-checkout-footer>
-  </ion-side-menu-content>
-  <ion-side-menu side="right" width='300'>
-      <!-- SIDE MENU RIGHT CONTENT HEADER -->
-      <ion-header-bar class="bar-dark">
-        <button class="button icon ion-arrow-left-a" ng-click='back()'></button>
-        <h1 class="title">Cart</h1>
-        <button class='button icon ion-bag' ng-click='toggleRightSideMenu()'></button>
-      </ion-header-bar>
-      <!-- SIDE MENU RIGHT CONTENT -->
-        <ion-content>
-          <ion-cart products='cartProducts'></ion-cart>
-        </ion-content>
-      <!-- SIDE MENU RIGHT CONTENT FOOTER -->
-      <ion-checkout-footer></ion-checkout-footer>
-  </ion-side-menu>
-</ion-side-menus>
+
+<h2>Shopping Cart Bitch</h2>
+<!-- <div ng:controller="CartCtrl"> -->
+    <table class="table">
+        <tr>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Cost</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="item in invoice.items">
+            <td><input type="text" ng-model="item.description"class="input-small"></td>
+            <td><input type="number" ng-model="item.qty" ng-required class="input-mini"></td>
+            <td><input type="number" ng-model="item.cost" ng-required class="input-mini"></td>
+            <td>{{item.qty * item.cost | currency}}</td>
+            <td>
+                [<a href ng-click="removeItem($index)">X</a>]
+            </td>
+        </tr>
+        <tr>
+            <td><a href ng-click="addItem()" class="btn btn-small">add item</a></td>
+            <td></td>
+            <td>Total:</td>
+            <td>{{total() | currency}}</td>
+        </tr>
+    </table>
+</div>
+</body>

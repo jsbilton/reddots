@@ -34,9 +34,9 @@ angular
         controller: 'StoresCtrl'
       }
     },
-    onEnter: function ($state, $auth) {
-        if(!$auth.isAuthenticated()) $state.go('app.login');
-      }
+    // onEnter: function ($state, $auth) {
+    //     if(!$auth.isAuthenticated()) $state.go('app.login');
+    //   }
   })
 
   .state('app.orderview', {

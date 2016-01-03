@@ -11,9 +11,6 @@ angular
               controller: 'CartCtrl'
             }
           },
-          // onEnter: function ($state, $auth) {
-          //   if(!$auth.isAuthenticated()) $state.go('app.login');
-          // }
 
           // onEnter: function ($state, $auth) {
           //   if(!$auth.isAuthenticated()) $state.go('app.login');
@@ -22,7 +19,7 @@ angular
         })
 //added this for the customer button to direct to checkout view
         .state('app.checkout', {
-          url: '/checkout/:custId',
+          url: '/checkout/:storeId',
           views: {
             'menuContent': {
               templateUrl: 'cart/views/checkout.html',

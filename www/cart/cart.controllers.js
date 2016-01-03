@@ -40,14 +40,16 @@ angular
     };
 
 //added this for the customer button to direct to checkout view
-    $scope.custCheckOut = function () {
+    $scope.goCheckOut = function () {
       var id = $stateParams.storeId;
-      CartService.getCart(id).then(function (data) {
-        console.log(data);
-        $scope.cart = data;
-        $state.go('app.checkout', {custId: id});
-      });
-    };
+      $state.go('app.checkout', {storeId: id});
+      };
+    });
+
+    
+  });
+
+
 
 // //This is a form for cart to tally up total costs of items in the cart
 //     function CartCtrl($scope) {
@@ -76,48 +78,3 @@ angular
 //             return total;
 //         };
 //     }
-
-
-
-  });
-
-
-  //   .controller('CartController', function ($scope, CartService, $stateParams) {
-  //     var vm = this;
-  //     $scope.cart = CartService.getCartItems();
-  //
-  //     if($stateParams.favId) {
-  //       vm.cartDetail = CartService.getCart($stateParams.cartId);
-  //
-  //     }
-  // // //Gets all store data
-  // //      $scope.fromStore = function(liquor){
-  // //          CartService.getItems(liquor).then(function(items){
-  // //          $scope.items = items;
-  // //          $location.path("/store");
-  // //        });
-  // //      };
-  // //      CartService.getItems('liquor').then(function(items){
-  // //      $scope.items = items;
-  // //     });
-  //
-  // //Get Cart Data
-  //           CartService.getCartItems().success(function(cartItems){
-  //             $scope.cartItems = cartItems;
-  //           });
-  //
-  // //Remove Item from Cart
-  //           $scope.removeFromCart = function(item){
-  //            CartService.removeFromCart(item);
-  //          };
-  //
-  // //Post and add item to cart
-  //           $scope.addItem = function(item){
-  //             CartService.addToCart(item);
-  //             // items.data.push({
-  //             // title: item.title
-  //
-  //           };
-  //
-  //
-  //         });

@@ -18,11 +18,6 @@ angular
       return $http.get(url + "/" + id);
     };
 
-// //added this for the customer button to direct to checkout view
-//     var custCheckOut = function(id, products) {
-//       return $http.get(url + "/" + id);
-//     };
-
 
     var getOneStore = function(id) {
       return $http.get(url + "/" + id);
@@ -36,9 +31,6 @@ angular
       getProducts: getProducts,
       getCartProducts: getCartProducts,
       addToCart: addToCart,
-
-      custCheckOut: custCheckOut
-
       getOneStore: getOneStore,
       getStore: getStore
     };
