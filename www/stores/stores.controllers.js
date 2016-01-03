@@ -33,7 +33,7 @@ angular
      };
 
      $scope.addToCart = function (newCartProduct) {
-      //  if($stateParams.isChecked)
+       if($stateParams.isChecked)
        console.log(CartService.cart());
        CartService.addCartProduct(newCartProduct);
      };
