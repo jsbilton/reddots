@@ -32,6 +32,12 @@ angular
        $state.go('app.cart', {storeId: id});
      };
 
+     $scope.addToCart = function (newCartProduct) {
+      //  if($stateParams.isChecked)
+       console.log(CartService.cart());
+       CartService.addCartProduct(newCartProduct);
+     };
+
      $scope.addStore = function (store) {
        StoresService.createStore(store);
      };
