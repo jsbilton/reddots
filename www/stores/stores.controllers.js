@@ -73,7 +73,7 @@ angular
         localStorageService.set('products', $scope.products);
       }, true);
      $scope.addProduct = function (productName, productPrice) {
-      $scope.products.push({
+      $scope.products.unshift({
         productName: productName,
         productPrice: productPrice
       });
