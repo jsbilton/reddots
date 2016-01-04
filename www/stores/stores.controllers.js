@@ -5,60 +5,72 @@
 angular
 .module('stores')
 .controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window) {
-
+  $scope.cartList = [];
+  console.log("YAY");
+  $scope.addToCart = function(newCartProduct) {
+    console.log("HELLO");
+    // var productsInCart = productsInStore.isChecked;
+    // StoreService.getProduct(isChecked).then(function(data) {
+    //   console.log(data);
+    //   console.log('what are these products', productsInCart);
+    //   $scope.cart = data;
+    // });
+    $scope.cartList.push(newCartProduct);
+    console.log($scope.cartList);
+  };
   mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
-    $scope.map = {
-      center: {
-        latitude: 32.788969,
-        longitude: -79.938103
-      },
-      zoom: 8
-    };
+  $scope.map = {
+    center: {
+      latitude: 32.788969,
+      longitude: -79.938103
+    },
+    zoom: 8
+  };
 
-     StoresService.getStores().success(function (stores) {
-       $scope.stores = stores;
+   StoresService.getStores().success(function (stores) {
+     $scope.stores = stores;
+   });
+
+   $scope.goToStoreView = function(store) {
+     var id = store._id;
+     $state.go('app.storeview', {storeId: id});
+   };
+
+   $scope.goToOrderView = function(store) {
+     var id = store._id;
+     $state.go('app.orderview', {storeId: id});
+   };
+
+   $scope.goToCart = function () {
+     var id = $stateParams.storeId;
+     $state.go('app.cart', {storeId: id});
+   };
+
+   $scope.addStore = function (store) {
+     StoresService.createStore(store);
+   };
+
+   $scope.deleteStore = function (store) {
+     $scope.stores.splice(index, 1);
+   };
+
+   $scope.signup = function(newStore) {
+     console.log("STORE", newStore);
+     $auth.signup({
+       displayName: newStore.name,
+       storeAddress: newStore.address,
+       email: newStore.email,
+       password: newStore.password,
+       confirmPassword: newStore.confirmPassword
+     }).catch(function(response) {
+       console.log("ERROR SIGNUP", response);
+       //where to go on failure
+       $state.go('app.storesignup');
      });
-
-     $scope.goToStoreView = function(store) {
-       var id = store._id;
-       $state.go('app.storeview', {storeId: id});
-     };
-
-     $scope.goToOrderView = function(store) {
-       var id = store._id;
-       $state.go('app.orderview', {storeId: id});
-     };
-
-     $scope.goToCart = function () {
-       var id = $stateParams.storeId;
-       $state.go('app.cart', {storeId: id});
-     };
-
-     $scope.addStore = function (store) {
-       StoresService.createStore(store);
-     };
-
-     $scope.deleteStore = function (store) {
-       $scope.stores.splice(index, 1);
-     };
-
-     $scope.signup = function(newStore) {
-       console.log("STORE", newStore);
-       $auth.signup({
-         displayName: newStore.name,
-         storeAddress: newStore.address,
-         email: newStore.email,
-         password: newStore.password,
-         confirmPassword: newStore.confirmPassword
-       }).catch(function(response) {
-         console.log("ERROR SIGNUP", response);
-         //where to go on failure
-         $state.go('app.storesignup');
-       });
-       //where to go on success
-        var id = store._id;
-         $state.go('app.storeview', {storedId: id});
-     };
+     //where to go on success
+      var id = store._id;
+       $state.go('app.storeview', {storedId: id});
+   };
 
     var vm = this;
     if($stateParams.storeId) {
@@ -105,15 +117,7 @@ angular
     //    CartService.addCartProduct(newCartProduct);
     //  };
 
-    $scope.addToCart = function() {
-      var productsInCart = productsInStore.isChecked;
-      StoreService.getProduct(isChecked).then(function(data) {
-        console.log(data);
-        console.log('what are these products', productsInCart);
-        $scope.cart = data;
-      });
-     $scope.products = productsInCart || [];
-   };
+
 
    if($stateParams.newCartProduct) {
      vm.cart = CartService.getProduct($stateParams.newCartProduct);
