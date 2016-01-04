@@ -8,8 +8,7 @@ angular
     'angular-mapbox',
     'ui.router',
     'ngSanitize',
-    'satellizer',
-    'cart'
+    'satellizer'
   ])
 
   .run(function($ionicPlatform) {
