@@ -18,4 +18,6 @@ angular
           $state.go('app.map');
       };
 
+
+
     });

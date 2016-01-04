@@ -5,6 +5,7 @@
 angular
 .module('stores')
 .controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window) {
+
   mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
     $scope.map = {
       center: {
@@ -13,6 +14,7 @@ angular
       },
       zoom: 8
     };
+
      StoresService.getStores().success(function (stores) {
        $scope.stores = stores;
      });
@@ -101,15 +103,15 @@ angular
        });
     };
 
-    $scope.getTotalPrice = function () {
-      totalPrice = 0; //this is reading out to the total
-      for (var i = 0; i < $scope.products.length; i++) {
-        if ($scope.products[i].productPrice) {
-          totalPrice += $scope.products[i].productPrice;
-          console.log('what is total productPrice', totalPrice);
-        }
-      }
-      $scope.totalPriceValue = totalPrice;
-    };
+    // $scope.getTotalPrice = function () {
+    //   totalPrice = 0; //this is reading out to the total
+    //   for (var i = 0; i < $scope.products.length; i++) {
+    //     if ($scope.products[i].productPrice) {
+    //       totalPrice += $scope.products[i].productPrice;
+    //       console.log('what is total productPrice', totalPrice);
+    //     }
+    //   }
+    //   $scope.totalPriceValue = totalPrice;
+    // };
 
 });

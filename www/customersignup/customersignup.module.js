@@ -13,5 +13,16 @@ angular
         controller: 'CustomerSignupCtrl'
       }
     }
+  })
+//added this to route to customer store VIEW
+  .state('app.custHome', {
+    url: "/custHome/:custId",
+    views: {
+      'menuContent': {
+        templateUrl: "customersignup/views/custHome.html",
+        controller: 'CustomerSignupCtrl'
+      }
+    }
   });
+
 });

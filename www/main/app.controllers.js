@@ -3,6 +3,7 @@ angular.module('reddots.controllers', [
 ])
 
 .controller('AppCtrl', function($scope) {
+
 })
 
 .controller('LoginCtrl', function($scope, $stateParams) {
