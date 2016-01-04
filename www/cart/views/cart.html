@@ -1,8 +1,7 @@
-
-<body ng-controller="StoresCtrl">
+<body>
 <ion-view title="">
-  <ion-content class="has-header" scroll="false" ng-controller="StoresCtrl">
 
+  <ion-content class="has-header" scroll="false" ng-controller="CartCtrl">
     <div class="storeview-head">
       <ion-header-bar class="bar-positive" ng-init="getOneStore()">
         <h1 class="title"><div ng-repeat="store in stores" class="store" data-id="{{c.id}}">
@@ -10,17 +9,19 @@
           </div></h1>
       </ion-header-bar>
     </div>
-
   </ion-content>
 
-  <ion-content ng-controller="StoresCtrl">
-  <div class="list storeview-body" ng-init="getOneStore()">
-      <div id="add-item"></div>
-      <div ng-repeat="store in stores" class="store store-address"data-id="{{c.id}}">{{store.address}}</div>
+  <ion-content ng-controller="CartCtrl">
+    <div class="list storeview-body" ng-init="getOneStore()">
+        <div id="add-item"></div>
+        <div ng-repeat="store in stores" class="store store-address" data-id="{{c.id}}">{{store.address}}</div>
+    </div>
+  </ion-content>
+
+  <ion-content>
+    <div class="list cart-body">
       <ion-list id="store-items">
-
         <h4>Your Shopping Cart</h4>
-
         <ion-item ng-repeat="product in products" item="item" class="item-remove-animate">
           <div class="row">
             <div class="col col-75">{{ product.productName }}</div>
@@ -32,23 +33,17 @@
         </ion-item>
         <div class="row">
           <div class="col col-75"><h4>Total</h4></div>
-          <div class="col">{{ product.productPrice | currency }}</div>
           <ion-item>
-           <div ng-init="getTotalPrice()" class="total-price">
-               {{ totalPriceValue | currency }}
-           </div>
-         </ion-item>
+            <div class="col total-price" ng-init="getTotalPrice()">{{ totalPriceValue | currency }}</div>
+          </ion-item>
         </div>
       </ion-list>
-
-      <!-- <div class="row responsive-sm">
-        <button class="button button-medium button-energized">Checkout</button> -->
       <div class="row responsive-sm checkout-btn">
-        <button class="button button-medium button-energized" ng-click="goCheckOut()">Checkout</button>
+        <ion-button class="button button-medium button-energized" ng-click="goCheckOut()">Checkout</ion-button>
       </div>
-
     </div>
   </ion-content>
+
 </ion-view>
 </body>
 

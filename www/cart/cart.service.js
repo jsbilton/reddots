@@ -18,19 +18,9 @@ angular
       return $http.get(url + "/" + id);
     };
 
-    var getOneStore = function(id) {
-      return $http.get(url + "/" + id);
-    };
-
-    var getStore = function(id) {
-      return $http.get(url + "/" + id);
-    };
-
     return {
       getProducts: getProducts,
       getCartProducts: getCartProducts,
-      addToCart: addToCart,
-      getOneStore: getOneStore,
-      getStore: getStore
+      addToCart: addToCart
     };
   });
