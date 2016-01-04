@@ -58,4 +58,6 @@ angular
       $scope.totalPriceValue = totalPrice;
     };
 
+
+
     });

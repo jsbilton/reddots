@@ -1,4 +1,37 @@
 <!-- Sample Code -->
+<ion-content>
+  <div data-ng-app="app" data-ng-controller="CartCtrl">
+      <form action="#"
+        name="cardForm"
+        data-card
+        data-width="500"
+        data-card-container="#card-container"
+        data-placeholders="cardPlaceholders"
+        data-options="cardOptions"
+        data-messages="cardMessages">
+        <div>
+            <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number"/>
+
+            <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name"/>
+        </div>
+        <div>
+            <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry"/>
+
+            <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc"/>
+
+            <input type="button" value="Change card" data-ng-click="changeCard()"/>
+            <input type="button" value="Clear" data-ng-click="clear()"/>
+        </div>
+
+      </form>
+  </div>
+  <div id="card-container"></div>
+</ion-content>
+
+
+
+
+<!--
 <body ng-controller="StoresCtrl">
 <ion-view title="">
   <ion-content class="has-header" scroll="false" ng-controller="StoresCtrl">
@@ -9,17 +42,11 @@
           </div></h1>
       </ion-header-bar>
     </div>
-    <!-- <div class="row responsive-sm checkout-btn">
-      <button class="button button-medium button-energized" ng-click="goCheckOut()">Place Order</button>
-    </div> -->
-  </ion-content>
-<!--
-  <button class="button button-small button-assertive" ng-click="addItem()">
-    <a href ng-click="addItem()" class="btn btn-small">add item</a>
-  </button> -->
 
+  </ion-content> -->
+
+<!--
   <ion-content>
-    <!-- <ion-header-bar class="has-header"> -->
     <h4>Checkout</h4>
 
       <ion-list id="cart-items" ng-repeat="product in products">
@@ -36,10 +63,9 @@
       <div class="row responsive-sm checkout-btn">
         <button class="button button-medium button-energized" ng-click="goCheckOut()">Place Order</button>
       </div>
-    <!-- </ion-header-bar> -->
   </ion-content>
 </ion-view>
-</body>
+</body> -->
 
 
 
