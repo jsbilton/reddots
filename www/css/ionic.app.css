@@ -9808,8 +9808,8 @@ a {
 .storeview-head {
   width: 100%; }
 
-.ion-ios-cart-outline {
-  width: 60px; }
+.ion-ios-cart {
+  width: 50px; }
 
 .checkout-btn {
   font-size: 2rem;
@@ -9818,3 +9818,9 @@ a {
 
 .cart-trash {
   width: 50px; }
+
+.cart-body {
+  margin-top: 70px; }
+
+.total-price {
+  width: 100%; }

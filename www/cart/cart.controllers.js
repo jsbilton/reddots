@@ -1,5 +1,8 @@
 angular
   .module('cart')
+  // .controller('CartCtrl', function ($scope, CartService, $stateParams) {
+  //   var vm = this;
+  //   $scope.cartProducts = CartService.getCartProducts();
   .controller('CartCtrl', function ($scope, $state, CartService, StoresService, $stateParams, localStorageService) {
     var vm = this;
     if($stateParams.cartProductId) {
@@ -11,33 +14,31 @@ angular
 
       $scope.products = productsInCart || [];
 
-      $scope.$watch('products', function () {
-        localStorageService.set('products', $scope.products);
-      }, true);
-    //  $scope.addProduct = function (productName, productPrice) {
-    //   $scope.products.push({
-    //     productName: productName,
-    //     productPrice: productPrice
-    //   });
-    //   $scope.productName = "";
-    //   $scope.productPrice = "";
-    // };
+    if($stateParams.newCartProduct) {
+      vm.cart = CartService.getProduct($stateParams.newCartProduct);
+    }
 
-    // $scope.addToCart = function () {
-    //   var id = $stateParams.storeId;
-    //   CartService.getStore(id).then(function(data) {
-    //     console.log(data);
-    //     $scope.cart = data;
-    //     $state.go('app.cart', {storeId: id});
-    //   });
+    // $scope.getTotalPrice = function () {
+    //   totalPrice = 0; //this is reading out to the total
+    //   for (var i = 0; i < $scope.products.length; i++) {
+    //     if ($scope.products[i].productPrice) {
+    //       totalPrice += $scope.products[i].productPrice;
+    //       console.log('what is total productPrice', totalPrice);
+    //     }
+    //   }
+    //   $scope.totalPriceValue = totalPrice;
     // };
 
     $scope.getOneStore = function() {
       var id = $stateParams.storeId;
-      CartService.getStore(id).success(function(data) {
-         console.log('is this what you want?',data);
+      StoresService.getStore(id).then(function(data) {
+         console.log('is this what you want?', data);
          $scope.stores = data;
        });
+    };
+
+    $scope.removeProduct = function (index) {
+      $scope.products.splice(index, 1);
     };
 
 //added this for the customer button to direct to checkout view

@@ -34,6 +34,12 @@ angular
        $state.go('app.cart', {storeId: id});
      };
 
+     $scope.addToCart = function (newCartProduct) {
+       if($stateParams.isChecked)
+       console.log(CartService.cart());
+       CartService.addCartProduct(newCartProduct);
+     };
+
      $scope.addStore = function (store) {
        StoresService.createStore(store);
      };
@@ -96,5 +102,16 @@ angular
          $scope.stores = data;
        });
     };
+
+    // $scope.getTotalPrice = function () {
+    //   totalPrice = 0; //this is reading out to the total
+    //   for (var i = 0; i < $scope.products.length; i++) {
+    //     if ($scope.products[i].productPrice) {
+    //       totalPrice += $scope.products[i].productPrice;
+    //       console.log('what is total productPrice', totalPrice);
+    //     }
+    //   }
+    //   $scope.totalPriceValue = totalPrice;
+    // };
 
 });
