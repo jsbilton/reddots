@@ -6,7 +6,6 @@
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.14.1",
     "bower": "^1.7.1",
-    "card": "^1.2.1",
     "connect-roles": "^3.1.1",
     "express": "^4.13.3",
     "gulp": "^3.5.6",

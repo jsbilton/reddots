@@ -4,72 +4,79 @@
 
 angular
 .module('stores')
-.controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window) {
-
+.controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window, $rootScope) {
+  $rootScope.cartList = [];
+  console.log("YAY");
+  $scope.addToCart = function(newCartProduct) {
+    console.log("HELLO");
+    // var productsInCart = productsInStore.isChecked;
+    // StoreService.getProduct(isChecked).then(function(data) {
+    //   console.log(data);
+    //   console.log('what are these products', productsInCart);
+    //   $scope.cart = data;
+    // });
+    $scope.cartList.push(newCartProduct);
+    console.log($scope.cartList);
+  };
   mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
-    $scope.map = {
-      center: {
-        latitude: 32.788969,
-        longitude: -79.938103
-      },
-      zoom: 8
-    };
+  $scope.map = {
+    center: {
+      latitude: 32.788969,
+      longitude: -79.938103
+    },
+    zoom: 8
+  };
 
-     StoresService.getStores().success(function (stores) {
-       $scope.stores = stores;
+   StoresService.getStores().success(function (stores) {
+     $scope.stores = stores;
+   });
+
+   $scope.goToStoreView = function(store) {
+     var id = store._id;
+     $state.go('app.storeview', {storeId: id});
+   };
+
+   $scope.goToOrderView = function(store) {
+     var id = store._id;
+     $state.go('app.orderview', {storeId: id});
+   };
+
+   $scope.goToCart = function () {
+     var id = $stateParams.storeId;
+     $state.go('app.cart', {storeId: id});
+   };
+
+   $scope.addStore = function (store) {
+     StoresService.createStore(store);
+   };
+
+   $scope.deleteStore = function (store) {
+     $scope.stores.splice(index, 1);
+   };
+
+   $scope.signup = function(newStore) {
+     console.log("STORE", newStore);
+     $auth.signup({
+       displayName: newStore.name,
+       storeAddress: newStore.address,
+       email: newStore.email,
+       password: newStore.password,
+       confirmPassword: newStore.confirmPassword
+     }).catch(function(response) {
+       console.log("ERROR SIGNUP", response);
+       //where to go on failure
+       $state.go('app.storesignup');
      });
-
-     $scope.goToStoreView = function(store) {
-       var id = store._id;
-       $state.go('app.storeview', {storeId: id});
-     };
-
-     $scope.goToOrderView = function(store) {
-       var id = store._id;
-       $state.go('app.orderview', {storeId: id});
-     };
-
-     $scope.goToCart = function () {
-       var id = $stateParams.storeId;
-       $state.go('app.cart', {storeId: id});
-     };
-
-     $scope.addToCart = function (newCartProduct) {
-       if($stateParams.isChecked)
-       console.log(CartService.cart());
-       CartService.addCartProduct(newCartProduct);
-     };
-
-     $scope.addStore = function (store) {
-       StoresService.createStore(store);
-     };
-
-     $scope.deleteStore = function (store) {
-       $scope.stores.splice(index, 1);
-     };
-
-     $scope.signup = function(newStore) {
-       console.log("STORE", newStore);
-       $auth.signup({
-         displayName: newStore.name,
-         storeAddress: newStore.address,
-         email: newStore.email,
-         password: newStore.password,
-         confirmPassword: newStore.confirmPassword
-       }).catch(function(response) {
-         console.log("ERROR SIGNUP", response);
-         //where to go on failure
-         $state.go('app.storesignup');
-       });
-       //where to go on success
-        var id = store._id;
-         $state.go('app.storeview', {storedId: id});
-     };
+     //where to go on success
+      var id = store._id;
+       $state.go('app.storeview', {storedId: id});
+   };
 
     var vm = this;
     if($stateParams.storeId) {
       vm.storeMarker = StoresService.getStore($stateParams.storeId);
     }
+
      $scope.name="addProducts";
      var productsInStore = localStorageService.get('products');
 
@@ -78,14 +85,15 @@ angular
       $scope.$watch('products', function () {
         localStorageService.set('products', $scope.products);
       }, true);
-     $scope.addProduct = function (productName, productPrice) {
-      $scope.products.unshift({
-        productName: productName,
-        productPrice: productPrice
-      });
-      $scope.productName = "";
-      $scope.productPrice = "";
-    };
+
+    //  $scope.addProduct = function (productName, productPrice) {
+    //   $scope.products.unshift({
+    //     productName: productName,
+    //     productPrice: productPrice
+    //   });
+    //   $scope.productName = "";
+    //   $scope.productPrice = "";
+    // };
 
     $scope.removeProduct = function (index) {
       $scope.products.splice(index, 1);
@@ -103,15 +111,16 @@ angular
        });
     };
 
-    // $scope.getTotalPrice = function () {
-    //   totalPrice = 0; //this is reading out to the total
-    //   for (var i = 0; i < $scope.products.length; i++) {
-    //     if ($scope.products[i].productPrice) {
-    //       totalPrice += $scope.products[i].productPrice;
-    //       console.log('what is total productPrice', totalPrice);
-    //     }
-    //   }
-    //   $scope.totalPriceValue = totalPrice;
-    // };
+    //  $scope.addToCart = function (newCartProduct) {
+    //    if($stateParams.isChecked)
+    //    console.log('hello', CartService.cart());
+    //    CartService.addCartProduct(newCartProduct);
+    //  };
+
+
+
+   if($stateParams.newCartProduct) {
+     vm.cart = CartService.getProduct($stateParams.newCartProduct);
+   }
 
 });

@@ -3,20 +3,18 @@ angular
   // .controller('CartCtrl', function ($scope, CartService, $stateParams) {
   //   var vm = this;
   //   $scope.cartProducts = CartService.getCartProducts();
-  .controller('CartCtrl', function ($scope, $state, CartService, StoresService, $stateParams, localStorageService) {
+  .controller('CartCtrl', function ($scope, $state, CartService, StoresService, $stateParams, localStorageService,$rootScope) {
     var vm = this;
+    glob = $rootScope.cartList;
     if($stateParams.cartProductId) {
-      vm.cart = CartService.getProduct($stateParams.cartProductId);
+      vm.cart = $rootScope.cartList;
     }
-     $scope.name="addToCart";
-     var productsInCart = localStorageService.get('products');
-     console.log('what are these products', productsInCart);
 
-      $scope.products = productsInCart || [];
+      // $scope.cartList = cartList || [];
 
-    if($stateParams.newCartProduct) {
-      vm.cart = CartService.getProduct($stateParams.newCartProduct);
-    }
+    // if($stateParams.newCartProduct) {
+    //   vm.cart = CartService.getProduct($stateParams.newCartProduct);
+    // }
 
     // $scope.getTotalPrice = function () {
     //   totalPrice = 0; //this is reading out to the total
@@ -37,8 +35,13 @@ angular
        });
     };
 
-    $scope.removeProduct = function (index) {
-      $scope.products.splice(index, 1);
+    $scope.removeProduct = function (product) {
+      $rootScope.cartList.forEach(function(item,idx,arr) {
+        if(item.productName === product.productName) {
+          arr.splice(idx,1);
+        }
+      });
+      $scope.getTotalPrice();
     };
 
 //added this for the customer button to direct to checkout view
@@ -49,12 +52,17 @@ angular
 
     $scope.getTotalPrice = function () {
       totalPrice = 0; //this is reading out to the total
-      for (var i = 0; i < $scope.products.length; i++) {
-        if ($scope.products[i].productPrice) {
-          totalPrice += $scope.products[i].productPrice;
+      // for (var i = 0; i < $scope.cartList.length; i++) {
+      //   if ($scope.products[i].productPrice) {
+      //     totalPrice += $scope.products[i].productPrice;
+      //   }
+      // }
+      $rootScope.cartList.forEach(function(item) {
+        if(item.productPrice) {
+          totalPrice += item.productPrice;
           console.log('what is total productPrice', totalPrice);
         }
-      }
+      });
       $scope.totalPriceValue = totalPrice;
     };
 
