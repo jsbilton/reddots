@@ -4,8 +4,8 @@
 
 angular
 .module('stores')
-.controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window) {
-  $scope.cartList = [];
+.controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window, $rootScope) {
+  $rootScope.cartList = [];
   console.log("YAY");
   $scope.addToCart = function(newCartProduct) {
     console.log("HELLO");

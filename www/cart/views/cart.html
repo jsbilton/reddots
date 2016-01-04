@@ -22,12 +22,12 @@
     <div class="list cart-body">
       <ion-list id="store-items">
         <h4>Your Shopping Cart</h4>
-        <ion-item ng-repeat="product in products" item="item" class="item-remove-animate">
+        <ion-item ng-repeat="product in cartList" item="item" class="item-remove-animate">
           <div class="row">
             <div class="col col-75">{{ product.productName }}</div>
             <div class="col">{{ product.productPrice | currency }}</div>
           </div>
-          <ion-option-button type="submit" ng-click="removeProduct($index)" class="button-assertive">
+          <ion-option-button type="submit" ng-click="removeProduct(product)" class="button-assertive">
             <i class="icon ion-ios-trash-outline cart-trash"></i>
           </ion-option-button>
         </ion-item>
