@@ -34,12 +34,6 @@ angular
        $state.go('app.cart', {storeId: id});
      };
 
-     $scope.addToCart = function (newCartProduct) {
-       if($stateParams.isChecked)
-       console.log(CartService.cart());
-       CartService.addCartProduct(newCartProduct);
-     };
-
      $scope.addStore = function (store) {
        StoresService.createStore(store);
      };
@@ -70,6 +64,7 @@ angular
     if($stateParams.storeId) {
       vm.storeMarker = StoresService.getStore($stateParams.storeId);
     }
+
      $scope.name="addProducts";
      var productsInStore = localStorageService.get('products');
 
@@ -78,14 +73,15 @@ angular
       $scope.$watch('products', function () {
         localStorageService.set('products', $scope.products);
       }, true);
-     $scope.addProduct = function (productName, productPrice) {
-      $scope.products.unshift({
-        productName: productName,
-        productPrice: productPrice
-      });
-      $scope.productName = "";
-      $scope.productPrice = "";
-    };
+
+    //  $scope.addProduct = function (productName, productPrice) {
+    //   $scope.products.unshift({
+    //     productName: productName,
+    //     productPrice: productPrice
+    //   });
+    //   $scope.productName = "";
+    //   $scope.productPrice = "";
+    // };
 
     $scope.removeProduct = function (index) {
       $scope.products.splice(index, 1);
@@ -103,15 +99,24 @@ angular
        });
     };
 
-    // $scope.getTotalPrice = function () {
-    //   totalPrice = 0; //this is reading out to the total
-    //   for (var i = 0; i < $scope.products.length; i++) {
-    //     if ($scope.products[i].productPrice) {
-    //       totalPrice += $scope.products[i].productPrice;
-    //       console.log('what is total productPrice', totalPrice);
-    //     }
-    //   }
-    //   $scope.totalPriceValue = totalPrice;
-    // };
+    //  $scope.addToCart = function (newCartProduct) {
+    //    if($stateParams.isChecked)
+    //    console.log('hello', CartService.cart());
+    //    CartService.addCartProduct(newCartProduct);
+    //  };
+
+    $scope.addToCart = function() {
+      var productsInCart = productsInStore.isChecked;
+      StoreService.getProduct(isChecked).then(function(data) {
+        console.log(data);
+        console.log('what are these products', productsInCart);
+        $scope.cart = data;
+      });
+     $scope.products = productsInCart || [];
+   };
+
+   if($stateParams.newCartProduct) {
+     vm.cart = CartService.getProduct($stateParams.newCartProduct);
+   }
 
 });
