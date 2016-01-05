@@ -9822,5 +9822,28 @@ a {
 .cart-body {
   margin-top: 70px; }
 
-.total-price {
-  width: 100%; }
+.item {
+  height: 50px; }
+
+.item-complex .item-content {
+  padding: 4px 15px 4px 20px; }
+
+.product-list {
+  padding: 4px 35px 4px 20px; }
+
+.all-totals {
+  font-size: 1.25rem;
+  width: 100%;
+  margin: auto;
+  height: 50px;
+  background-color: grey;
+  padding: 2px 30px 2px 25px; }
+
+.totals h4 {
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  width: 100%;
+  text-align: left; }
+
+.checkbox {
+  padding: 0; }
