@@ -23,7 +23,7 @@
             data-placeholders="cardPlaceholders"
             data-options="cardOptions"
             data-messages="cardMessages">
-
+        <div class="list card">
             <div>
               <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
 
@@ -37,9 +37,10 @@
               <input type="button" value="Change card" data-ng-click="changeCard()" />
               <input type="button" value="Clear" data-ng-click="clear()" />
             </div>
+        </div>
           </form>
       <div class="row responsive-sm checkout-btn">
-        <button class="button button-medium button-energized" ng-click="goCheckOut()">Place Order</button>
+        <button class="button button-medium button-energized" ng-click="showConfirm()">Place Order</button>
       </div>
     </div>
   </ion-content>

@@ -1,6 +1,6 @@
 angular
   .module('cart')
-  .controller('CartCtrl', function ($scope, $state, CartService, StoresService, $stateParams, localStorageService,$rootScope) {
+  .controller('CartCtrl', function ($scope, $ionicPopup, $state, CartService, StoresService, $stateParams, localStorageService,$rootScope) {
     var vm = this;
     glob = $rootScope.cartList;
     if($stateParams.cartProductId) {
@@ -46,6 +46,20 @@ angular
       $scope.totalPriceValue = totalPrice;
     };
 
+    $scope.showConfirm = function() {
+       var confirmPopup = $ionicPopup.confirm({
+         title: 'All customers must show proper identification upon pickup',
+         template: 'Are you sure you are of the legal age of consumption?'
+       });
+       confirmPopup.then(function(res) {
+         if(res) {
+           console.log('You are sure');
+         } else {
+           console.log('You are not sure');
+         }
+       });
+     };
+
     //Credit card payment
     $scope.card = {
     name: 'Mike Brown',
@@ -70,6 +84,25 @@ angular
       debug: false,
       formatting: true
     };
+
+    // $scope.showConfirm = function() {
+    //    var confirmPopup = $ionicPopup.confirm({
+    //      title: 'All customers must show proper identification upon pickup',
+    //      template: 'Are you sure you are of the legal age of consumption?'
+    //    });
+    //    confirmPopup.then(function(res) {
+    //      if(res) {
+    //        console.log('You are sure');
+    //      } else {
+    //        console.log('You are not sure');
+    //      }
+    //    });
+    //  };
+
+
+
+
+
 
 
 
