@@ -45,6 +45,7 @@ angular
       });
       $scope.totalPriceValue = totalPrice;
     };
+
     //Credit card payment
     $scope.card = {
     name: 'Mike Brown',
@@ -69,6 +70,7 @@ angular
       debug: false,
       formatting: true
     };
+
 
 
     });
