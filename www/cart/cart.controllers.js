@@ -10,7 +10,7 @@ angular
     $scope.getOneStore = function() {
       var id = $stateParams.storeId;
       StoresService.getStore(id).then(function(data) {
-         console.log('is this what you want?', data);
+        //  console.log('is this what you want?', data);
          $scope.stores = data;
        });
     };
@@ -40,7 +40,7 @@ angular
       $rootScope.cartList.forEach(function(item) {
         if(item.productPrice) {
           totalPrice += item.productPrice;
-          console.log('what is total productPrice', totalPrice);
+          // console.log('what is total productPrice', totalPrice);
         }
       });
       $scope.totalPriceValue = totalPrice;

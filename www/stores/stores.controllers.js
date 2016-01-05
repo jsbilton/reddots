@@ -6,17 +6,11 @@ angular
 .module('stores')
 .controller('StoresCtrl', function($state, $auth, $scope, StoresService, CartService, $stateParams, localStorageService, mapboxService, $ionicLoading, $window, $rootScope) {
   $rootScope.cartList = [];
-  console.log("YAY");
+  // console.log("YAY");
   $scope.addToCart = function(newCartProduct) {
-    console.log("HELLO");
-    // var productsInCart = productsInStore.isChecked;
-    // StoreService.getProduct(isChecked).then(function(data) {
-    //   console.log(data);
-    //   console.log('what are these products', productsInCart);
-    //   $scope.cart = data;
-    // });
+    // console.log("HELLO");
     $scope.cartList.push(newCartProduct);
-    console.log($scope.cartList);
+    // console.log($scope.cartList);
   };
   mapboxService.init({ accessToken: 'pk.eyJ1IjoiamV0YmFsYWd0YXMiLCJhIjoiY2lpZ28waDZlMDJobHY1bTF1YnZrcHcxdSJ9.2YP0ceOasnLzdmIAG9Uy3g' });
   $scope.map = {
@@ -86,14 +80,14 @@ angular
         localStorageService.set('products', $scope.products);
       }, true);
 
-    //  $scope.addProduct = function (productName, productPrice) {
-    //   $scope.products.unshift({
-    //     productName: productName,
-    //     productPrice: productPrice
-    //   });
-    //   $scope.productName = "";
-    //   $scope.productPrice = "";
-    // };
+     $scope.addProduct = function (productName, productPrice) {
+      $scope.products.unshift({
+        productName: productName,
+        productPrice: productPrice
+      });
+      $scope.productName = "";
+      $scope.productPrice = "";
+    };
 
     $scope.removeProduct = function (index) {
       $scope.products.splice(index, 1);
@@ -106,7 +100,7 @@ angular
     $scope.getOneStore = function() {
       var id = $stateParams.storeId;
       StoresService.getStore(id).then(function(data) {
-         console.log(data);
+        //  console.log(data);
          $scope.stores = data;
        });
     };

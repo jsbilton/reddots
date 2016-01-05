@@ -31,12 +31,12 @@
             <i class="icon ion-ios-trash-outline cart-trash"></i>
           </ion-option-button>
         </ion-item>
-        <div class="row">
+        <ion-item class="all-totals">
+        <div class="row totals">
           <div class="col col-75"><h4>Total</h4></div>
-          <ion-item>
-            <div class="col total-price" ng-init="getTotalPrice()">{{ totalPriceValue | currency }}</div>
-          </ion-item>
+          <div class="col tot-price" ng-init="getTotalPrice()"><h4>{{ totalPriceValue | currency }}</h4></div>
         </div>
+        </ion-item>
       </ion-list>
       <div class="row responsive-sm checkout-btn">
         <ion-button class="button button-medium button-energized" ng-click="goCheckOut()">Checkout</ion-button>
