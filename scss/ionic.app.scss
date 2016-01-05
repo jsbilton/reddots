@@ -122,9 +122,11 @@ a {
 }
 
 .checkout-btn {
-  font-size: 2rem;
   width: 70%;
   margin: auto;
+  h4 {
+    color: #FFFFFF;
+  }
 }
 
 .cart-trash {

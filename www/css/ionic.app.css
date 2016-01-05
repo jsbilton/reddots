@@ -9812,9 +9812,10 @@ a {
   width: 50px; }
 
 .checkout-btn {
-  font-size: 2rem;
   width: 70%;
   margin: auto; }
+  .checkout-btn h4 {
+    color: #FFFFFF; }
 
 .cart-trash {
   width: 50px; }
