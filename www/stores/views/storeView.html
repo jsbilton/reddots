@@ -29,10 +29,10 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
           <div class="col col-75">{{ product.productName }}</div>
           <div class="col">{{ product.productPrice | currency }}</div>
         </div>
-        <ion-option-button class="button-calm icon ion-edit" ng-click="edit(product)">
+        <ion-option-button class="button-calm" ng-click="edit(product)">
           Edit
         </ion-option-button>
-        <ion-option-button type="submit" ng-click="removeProduct($index)" class="button-assertive icon ion-trash-a">
+        <ion-option-button type="submit" ng-click="removeProduct($index)" class="button-assertive">
           Delete
         </ion-option-button>
       </ion-item>
