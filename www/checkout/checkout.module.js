@@ -1,14 +1,14 @@
 angular
-  .module('cart', ['LocalStorageModule'])
+  .module('checkout', ['LocalStorageModule'])
 
   .config(function ($stateProvider) {
       $stateProvider
-        .state('app.cart', {
-          url: '/cart/:storeId',
+        .state('app.checkout', {
+          url: '/checkout/:storeId',
           views: {
             'menuContent': {
-              templateUrl: 'cart/views/cart.html',
-              controller: 'CartCtrl'
+              templateUrl: 'checkout/views/checkout.html',
+              controller: 'CheckoutCtrl'
             }
           },
 
