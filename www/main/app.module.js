@@ -5,6 +5,7 @@ angular
     'stores',
     'customersignup',
     'cart',
+    'checkout',
     'angular-mapbox',
     'ui.router',
     'ngSanitize',
