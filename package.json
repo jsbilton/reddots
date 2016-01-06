@@ -30,6 +30,8 @@
     "gulp": "^3.9.0",
     "gulp-util": "^2.2.14",
     "shelljs": "^0.3.0",
+    "coffee-script": "~1.7.1",
+    "coffeeify": "~1.2.0",
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
