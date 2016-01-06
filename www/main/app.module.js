@@ -41,7 +41,7 @@ angular
       });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/app/map');
   })
   .config(function ($authProvider) {
     if (ionic.Platform.isIOS() || ionic.Platform.isAndroid()) {
