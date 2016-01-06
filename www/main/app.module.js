@@ -9,7 +9,8 @@ angular
     'angular-mapbox',
     'ui.router',
     'ngSanitize',
-    'satellizer'
+    'satellizer',
+    'gavruk.card'
   ])
 
   .run(function($ionicPlatform) {

@@ -3,49 +3,62 @@ angular.module('checkout')
 .controller('CheckoutCtrl', function($scope, $stateParams, StoresService) {
 
   $scope.getOneStore = function() {
-    var id = $stateParams.storeId;
-    StoresService.getStore(id).then(function(data) {
-      //  console.log('is this what you want?', data);
-       $scope.stores = data;
-     });
+      var id = $stateParams.storeId;
+      StoresService.getStore(id).then(function(data) {
+        //  console.log('is this what you want?', data);
+         $scope.stores = data;
+       });
+    };
+
+  var card1 = {
+    name: 'Mike Brown',
+    number: '5555 4444 3333 1111',
+    expiry: '11 / 2020',
+    cvc: '123'
+  };
+  var card2 = {
+    name: 'Bill Smith',
+    number: '4321 4321 4321 4321',
+    expiry: '02 / 2018',
+    cvc: '591'
   };
 
-  var card = new Card({
-    // a selector or DOM element for the form where users will
-    // be entering their information
-    form: 'form', // *required*
-    // a selector or DOM element for the container
-    // where you want the card to appear
-    container: '.card-wrapper', // *required*
+  var selectedCard = 1;
+  $scope.card = card1;
 
-    formSelectors: {
-        numberInput: 'input#number', // optional — default input[name="number"]
-        expiryInput: 'input#expiry', // optional — default input[name="expiry"]
-        cvcInput: 'input#cvc', // optional — default input[name="cvc"]
-        nameInput: 'input#name' // optional - defaults input[name="name"]
-    },
+  $scope.changeCard = function() {
+    if (selectedCard == 1) {
+      $scope.card = card2;
+      selectedCard = 2;
+    } else {
+      $scope.card = card1;
+      selectedCard = 1;
+    }
+  };
 
-    width: 200, // optional — default 350px
-    formatting: true, // optional - default true
+  $scope.clear = function() {
+    $scope.card = {};
+  };
 
-    // Strings for translation - optional
-    messages: {
-        validDate: 'valid\ndate', // optional - default 'valid\nthru'
-        monthYear: 'mm/yyyy', // optional - default 'month/year'
-    },
+  $scope.cardPlaceholders = {
+    name: 'Your Full Name',
+    number: 'xxxx xxxx xxxx xxxx',
+    expiry: 'MM/YY',
+    cvc: 'xxx'
+  };
 
-    // Default placeholders for rendered fields - optional
-    placeholders: {
-        number: '•••• •••• •••• ••••',
-        name: 'Full Name',
-        expiry: '••/••',
-        cvc: '•••'
-    },
+  $scope.cardMessages = {
+    validDate: 'valid\nthru',
+    monthYear: 'MM/YYYY',
+  };
 
-    // if true, will log helpful messages for setting up Card
-    debug: false // optional - default false
-});
-  console.log('HELLO', document.querySelectorAll('#container-id'));
-  // new Card({ form: 'form', container: '.card'});
+  $scope.cardOptions = {
+    debug: false,
+    formatting: true
+  };
 
 });
+
+// this card animation is a mashup of Jesse Pollak's and Sergey Gavruk's work
+// https://github.com/jessepollak/card
+// https://github.com/gavruk/angular-card
