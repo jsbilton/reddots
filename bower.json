@@ -41,9 +41,6 @@
     "tests"
   ],
   "resolutions": {
-    "angular": "1.4.3",
-    "angular-sanitize": "1.4.3",
-    "angular-animate": "1.4.3",
-    "ionic": "1.2.0"
+    "angular": "~1.4.8"
   }
 }
