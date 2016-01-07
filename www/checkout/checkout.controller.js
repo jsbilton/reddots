@@ -1,6 +1,6 @@
 angular.module('checkout')
 
-.controller('CheckoutCtrl', function($scope, $stateParams, StoresService) {
+.controller('CheckoutCtrl', function($scope, $stateParams, StoresService, $ionicPopup) {
 
   $scope.getOneStore = function() {
       var id = $stateParams.storeId;
@@ -57,7 +57,18 @@ angular.module('checkout')
     formatting: true
   };
 
-});
+  // $scope.showConfirm = function() {
+  //   console.log("fire");
+  //     $ionicPopup.alert({
+  //       title: 'Your order has been processed and will be ready upon arrival',
+  //       template: 'All customers must show proper ID'
+  //     });
+  //   };
+
+
+ });
+
+
 
 // this card animation is a mashup of Jesse Pollak's and Sergey Gavruk's work
 // https://github.com/jessepollak/card
