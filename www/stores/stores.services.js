@@ -35,17 +35,19 @@ angular
         console.log("yaay, store deleted!");
       });
     };
+
     var addProduct = function (newProduct) {
       var data = [];
       data.map(function(el) {
+        console.log("trying to addProduct?", res);
         var products = el;
         products.productName = productName;
         products.productPrice = productPrice;
       });
         $http.post(url, products).then(function (res) {
           console.log("NEW PRODUCT ADDED!");
+          return products;
       });
-      return products;
     };
 
     var getProducts = function(id, products) {
