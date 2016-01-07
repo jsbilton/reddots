@@ -19,11 +19,15 @@ DIFFERENCE: Customers and !AUTHENTICATED USERS can only Read, while Stores and A
           <h4>Product Selection</h4>
             <ion-item class="product-list" ng-model="filter.blue" ng-repeat="product in products" >
               <div class="row">
-                <label class="checkbox">
-                  <input type="checkbox" ng-checked="isChecked" ng-click="addToCart(product)">
+                <label class="checkbox-assertive">
+                  <div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-assertive">
+                    <input type="checkbox" ng-checked="isChecked" ng-click="addToCart(product)">
+                     <i class="checkbox-icon"></i>
+                  </div>
                 </label>
                 <div class="col col-75">{{ product.productName }}</div>
                 <div class="col">{{ product.productPrice | currency }}</div>
+
               </div>
           </ion-item>
         </ion-list>
